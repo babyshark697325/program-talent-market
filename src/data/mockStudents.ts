@@ -1,4 +1,3 @@
-
 export interface StudentPortfolioItem {
   id: number;
   imageUrl: string;
@@ -14,7 +13,8 @@ export interface StudentService {
   avatarUrl: string;
   skills: string[];
   price: string;
-  portfolio?: StudentPortfolioItem[]; // new field
+  portfolio?: StudentPortfolioItem[];
+  aboutMe?: string; // new optional field
 }
 
 export const mockStudents: StudentService[] = [
@@ -28,6 +28,7 @@ export const mockStudents: StudentService[] = [
       "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80",
     skills: ["Career", "Writing", "Editing"],
     price: "$25/hr",
+    aboutMe: "I am passionate about helping students land their dream jobs. With 5 years of experience in career development and a background in professional writing, I've worked with dozens of clients worldwide. In my spare time, I enjoy hiking and reading sci-fi novels.",
     portfolio: [
       {
         id: 1,
@@ -53,6 +54,7 @@ export const mockStudents: StudentService[] = [
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80",
     skills: ["Programming", "Python", "Tutoring"],
     price: "$20/hr",
+    aboutMe: "I'm a Computer Science major with a love for teaching and sharing knowledge. My tutoring style is patient and encouraging—no question is too small! When I'm not coding, you’ll find me baking bread or playing guitar.",
     portfolio: [
       {
         id: 1,
@@ -72,6 +74,7 @@ export const mockStudents: StudentService[] = [
       "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80",
     skills: ["Design", "Branding", "Graphics"],
     price: "$45/hr",
+    aboutMe: "Design isn't just my career—it's my passion. I specialize in minimal, memorable visuals and love collaborating on fresh ideas. Outside of design, I enjoy photography and practicing yoga.",
     portfolio: [
       {
         id: 1,
@@ -91,6 +94,7 @@ export const mockStudents: StudentService[] = [
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80",
     skills: ["Social Media", "Marketing", "Consulting"],
     price: "$35/hr",
+    aboutMe: "From launching campaigns to boosting engagement, I love all things social! I have a knack for turning analytics into actionable strategies. Off the clock, I'm traveling or mastering new recipes.",
     portfolio: [
       {
         id: 1,
@@ -110,6 +114,7 @@ export const mockStudents: StudentService[] = [
       "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80",
     skills: ["Web Development", "WordPress", "Tech Support"],
     price: "$30/hr",
+    aboutMe: "I'm a web enthusiast with a focus on usability and performance. Helping small businesses get online is what motivates me every day! In my downtime, I'm tinkering with open-source or mountain biking.",
     portfolio: [
       {
         id: 1,

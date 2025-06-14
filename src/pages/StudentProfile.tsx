@@ -35,6 +35,12 @@ const StudentProfile: React.FC = () => {
           />
           <div className="text-2xl font-bold mb-1">{student.name}</div>
           <div className="text-primary font-medium mb-1">{student.title}</div>
+          {student.aboutMe && (
+            <div className="mt-2 mb-2 w-full bg-muted/50 text-muted-foreground rounded-lg px-3 py-2 text-sm text-left">
+              <span className="block font-semibold text-muted-foreground mb-1">About Me</span>
+              <span>{student.aboutMe}</span>
+            </div>
+          )}
           <div className="text-muted-foreground text-base mb-2">{student.description}</div>
           <div className="flex flex-wrap gap-2 my-3">
             {student.skills.map((skill) => (
