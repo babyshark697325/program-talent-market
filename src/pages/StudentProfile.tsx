@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { mockStudents } from "@/data/mockStudents";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Laptop } from "lucide-react"; // Add the tech icon
 
 const StudentProfile: React.FC = () => {
   const { id } = useParams();
@@ -28,16 +28,22 @@ const StudentProfile: React.FC = () => {
       <div className="max-w-3xl w-full mx-auto rounded-xl bg-card shadow p-8 flex flex-col md:flex-row gap-10 animate-fade-in">
         {/* Avatar and summary */}
         <div className="w-full md:w-1/3 flex flex-col items-center mb-6 md:mb-0">
-          <img
-            src={student.avatarUrl}
-            alt={`${student.name} profile`}
-            className="w-32 h-32 rounded-full border mb-4 object-cover shadow"
-          />
-          <div className="text-2xl font-bold mb-1">{student.name}</div>
+          <div className="flex flex-col items-center mb-2">
+            <Laptop size={36} className="text-primary mb-2 animate-pulse" /> {/* Tech cue */}
+            <img
+              src={student.avatarUrl}
+              alt={`${student.name} profile`}
+              className="w-32 h-32 rounded-full border mb-4 object-cover shadow"
+            />
+          </div>
+          <div className="text-2xl font-bold mb-1 text-center">{student.name}</div>
+          <div className="text-[16px] text-green-700 font-semibold mb-2 text-center">
+            MyVillage Program · Tech Talent
+          </div>
           <div className="text-primary font-medium mb-1">{student.title}</div>
           {student.aboutMe && (
             <div className="mt-2 mb-2 w-full bg-muted/50 text-muted-foreground rounded-lg px-3 py-2 text-sm text-left">
-              <span className="block font-semibold text-muted-foreground mb-1">About Me</span>
+              <span className="block font-semibold text-muted-foreground mb-1">About Me & My Tech Journey</span>
               <span>{student.aboutMe}</span>
             </div>
           )}
@@ -101,3 +107,4 @@ const StudentProfile: React.FC = () => {
 };
 
 export default StudentProfile;
+
