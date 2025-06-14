@@ -87,7 +87,7 @@ const Index: React.FC = () => {
           )}
         </div>
         <footer className="text-center mt-20 pb-6 text-muted-foreground text-sm opacity-80">
-          &copy; {new Date().getFullYear()} MyVillageProject &middot; All rights reserved.
+          &copy; {new Date().getFullYear()} MyVillage Program &middot; All rights reserved.
         </footer>
       </div>
     </div>
@@ -95,3 +95,4 @@ const Index: React.FC = () => {
 };
 
 export default Index;
+
