@@ -4,6 +4,7 @@ import StudentServiceCard from "@/components/StudentServiceCard";
 import { mockStudents } from "@/data/mockStudents";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 
 const ALL_SKILLS = Array.from(
   new Set(mockStudents.flatMap((s) => s.skills))
@@ -12,6 +13,7 @@ const ALL_SKILLS = Array.from(
 const Index: React.FC = () => {
   const [search, setSearch] = useState("");
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const filteredStudents = mockStudents.filter((student) => {
     const matchSearch =
@@ -75,7 +77,7 @@ const Index: React.FC = () => {
               <StudentServiceCard
                 key={student.id}
                 student={student}
-                onView={() => window.alert("Profile details coming soon!")}
+                onView={() => navigate(`/student/${student.id}`)}
               />
             ))
           ) : (
