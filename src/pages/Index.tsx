@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useNavigate } from "react-router-dom";
-import { Plus, Users, Briefcase } from "lucide-react";
+import { Plus, Users, Briefcase, Sparkles } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ALL_SKILLS = Array.from(
@@ -76,11 +76,32 @@ const Index: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-slate-100 pt-10 px-0">
       <div className="max-w-6xl mx-auto w-full">
-        {/* Page Title */}
-        <div className="mb-8 px-2">
-          <h1 className="text-6xl font-bold mb-6 text-center text-primary">
-            MyVillage Talent
-          </h1>
+        {/* Enhanced Page Title Section */}
+        <div className="mb-12 px-2 relative">
+          <div className="text-center relative">
+            {/* Decorative background elements */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-5">
+              <Sparkles size={200} className="text-primary" />
+            </div>
+            
+            {/* Main title with gradient text */}
+            <h1 className="text-7xl md:text-8xl font-black mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight tracking-tight relative z-10">
+              MyVillage
+            </h1>
+            <div className="text-5xl md:text-6xl font-bold text-primary mb-6 relative z-10">
+              Talent
+            </div>
+            
+            {/* Subtitle with elegant styling */}
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
+              Where exceptional talent meets extraordinary opportunities
+            </p>
+            
+            {/* Decorative line */}
+            <div className="mt-8 flex justify-center">
+              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full"></div>
+            </div>
+          </div>
         </div>
 
         {/* Hero/Heading Section */}
