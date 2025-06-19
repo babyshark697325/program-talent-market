@@ -76,11 +76,18 @@ const Index: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-slate-100 pt-10 px-0">
       <div className="max-w-6xl mx-auto w-full">
+        {/* Page Title */}
+        <div className="mb-8 px-2">
+          <h1 className="text-6xl font-bold mb-6 text-center text-primary">
+            MyVillage Talent
+          </h1>
+        </div>
+
         {/* Hero/Heading Section */}
         <div className="mb-10 px-2">
-          <h1 className="text-5xl font-extrabold mb-4 text-left text-primary leading-tight tracking-tight">
+          <h2 className="text-5xl font-extrabold mb-4 text-left text-primary leading-tight tracking-tight">
             {activeTab === "students" ? "Hire Top Talent from Our Program" : "Find Your Next Project"}
-          </h1>
+          </h2>
           <p className="text-xl text-muted-foreground mb-3 text-left">
             {activeTab === "students" 
               ? "Discover, hire, and collaborate with highly skilled students in web development, design, consulting, and more."
