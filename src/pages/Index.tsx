@@ -76,23 +76,9 @@ const Index: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-slate-100 pt-10 px-0">
       <div className="max-w-6xl mx-auto w-full">
-        {/* Enhanced Page Title Section with Thumbnail */}
+        {/* Enhanced Page Title Section */}
         <div className="mb-12 px-2 relative">
           <div className="text-center relative">
-            {/* Aesthetic thumbnail image */}
-            <div className="mb-8 flex justify-center">
-              <div className="relative">
-                <img
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80"
-                  alt="Collaborative workspace"
-                  className="w-48 h-32 md:w-60 md:h-40 object-cover rounded-2xl shadow-2xl border-4 border-white/50"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full animate-pulse"></div>
-                <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-primary rounded-full"></div>
-              </div>
-            </div>
-            
             {/* Decorative background elements */}
             <div className="absolute inset-0 flex items-center justify-center opacity-5">
               <Sparkles size={200} className="text-primary" />
