@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { mockStudents } from "@/data/mockStudents";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Laptop } from "lucide-react"; // Add the tech icon
+import { ArrowLeft, Laptop, Mail, Phone } from "lucide-react";
 
 const StudentProfile: React.FC = () => {
   const { id } = useParams();
@@ -29,7 +29,7 @@ const StudentProfile: React.FC = () => {
         {/* Avatar and summary */}
         <div className="w-full md:w-1/3 flex flex-col items-center mb-6 md:mb-0">
           <div className="flex flex-col items-center mb-2">
-            <Laptop size={36} className="text-primary mb-2 animate-pulse" /> {/* Tech cue */}
+            <Laptop size={36} className="text-primary mb-2 animate-pulse" />
             <img
               src={student.avatarUrl}
               alt={`${student.name} profile`}
@@ -56,6 +56,38 @@ const StudentProfile: React.FC = () => {
             ))}
           </div>
           <div className="text-lg font-semibold text-green-700 mt-2">{student.price}</div>
+          
+          {/* Contact Information */}
+          {student.contact && (
+            <div className="mt-4 w-full bg-white border rounded-lg p-3">
+              <div className="text-sm font-semibold text-muted-foreground mb-2">Contact Information</div>
+              <div className="space-y-2">
+                {student.contact.email && (
+                  <div className="flex items-center gap-2 text-sm">
+                    <Mail size={16} className="text-muted-foreground" />
+                    <a 
+                      href={`mailto:${student.contact.email}`}
+                      className="text-primary hover:underline"
+                    >
+                      {student.contact.email}
+                    </a>
+                  </div>
+                )}
+                {student.contact.phone && (
+                  <div className="flex items-center gap-2 text-sm">
+                    <Phone size={16} className="text-muted-foreground" />
+                    <a 
+                      href={`tel:${student.contact.phone}`}
+                      className="text-primary hover:underline"
+                    >
+                      {student.contact.phone}
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
           <Link to="/">
             <Button variant="outline" size="sm" className="mt-5">
               <ArrowLeft className="mr-1" size={16} />
@@ -107,4 +139,3 @@ const StudentProfile: React.FC = () => {
 };
 
 export default StudentProfile;
-
