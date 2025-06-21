@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import StudentServiceCard from "@/components/StudentServiceCard";
 import JobCard from "@/components/JobCard";
@@ -74,39 +75,53 @@ const Index: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-slate-100">
-      {/* Header Section with Background */}
-      <div className="relative bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-20 w-32 h-32 bg-primary rounded-full blur-xl"></div>
-          <div className="absolute top-32 right-16 w-24 h-24 bg-accent rounded-full blur-lg"></div>
-          <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-primary/30 rounded-full blur-2xl"></div>
+      {/* Enhanced Header Section with Strong Visual Impact */}
+      <div className="relative bg-gradient-to-br from-primary/20 via-accent/10 to-primary/15 overflow-hidden border-b-4 border-accent/20">
+        {/* Enhanced Background Pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-20 w-40 h-40 bg-primary rounded-full blur-2xl animate-pulse"></div>
+          <div className="absolute top-32 right-16 w-32 h-32 bg-accent rounded-full blur-xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-20 left-1/3 w-48 h-48 bg-primary/40 rounded-full blur-3xl animate-pulse delay-500"></div>
+          <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-accent/60 rounded-full blur-lg animate-pulse delay-700"></div>
         </div>
         
+        {/* Decorative Grid Pattern */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `radial-gradient(circle at 25px 25px, rgba(34, 122, 64, 0.2) 2px, transparent 0)`,
+          backgroundSize: '50px 50px'
+        }}></div>
+        
         {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-24">
           <div className="text-center">
-            {/* Decorative background elements */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-5">
-              <Sparkles size={200} className="text-primary" />
+            {/* Enhanced Decorative background elements */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-8">
+              <Sparkles size={300} className="text-primary animate-pulse" />
             </div>
             
-            {/* Main title with gradient text */}
-            <h1 className="text-7xl md:text-8xl font-black mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight tracking-tight relative z-10">
+            {/* Main title with stronger gradient and shadow */}
+            <h1 className="text-8xl md:text-9xl font-black mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight tracking-tight relative z-10 drop-shadow-lg">
               MyVillage
             </h1>
-            <div className="text-5xl md:text-6xl font-bold text-primary mb-6 relative z-10">
+            <div className="text-6xl md:text-7xl font-bold text-primary mb-8 relative z-10 drop-shadow-md">
               Talent
             </div>
             
-            {/* Subtitle with elegant styling */}
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
+            {/* Enhanced subtitle with better contrast */}
+            <p className="text-xl md:text-2xl text-primary/80 max-w-3xl mx-auto leading-relaxed font-semibold mb-6">
               Where exceptional talent meets extraordinary opportunities
             </p>
             
-            {/* Decorative line */}
-            <div className="mt-8 flex justify-center">
-              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full"></div>
+            {/* Enhanced decorative elements */}
+            <div className="mt-10 flex justify-center items-center gap-4">
+              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full"></div>
+              <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full"></div>
+            </div>
+            
+            {/* Call to action hint */}
+            <div className="mt-8 text-primary/60 font-medium">
+              Discover • Connect • Create
             </div>
           </div>
         </div>
