@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useNavigate } from "react-router-dom";
-import { Plus, Users, Briefcase, Sparkles } from "lucide-react";
+import { Plus, Users, Briefcase, Sparkles, Search } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ALL_SKILLS = Array.from(
@@ -89,85 +89,102 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-slate-100">
-      {/* Header Section with Background */}
-      <div className="relative bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-20 w-32 h-32 bg-primary rounded-full blur-xl"></div>
-          <div className="absolute top-32 right-16 w-24 h-24 bg-accent rounded-full blur-lg"></div>
-          <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-primary/30 rounded-full blur-2xl"></div>
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-primary/5 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-1/4 w-72 h-72 bg-gradient-to-br from-primary/10 to-accent/20 rounded-full blur-3xl animate-pulse opacity-60"></div>
+        <div className="absolute bottom-32 right-1/3 w-96 h-96 bg-gradient-to-tl from-accent/15 to-primary/10 rounded-full blur-3xl animate-pulse opacity-40" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 right-20 w-48 h-48 bg-gradient-to-tr from-primary/5 to-accent/10 rounded-full blur-2xl animate-pulse opacity-50" style={{ animationDelay: '4s' }}></div>
+      </div>
+
+      {/* Enhanced Header Section */}
+      <div className="relative">
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-accent/8"></div>
         
         {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 py-24">
           <div className="text-center">
-            {/* Decorative background elements */}
+            {/* Floating decoration */}
             <div className="absolute inset-0 flex items-center justify-center opacity-5">
-              <Sparkles size={200} className="text-primary" />
+              <Sparkles size={300} className="text-primary animate-pulse" />
             </div>
             
-            {/* Main title with gradient text */}
-            <h1 className="text-7xl md:text-8xl font-black mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight tracking-tight relative z-10">
-              MyVillage
-            </h1>
-            <div className="text-5xl md:text-6xl font-bold text-primary mb-6 relative z-10">
-              Talent
+            {/* Enhanced title with multiple gradients */}
+            <div className="relative z-10 mb-8">
+              <h1 className="text-7xl md:text-8xl font-black mb-2 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight tracking-tight animate-fade-in">
+                MyVillage
+              </h1>
+              <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                Talent
+              </div>
             </div>
             
-            {/* Subtitle with elegant styling */}
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
+            {/* Enhanced subtitle */}
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
               Where exceptional talent meets extraordinary opportunities
             </p>
             
-            {/* Decorative line */}
-            <div className="mt-8 flex justify-center">
-              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full"></div>
+            {/* Animated decorative elements */}
+            <div className="flex justify-center gap-2 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+              <div className="w-16 h-1 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full"></div>
+              <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto w-full pt-10">
-        {/* Hero/Heading Section */}
-        <div className="mb-10 px-2">
-          <h2 className="text-5xl font-extrabold mb-4 text-left text-primary leading-tight tracking-tight">
-            {activeTab === "students" ? "Hire Top Talent from Our Program" : "Find Your Next Project"}
-          </h2>
-          <p className="text-xl text-muted-foreground mb-3 text-left">
-            {activeTab === "students" 
-              ? "Discover, hire, and collaborate with highly skilled students in web development, design, consulting, and more."
-              : "Browse available job opportunities posted by clients looking for talented students."
-            }
-          </p>
+      {/* Main Content with enhanced styling */}
+      <div className="max-w-6xl mx-auto w-full px-6 pb-16 relative z-10">
+        {/* Enhanced Hero Section */}
+        <div className="mb-12 animate-fade-in">
+          <div className="bg-gradient-to-r from-white/80 to-primary/5 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-primary/10">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-left bg-gradient-to-r from-primary to-accent/80 bg-clip-text text-transparent leading-tight tracking-tight">
+              {activeTab === "students" ? "Hire Top Talent from Our Program" : "Find Your Next Project"}
+            </h2>
+            <p className="text-xl text-muted-foreground mb-3 text-left leading-relaxed">
+              {activeTab === "students" 
+                ? "Discover, hire, and collaborate with highly skilled students in web development, design, consulting, and more."
+                : "Browse available job opportunities posted by clients looking for talented students."
+              }
+            </p>
+          </div>
         </div>
 
-        {/* Featured Student of the Week */}
-        <div className="px-2 mb-10">
+        {/* Featured Student Section */}
+        <div className="mb-12 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           <FeaturedStudent 
             student={featuredStudent}
             onViewProfile={() => navigate(`/student/${featuredStudent.id}`)}
           />
         </div>
 
-        {/* Tab Navigation */}
-        <div className="flex items-center justify-between mb-6 px-2">
-          <div className="flex gap-2">
+        {/* Enhanced Tab Navigation */}
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="flex gap-3">
             <Button
               variant={activeTab === "students" ? "default" : "outline"}
               onClick={() => setActiveTab("students")}
-              className="flex items-center gap-2"
+              className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 ${
+                activeTab === "students" 
+                  ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-primary/25" 
+                  : "bg-white/80 backdrop-blur-sm border-primary/20 hover:bg-primary/5"
+              }`}
             >
-              <Users size={18} />
+              <Users size={20} />
               Students ({mockStudents.length})
             </Button>
             <Button
               variant={activeTab === "jobs" ? "default" : "outline"}
               onClick={() => setActiveTab("jobs")}
-              className="flex items-center gap-2"
+              className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 ${
+                activeTab === "jobs" 
+                  ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-primary/25" 
+                  : "bg-white/80 backdrop-blur-sm border-primary/20 hover:bg-primary/5"
+              }`}
             >
-              <Briefcase size={18} />
+              <Briefcase size={20} />
               Jobs ({jobs.length})
             </Button>
           </div>
@@ -175,12 +192,12 @@ const Index: React.FC = () => {
           {activeTab === "jobs" && (
             <Dialog open={isPostJobOpen} onOpenChange={setIsPostJobOpen}>
               <DialogTrigger asChild>
-                <Button className="flex items-center gap-2">
-                  <Plus size={18} />
+                <Button className="flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <Plus size={20} />
                   Post a Job
                 </Button>
               </DialogTrigger>
-              <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+              <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto rounded-3xl">
                 <DialogHeader>
                   <DialogTitle>Post a New Job</DialogTitle>
                 </DialogHeader>
@@ -193,71 +210,110 @@ const Index: React.FC = () => {
           )}
         </div>
 
-        {/* Search & Skill Filters */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 px-2">
-          <Input
-            type="text"
-            placeholder={`Search by skill, ${activeTab === "students" ? "name, or service" : "title, or company"}...`}
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full sm:max-w-xs"
-          />
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="text-sm text-muted-foreground">Filter by skill:</span>
-            <Badge
-              key="all"
-              className={`cursor-pointer px-3 py-1 rounded-lg text-xs ${selectedSkill === null ? "bg-primary text-white" : ""}`}
-              onClick={() => setSelectedSkill(null)}
-            >
-              All
-            </Badge>
-            {ALL_SKILLS.map((skill) => (
-              <Badge
-                key={skill}
-                className={`cursor-pointer px-3 py-1 rounded-lg text-xs ${selectedSkill === skill ? "bg-primary text-white" : ""}`}
-                onClick={() => setSelectedSkill(skill)}
-              >
-                {skill}
-              </Badge>
-            ))}
+        {/* Enhanced Search & Filters */}
+        <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-6 shadow-lg border border-primary/10 mb-10 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={20} />
+              <Input
+                type="text"
+                placeholder={`Search by skill, ${activeTab === "students" ? "name, or service" : "title, or company"}...`}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="pl-12 py-3 rounded-2xl border-primary/20 focus:border-primary focus:ring-primary/20 bg-white/80 backdrop-blur-sm shadow-sm"
+              />
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="text-sm font-medium text-muted-foreground">Filter by skill:</span>
+              <div className="flex flex-wrap gap-2">
+                <Badge
+                  key="all"
+                  className={`cursor-pointer px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm ${
+                    selectedSkill === null 
+                      ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-primary/25" 
+                      : "bg-white/80 text-primary border border-primary/20 hover:bg-primary/5"
+                  }`}
+                  onClick={() => setSelectedSkill(null)}
+                >
+                  All
+                </Badge>
+                {ALL_SKILLS.slice(0, 6).map((skill) => (
+                  <Badge
+                    key={skill}
+                    className={`cursor-pointer px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm ${
+                      selectedSkill === skill 
+                        ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-primary/25" 
+                        : "bg-white/80 text-primary border border-primary/20 hover:bg-primary/5"
+                    }`}
+                    onClick={() => setSelectedSkill(skill)}
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 px-2">
+        {/* Enhanced Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 animate-fade-in" style={{ animationDelay: '0.5s' }}>
           {activeTab === "students" ? (
             filteredStudents.length ? (
-              filteredStudents.map((student) => (
-                <StudentServiceCard
-                  key={student.id}
-                  student={student}
-                  onView={() => navigate(`/student/${student.id}`)}
-                />
+              filteredStudents.map((student, index) => (
+                <div 
+                  key={student.id} 
+                  className="animate-fade-in hover:scale-105 transition-transform duration-300"
+                  style={{ animationDelay: `${0.1 * index}s` }}
+                >
+                  <StudentServiceCard
+                    student={student}
+                    onView={() => navigate(`/student/${student.id}`)}
+                  />
+                </div>
               ))
             ) : (
-              <div className="col-span-full text-center text-muted-foreground py-16 text-lg">
-                No student services found for your search.
+              <div className="col-span-full text-center py-20">
+                <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-12 shadow-lg border border-primary/10">
+                  <Sparkles className="mx-auto mb-4 text-primary/40" size={48} />
+                  <p className="text-xl text-muted-foreground font-medium">
+                    No student services found for your search.
+                  </p>
+                </div>
               </div>
             )
           ) : (
             filteredJobs.length ? (
-              filteredJobs.map((job) => (
-                <JobCard
-                  key={job.id}
-                  job={job}
-                  onView={() => navigate(`/job/${job.id}`)}
-                />
+              filteredJobs.map((job, index) => (
+                <div 
+                  key={job.id} 
+                  className="animate-fade-in hover:scale-105 transition-transform duration-300"
+                  style={{ animationDelay: `${0.1 * index}s` }}
+                >
+                  <JobCard
+                    job={job}
+                    onView={() => navigate(`/job/${job.id}`)}
+                  />
+                </div>
               ))
             ) : (
-              <div className="col-span-full text-center text-muted-foreground py-16 text-lg">
-                No job postings found for your search.
+              <div className="col-span-full text-center py-20">
+                <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-12 shadow-lg border border-primary/10">
+                  <Briefcase className="mx-auto mb-4 text-primary/40" size={48} />
+                  <p className="text-xl text-muted-foreground font-medium">
+                    No job postings found for your search.
+                  </p>
+                </div>
               </div>
             )
           )}
         </div>
         
-        <footer className="text-center mt-20 pb-6 text-muted-foreground text-sm opacity-80">
-          &copy; {new Date().getFullYear()} MyVillage Program &middot; All rights reserved.
+        {/* Enhanced Footer */}
+        <footer className="text-center mt-24 pb-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="bg-gradient-to-r from-transparent via-primary/10 to-transparent h-px mb-8"></div>
+          <p className="text-muted-foreground text-sm opacity-80 font-medium">
+            &copy; {new Date().getFullYear()} MyVillage Program &middot; All rights reserved.
+          </p>
         </footer>
       </div>
     </div>
