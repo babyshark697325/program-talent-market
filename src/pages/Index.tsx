@@ -74,61 +74,50 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-slate-100">
-      {/* Enhanced Header Section with Strong Visual Impact */}
-      <div className="relative bg-gradient-to-br from-primary/20 via-accent/10 to-primary/15 overflow-hidden border-b-4 border-accent/20">
-        {/* Enhanced Background Pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-20 w-40 h-40 bg-primary rounded-full blur-2xl animate-pulse"></div>
-          <div className="absolute top-32 right-16 w-32 h-32 bg-accent rounded-full blur-xl animate-pulse delay-1000"></div>
-          <div className="absolute bottom-20 left-1/3 w-48 h-48 bg-primary/40 rounded-full blur-3xl animate-pulse delay-500"></div>
-          <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-accent/60 rounded-full blur-lg animate-pulse delay-700"></div>
-        </div>
-        
-        {/* Decorative Grid Pattern */}
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `radial-gradient(circle at 25px 25px, rgba(34, 122, 64, 0.2) 2px, transparent 0)`,
-          backgroundSize: '50px 50px'
-        }}></div>
-        
-        {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 py-24">
-          <div className="text-center">
-            {/* Enhanced Decorative background elements */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-8">
-              <Sparkles size={300} className="text-primary animate-pulse" />
+    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-slate-100 pt-10 px-0">
+      <div className="max-w-6xl mx-auto w-full">
+        {/* Enhanced Page Title Section with Thumbnail */}
+        <div className="mb-12 px-2 relative">
+          <div className="text-center relative">
+            {/* Aesthetic thumbnail image */}
+            <div className="mb-8 flex justify-center">
+              <div className="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80"
+                  alt="Collaborative workspace"
+                  className="w-48 h-32 md:w-60 md:h-40 object-cover rounded-2xl shadow-2xl border-4 border-white/50"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full animate-pulse"></div>
+                <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-primary rounded-full"></div>
+              </div>
             </div>
             
-            {/* Main title with stronger gradient and shadow */}
-            <h1 className="text-8xl md:text-9xl font-black mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight tracking-tight relative z-10 drop-shadow-lg">
+            {/* Decorative background elements */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-5">
+              <Sparkles size={200} className="text-primary" />
+            </div>
+            
+            {/* Main title with gradient text */}
+            <h1 className="text-7xl md:text-8xl font-black mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight tracking-tight relative z-10">
               MyVillage
             </h1>
-            <div className="text-6xl md:text-7xl font-bold text-primary mb-8 relative z-10 drop-shadow-md">
+            <div className="text-5xl md:text-6xl font-bold text-primary mb-6 relative z-10">
               Talent
             </div>
             
-            {/* Enhanced subtitle with better contrast */}
-            <p className="text-xl md:text-2xl text-primary/80 max-w-3xl mx-auto leading-relaxed font-semibold mb-6">
+            {/* Subtitle with elegant styling */}
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
               Where exceptional talent meets extraordinary opportunities
             </p>
             
-            {/* Enhanced decorative elements */}
-            <div className="mt-10 flex justify-center items-center gap-4">
-              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full"></div>
-              <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
-              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full"></div>
-            </div>
-            
-            {/* Call to action hint */}
-            <div className="mt-8 text-primary/60 font-medium">
-              Discover • Connect • Create
+            {/* Decorative line */}
+            <div className="mt-8 flex justify-center">
+              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full"></div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto w-full pt-10">
         {/* Hero/Heading Section */}
         <div className="mb-10 px-2">
           <h2 className="text-5xl font-extrabold mb-4 text-left text-primary leading-tight tracking-tight">
