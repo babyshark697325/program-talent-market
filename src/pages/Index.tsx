@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import StudentServiceCard from "@/components/StudentServiceCard";
 import JobCard from "@/components/JobCard";
@@ -74,11 +73,19 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-slate-100 pt-10 px-0">
-      <div className="max-w-6xl mx-auto w-full">
-        {/* Enhanced Page Title Section */}
-        <div className="mb-12 px-2 relative">
-          <div className="text-center relative">
+    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-slate-100">
+      {/* Header Section with Background */}
+      <div className="relative bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-20 w-32 h-32 bg-primary rounded-full blur-xl"></div>
+          <div className="absolute top-32 right-16 w-24 h-24 bg-accent rounded-full blur-lg"></div>
+          <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-primary/30 rounded-full blur-2xl"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20">
+          <div className="text-center">
             {/* Decorative background elements */}
             <div className="absolute inset-0 flex items-center justify-center opacity-5">
               <Sparkles size={200} className="text-primary" />
@@ -103,7 +110,10 @@ const Index: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
 
+      {/* Main Content */}
+      <div className="max-w-6xl mx-auto w-full pt-10">
         {/* Hero/Heading Section */}
         <div className="mb-10 px-2">
           <h2 className="text-5xl font-extrabold mb-4 text-left text-primary leading-tight tracking-tight">
