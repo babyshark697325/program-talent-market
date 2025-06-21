@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import StudentServiceCard from "@/components/StudentServiceCard";
 import JobCard from "@/components/JobCard";
 import PostJobForm from "@/components/PostJobForm";
+import FeaturedStudent from "@/components/FeaturedStudent";
 import { mockStudents } from "@/data/mockStudents";
 import { mockJobs, JobPosting } from "@/data/mockJobs";
 import { Input } from "@/components/ui/input";
@@ -15,6 +16,21 @@ import { useToast } from "@/hooks/use-toast";
 const ALL_SKILLS = Array.from(
   new Set([...mockStudents.flatMap((s) => s.skills), ...mockJobs.flatMap((j) => j.skills)])
 );
+
+// Featured student data (could be rotated weekly)
+const featuredStudent = {
+  id: 1,
+  name: "Alex Rivera",
+  title: "Resume Review & Career Coach",
+  avatarUrl: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80",
+  skills: ["Career Development", "Professional Writing", "Interview Prep"],
+  quote: "Helping students achieve their career dreams is what drives me every day. Every success story makes it all worthwhile!",
+  clientReview: {
+    text: "Alex completely transformed my resume and helped me land my dream job at a Fortune 500 company. The guidance was invaluable and the turnaround was incredibly fast!",
+    clientName: "Sarah Johnson, Marketing Manager",
+    rating: 5
+  }
+};
 
 const Index: React.FC = () => {
   const [search, setSearch] = useState("");
@@ -125,6 +141,14 @@ const Index: React.FC = () => {
               : "Browse available job opportunities posted by clients looking for talented students."
             }
           </p>
+        </div>
+
+        {/* Featured Student of the Week */}
+        <div className="px-2 mb-10">
+          <FeaturedStudent 
+            student={featuredStudent}
+            onViewProfile={() => navigate(`/student/${featuredStudent.id}`)}
+          />
         </div>
 
         {/* Tab Navigation */}
