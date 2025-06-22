@@ -125,18 +125,6 @@ const Index: React.FC = () => {
               Where exceptional talent meets extraordinary opportunities
             </p>
             
-            {/* New Resources Link */}
-            <div className="mb-8 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-              <Button
-                onClick={() => navigate("/resources")}
-                variant="outline"
-                className="bg-white/80 backdrop-blur-sm border-primary/20 hover:bg-primary/5 px-6 py-3 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
-              >
-                <BookOpen className="w-5 h-5 mr-2" />
-                Student Resources
-              </Button>
-            </div>
-            
             {/* Animated decorative elements */}
             <div className="flex justify-center gap-2 animate-fade-in" style={{ animationDelay: '0.6s' }}>
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
