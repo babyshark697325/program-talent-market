@@ -10,6 +10,9 @@ export interface JobPosting {
   postedDate: string;
   contactEmail: string;
   skills: string[];
+  location: string;
+  type: string;
+  experienceLevel: string;
 }
 
 export const mockJobs: JobPosting[] = [
@@ -23,7 +26,10 @@ export const mockJobs: JobPosting[] = [
     duration: "4-6 weeks",
     postedDate: "2024-01-15",
     contactEmail: "contact@localboutique.com",
-    skills: ["React", "Node.js", "E-commerce"]
+    skills: ["React", "Node.js", "E-commerce"],
+    location: "Remote",
+    type: "Project",
+    experienceLevel: "Intermediate"
   },
   {
     id: 2,
@@ -35,6 +41,9 @@ export const mockJobs: JobPosting[] = [
     duration: "2-3 weeks",
     postedDate: "2024-01-18",
     contactEmail: "marketing@fitnessstudio.com",
-    skills: ["Design", "Branding", "Social Media"]
+    skills: ["Design", "Branding", "Social Media"],
+    location: "New York, NY",
+    type: "Contract",
+    experienceLevel: "Beginner"
   }
 ];
