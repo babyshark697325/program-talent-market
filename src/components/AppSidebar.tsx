@@ -1,6 +1,7 @@
 
-import { Calendar, Home, Users, Briefcase, BookOpen, Settings, HelpCircle } from "lucide-react"
+import { Calendar, Home, Users, Briefcase, BookOpen, Settings, HelpCircle, User, FileText } from "lucide-react"
 import { useNavigate, useLocation } from "react-router-dom"
+import { useRole } from "@/contexts/RoleContext"
 import {
   Sidebar,
   SidebarContent,
@@ -13,41 +14,75 @@ import {
   SidebarHeader,
 } from "@/components/ui/sidebar"
 
-const navigationItems = [
+const studentNavigation = [
   {
-    title: "Home",
+    title: "Dashboard",
     url: "/",
     icon: Home,
   },
   {
-    title: "Student Resources",
+    title: "Resources",
     url: "/resources",
     icon: BookOpen,
   },
+  {
+    title: "My Profile",
+    url: "/profile",
+    icon: User,
+  },
 ]
 
-const quickActions = [
+const clientNavigation = [
+  {
+    title: "Browse Talent",
+    url: "/",
+    icon: Home,
+  },
+  {
+    title: "Post a Job",
+    url: "/?tab=jobs",
+    icon: Briefcase,
+  },
+]
+
+const studentQuickActions = [
+  {
+    title: "View Jobs",
+    url: "/?tab=jobs",
+    icon: Briefcase,
+  },
+  {
+    title: "Update Portfolio",
+    url: "/profile",
+    icon: FileText,
+  },
+]
+
+const clientQuickActions = [
   {
     title: "Browse Students",
     url: "/?tab=students",
     icon: Users,
   },
   {
-    title: "Browse Jobs",
-    url: "/?tab=jobs", 
-    icon: Briefcase,
+    title: "Manage Jobs",
+    url: "/?tab=jobs",
+    icon: Settings,
   },
 ]
 
 export function AppSidebar() {
   const navigate = useNavigate()
   const location = useLocation()
+  const { role } = useRole()
+
+  const navigationItems = role === 'student' ? studentNavigation : clientNavigation
+  const quickActions = role === 'student' ? studentQuickActions : clientQuickActions
 
   const handleNavigation = (url: string) => {
     if (url.includes('?tab=')) {
       const [path, params] = url.split('?')
       navigate(path)
-      // Handle tab switching if needed
     } else {
       navigate(url)
     }
@@ -64,7 +99,9 @@ export function AppSidebar() {
             <h2 className="font-bold text-lg bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               MyVillage
             </h2>
-            <p className="text-xs text-muted-foreground">Talent Hub</p>
+            <p className="text-xs text-muted-foreground">
+              {role === 'student' ? 'Student Portal' : 'Talent Hub'}
+            </p>
           </div>
         </div>
       </SidebarHeader>

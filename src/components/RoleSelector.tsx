@@ -1,0 +1,42 @@
+
+import React from 'react';
+import { useRole } from '@/contexts/RoleContext';
+import { Button } from '@/components/ui/button';
+import { Users, Briefcase } from 'lucide-react';
+
+const RoleSelector: React.FC = () => {
+  const { role, setRole } = useRole();
+
+  return (
+    <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-2xl p-1 shadow-md border border-primary/10">
+      <Button
+        variant={role === 'student' ? 'default' : 'ghost'}
+        size="sm"
+        onClick={() => setRole('student')}
+        className={`flex items-center gap-2 rounded-xl transition-all duration-300 ${
+          role === 'student' 
+            ? 'bg-gradient-to-r from-primary to-primary/80 text-white shadow-primary/25' 
+            : 'hover:bg-primary/5'
+        }`}
+      >
+        <Users size={16} />
+        Student
+      </Button>
+      <Button
+        variant={role === 'client' ? 'default' : 'ghost'}
+        size="sm"
+        onClick={() => setRole('client')}
+        className={`flex items-center gap-2 rounded-xl transition-all duration-300 ${
+          role === 'client' 
+            ? 'bg-gradient-to-r from-primary to-primary/80 text-white shadow-primary/25' 
+            : 'hover:bg-primary/5'
+        }`}
+      >
+        <Briefcase size={16} />
+        Client
+      </Button>
+    </div>
+  );
+};
+
+export default RoleSelector;
