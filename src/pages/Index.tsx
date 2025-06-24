@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import StudentServiceCard from "@/components/StudentServiceCard";
 import JobCard from "@/components/JobCard";
@@ -44,6 +43,10 @@ const Index: React.FC = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const { role } = useRole();
+
+  console.log("Current activeTab:", activeTab);
+  console.log("Filtered students count:", mockStudents.length);
+  console.log("User role:", role);
 
   const filteredStudents = mockStudents.filter((student) => {
     const matchSearch =
@@ -284,7 +287,10 @@ const Index: React.FC = () => {
           <div className="flex gap-3">
             <Button
               variant={activeTab === "students" ? "default" : "outline"}
-              onClick={() => setActiveTab("students")}
+              onClick={() => {
+                console.log("Switching to students tab");
+                setActiveTab("students");
+              }}
               className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 ${
                 activeTab === "students" 
                   ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-primary/25" 
@@ -296,7 +302,10 @@ const Index: React.FC = () => {
             </Button>
             <Button
               variant={activeTab === "jobs" ? "default" : "outline"}
-              onClick={() => setActiveTab("jobs")}
+              onClick={() => {
+                console.log("Switching to jobs tab");
+                setActiveTab("jobs");
+              }}
               className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 ${
                 activeTab === "jobs" 
                   ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-primary/25" 
@@ -425,6 +434,7 @@ const Index: React.FC = () => {
 
         {/* Enhanced Cards Grid */}
         <div className="animate-fade-in">
+          {console.log("Rendering cards grid, activeTab:", activeTab, "filteredStudents:", filteredStudents.length)}
           {activeTab === "students" ? (
             filteredStudents.length ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
