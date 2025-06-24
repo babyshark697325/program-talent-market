@@ -108,6 +108,9 @@ const Index: React.FC = () => {
     });
   };
 
+  // Log rendering info
+  console.log("Rendering cards grid, activeTab:", activeTab, "filteredStudents:", filteredStudents.length);
+
   if (role === 'student') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-primary/5 relative overflow-hidden">
@@ -317,6 +320,7 @@ const Index: React.FC = () => {
             </Button>
           </div>
           
+          {/* Post Job dialog */}
           {activeTab === "jobs" && (
             <Dialog open={isPostJobOpen} onOpenChange={setIsPostJobOpen}>
               <DialogTrigger asChild>
@@ -340,7 +344,6 @@ const Index: React.FC = () => {
 
         {/* Enhanced Search & Filters */}
         <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/20 mb-10 animate-fade-in">
-          {/* Search Bar */}
           <div className="flex flex-col lg:flex-row gap-6 mb-6">
             <div className="relative flex-1">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={20} />
@@ -353,7 +356,6 @@ const Index: React.FC = () => {
               />
             </div>
             
-            {/* Sort Options for Students */}
             {activeTab === "students" && (
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
@@ -385,7 +387,6 @@ const Index: React.FC = () => {
             )}
           </div>
 
-          {/* Skill Filters */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
             <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground whitespace-nowrap">
               <Filter size={16} />
@@ -419,7 +420,6 @@ const Index: React.FC = () => {
             </div>
           </div>
 
-          {/* Results Count */}
           <div className="mt-6 pt-4 border-t border-primary/10">
             <p className="text-sm text-muted-foreground">
               {activeTab === "students" 
@@ -434,7 +434,6 @@ const Index: React.FC = () => {
 
         {/* Enhanced Cards Grid */}
         <div className="animate-fade-in">
-          {console.log("Rendering cards grid, activeTab:", activeTab, "filteredStudents:", filteredStudents.length)}
           {activeTab === "students" ? (
             filteredStudents.length ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
