@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button";
 import StudentServiceCard from "@/components/StudentServiceCard";
 import JobCard from "@/components/JobCard";
 import { Users, Briefcase } from "lucide-react";
-import { Student } from "@/data/mockStudents";
+import { StudentService } from "@/data/mockStudents";
 import { JobPosting } from "@/data/mockJobs";
 
 interface ContentGridProps {
   activeTab: "students" | "jobs";
-  filteredStudents: Student[];
+  filteredStudents: StudentService[];
   filteredJobs: JobPosting[];
   onStudentView: (id: number) => void;
   onJobView: (id: number) => void;
