@@ -2,7 +2,7 @@
 import React from 'react';
 import { useRole } from '@/contexts/RoleContext';
 import { Button } from '@/components/ui/button';
-import { Users, Briefcase } from 'lucide-react';
+import { Users, Briefcase, Shield } from 'lucide-react';
 
 const RoleSelector: React.FC = () => {
   const { role, setRole } = useRole();
@@ -34,6 +34,19 @@ const RoleSelector: React.FC = () => {
       >
         <Briefcase size={16} />
         Client
+      </Button>
+      <Button
+        variant={role === 'admin' ? 'default' : 'ghost'}
+        size="sm"
+        onClick={() => setRole('admin')}
+        className={`flex items-center gap-2 rounded-xl transition-all duration-300 ${
+          role === 'admin' 
+            ? 'bg-gradient-to-r from-red-500 to-red-600 text-white shadow-red-500/25' 
+            : 'hover:bg-red-50'
+        }`}
+      >
+        <Shield size={16} />
+        Admin
       </Button>
     </div>
   );

@@ -1,5 +1,5 @@
 
-import { Calendar, Home, Users, Briefcase, BookOpen, Settings, HelpCircle, User, FileText } from "lucide-react"
+import { Calendar, Home, Users, Briefcase, BookOpen, Settings, HelpCircle, User, FileText, Shield, BarChart3, AlertTriangle } from "lucide-react"
 import { useNavigate, useLocation } from "react-router-dom"
 import { useRole } from "@/contexts/RoleContext"
 import {
@@ -45,6 +45,29 @@ const clientNavigation = [
   },
 ]
 
+const adminNavigation = [
+  {
+    title: "Admin Dashboard",
+    url: "/",
+    icon: Shield,
+  },
+  {
+    title: "User Management",
+    url: "/admin/users",
+    icon: Users,
+  },
+  {
+    title: "System Analytics",
+    url: "/admin/analytics",
+    icon: BarChart3,
+  },
+  {
+    title: "Reports & Issues",
+    url: "/admin/reports",
+    icon: AlertTriangle,
+  },
+]
+
 const studentQuickActions = [
   {
     title: "View Jobs",
@@ -71,13 +94,28 @@ const clientQuickActions = [
   },
 ]
 
+const adminQuickActions = [
+  {
+    title: "System Settings",
+    url: "/admin/settings",
+    icon: Settings,
+  },
+  {
+    title: "Platform Stats",
+    url: "/admin/stats",
+    icon: BarChart3,
+  },
+]
+
 export function AppSidebar() {
   const navigate = useNavigate()
   const location = useLocation()
   const { role } = useRole()
 
-  const navigationItems = role === 'student' ? studentNavigation : clientNavigation
-  const quickActions = role === 'student' ? studentQuickActions : clientQuickActions
+  const navigationItems = role === 'student' ? studentNavigation : 
+                         role === 'admin' ? adminNavigation : clientNavigation
+  const quickActions = role === 'student' ? studentQuickActions : 
+                      role === 'admin' ? adminQuickActions : clientQuickActions
 
   const handleNavigation = (url: string) => {
     if (url.includes('?tab=')) {
@@ -88,11 +126,27 @@ export function AppSidebar() {
     }
   }
 
+  const getRoleColor = () => {
+    switch (role) {
+      case 'admin': return 'from-red-500 to-red-600'
+      case 'student': return 'from-blue-500 to-blue-600'
+      default: return 'from-primary to-accent'
+    }
+  }
+
+  const getRoleLabel = () => {
+    switch (role) {
+      case 'admin': return 'Admin Panel'
+      case 'student': return 'Student Portal'
+      default: return 'Talent Hub'
+    }
+  }
+
   return (
     <Sidebar className="border-r border-primary/10">
       <SidebarHeader className="p-6">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+          <div className={`w-8 h-8 bg-gradient-to-br ${getRoleColor()} rounded-lg flex items-center justify-center`}>
             <span className="text-white font-bold text-sm">MV</span>
           </div>
           <div>
@@ -100,7 +154,7 @@ export function AppSidebar() {
               MyVillage
             </h2>
             <p className="text-xs text-muted-foreground">
-              {role === 'student' ? 'Student Portal' : 'Talent Hub'}
+              {getRoleLabel()}
             </p>
           </div>
         </div>

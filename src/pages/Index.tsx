@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import FeaturedStudent from "@/components/FeaturedStudent";
 import StudentDashboard from "@/components/StudentDashboard";
+import AdminDashboard from "@/components/AdminDashboard";
 import HeroSection from "@/components/HeroSection";
 import StatsGrid from "@/components/StatsGrid";
 import TabNavigation from "@/components/TabNavigation";
@@ -119,6 +120,14 @@ const Index: React.FC = () => {
       <StudentDashboard 
         jobs={jobs}
         setActiveTab={setActiveTab}
+      />
+    );
+  }
+
+  if (role === 'admin') {
+    return (
+      <AdminDashboard 
+        jobs={jobs}
       />
     );
   }
