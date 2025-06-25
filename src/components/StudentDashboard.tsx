@@ -14,6 +14,12 @@ interface StudentDashboardProps {
 const StudentDashboard: React.FC<StudentDashboardProps> = ({ jobs, setActiveTab }) => {
   const navigate = useNavigate();
 
+  const handleViewAllJobs = () => {
+    setActiveTab("jobs");
+    // Navigate to home page with jobs tab active
+    navigate("/");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-primary/5 relative overflow-hidden">
       {/* Animated background elements */}
@@ -89,7 +95,7 @@ const StudentDashboard: React.FC<StudentDashboardProps> = ({ jobs, setActiveTab 
             ))}
           </div>
           <div className="text-center mt-6">
-            <Button onClick={() => setActiveTab("jobs")} className="bg-gradient-to-r from-primary to-primary/80">
+            <Button onClick={handleViewAllJobs} className="bg-gradient-to-r from-primary to-primary/80">
               View All Jobs
             </Button>
           </div>
