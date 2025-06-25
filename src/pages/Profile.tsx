@@ -1,242 +1,252 @@
 
-import React from 'react';
-import { useRole } from '@/contexts/RoleContext';
-import { Button } from '@/components/ui/button';
+import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { User, Mail, Phone, MapPin, Edit, Save, Camera } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { User, Mail, Phone, MapPin, Edit, Save, X, Plus } from 'lucide-react';
 
-const Profile: React.FC = () => {
-  const { role } = useRole();
-  const [isEditing, setIsEditing] = React.useState(false);
-
-  // Mock student data - in a real app this would come from a database
-  const [profileData, setProfileData] = React.useState({
-    name: 'Alex Johnson',
-    title: 'Full Stack Developer',
-    email: 'alex.johnson@email.com',
+const Profile = () => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [profile, setProfile] = useState({
+    name: 'Alex Rivera',
+    email: 'alex.rivera@email.com',
     phone: '+1 (555) 123-4567',
     location: 'San Francisco, CA',
-    aboutMe: 'Passionate developer with 2 years of experience in React and Node.js. I love building user-friendly applications and solving complex problems.',
-    skills: ['React', 'TypeScript', 'Node.js', 'Python', 'PostgreSQL', 'AWS'],
-    price: '$35/hour',
-    avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face'
+    bio: 'Passionate software developer with 3 years of experience in full-stack development. Specializing in React, Node.js, and modern web technologies.',
+    skills: ['React', 'JavaScript', 'TypeScript', 'Node.js', 'Python', 'SQL'],
+    experience: [
+      {
+        title: 'Frontend Developer',
+        company: 'Tech Startup Inc.',
+        duration: '2023 - Present',
+        description: 'Developed responsive web applications using React and TypeScript'
+      },
+      {
+        title: 'Junior Developer',
+        company: 'Web Solutions LLC',
+        duration: '2022 - 2023',
+        description: 'Built and maintained client websites using modern web technologies'
+      }
+    ]
   });
 
-  if (role !== 'student') {
-    return (
-      <div className="flex-1 p-6">
-        <div className="max-w-md mx-auto text-center">
-          <h1 className="text-2xl font-semibold mb-4">Access Restricted</h1>
-          <p className="text-muted-foreground">
-            Profile management is only available for students. Please switch to student view to access this feature.
-          </p>
-        </div>
-      </div>
-    );
-  }
+  const [editedProfile, setEditedProfile] = useState(profile);
 
   const handleSave = () => {
+    setProfile(editedProfile);
     setIsEditing(false);
-    // In a real app, save data to database here
+  };
+
+  const handleCancel = () => {
+    setEditedProfile(profile);
+    setIsEditing(false);
   };
 
   return (
-    <div className="flex-1 p-6 bg-gradient-to-b from-white via-gray-50 to-slate-100 min-h-screen">
-      <div className="max-w-4xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
+    <div className="p-6 space-y-6">
+      <div className="flex items-center justify-between">
+        <div>
           <h1 className="text-3xl font-bold">My Profile</h1>
-          <Button
-            onClick={() => isEditing ? handleSave() : setIsEditing(true)}
-            className="flex items-center gap-2"
-          >
-            {isEditing ? <Save size={16} /> : <Edit size={16} />}
-            {isEditing ? 'Save Changes' : 'Edit Profile'}
-          </Button>
+          <p className="text-muted-foreground">Manage your profile information and settings</p>
         </div>
+        {!isEditing ? (
+          <Button onClick={() => setIsEditing(true)}>
+            <Edit className="mr-2 h-4 w-4" />
+            Edit Profile
+          </Button>
+        ) : (
+          <div className="flex gap-2">
+            <Button onClick={handleSave}>
+              <Save className="mr-2 h-4 w-4" />
+              Save
+            </Button>
+            <Button variant="outline" onClick={handleCancel}>
+              <X className="mr-2 h-4 w-4" />
+              Cancel
+            </Button>
+          </div>
+        )}
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Profile Card */}
-          <Card className="lg:col-span-1">
-            <CardHeader className="text-center">
-              <div className="relative mx-auto mb-4">
-                <img
-                  src={profileData.avatarUrl}
-                  alt="Profile"
-                  className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg"
-                />
-                {isEditing && (
-                  <Button
-                    size="sm"
-                    className="absolute bottom-0 right-0 rounded-full w-8 h-8 p-0"
-                  >
-                    <Camera size={14} />
-                  </Button>
+      <Tabs defaultValue="general" className="space-y-6">
+        <TabsList>
+          <TabsTrigger value="general">General</TabsTrigger>
+          <TabsTrigger value="skills">Skills & Experience</TabsTrigger>
+          <TabsTrigger value="settings">Settings</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="general">
+          <Card>
+            <CardHeader>
+              <CardTitle>Personal Information</CardTitle>
+              <CardDescription>Update your personal details</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex items-center space-x-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
+                  <User className="text-white" size={32} />
+                </div>
+                <div className="flex-1 space-y-2">
+                  <div>
+                    <label className="text-sm font-medium">Full Name</label>
+                    {isEditing ? (
+                      <Input
+                        value={editedProfile.name}
+                        onChange={(e) => setEditedProfile({...editedProfile, name: e.target.value})}
+                      />
+                    ) : (
+                      <p className="text-lg font-medium">{profile.name}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-sm font-medium">Email</label>
+                  {isEditing ? (
+                    <Input
+                      type="email"
+                      value={editedProfile.email}
+                      onChange={(e) => setEditedProfile({...editedProfile, email: e.target.value})}
+                    />
+                  ) : (
+                    <p className="flex items-center gap-2">
+                      <Mail size={16} />
+                      {profile.email}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label className="text-sm font-medium">Phone</label>
+                  {isEditing ? (
+                    <Input
+                      value={editedProfile.phone}
+                      onChange={(e) => setEditedProfile({...editedProfile, phone: e.target.value})}
+                    />
+                  ) : (
+                    <p className="flex items-center gap-2">
+                      <Phone size={16} />
+                      {profile.phone}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              <div>
+                <label className="text-sm font-medium">Location</label>
+                {isEditing ? (
+                  <Input
+                    value={editedProfile.location}
+                    onChange={(e) => setEditedProfile({...editedProfile, location: e.target.value})}
+                  />
+                ) : (
+                  <p className="flex items-center gap-2">
+                    <MapPin size={16} />
+                    {profile.location}
+                  </p>
                 )}
               </div>
-              <CardTitle className="text-xl">{profileData.name}</CardTitle>
-              <CardDescription className="text-primary font-medium">
-                {profileData.title}
-              </CardDescription>
-              <div className="text-lg font-semibold text-green-700 mt-2">
-                {profileData.price}
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex items-center gap-2 text-sm">
-                <Mail size={16} className="text-muted-foreground" />
-                <span>{profileData.email}</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm">
-                <Phone size={16} className="text-muted-foreground" />
-                <span>{profileData.phone}</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm">
-                <MapPin size={16} className="text-muted-foreground" />
-                <span>{profileData.location}</span>
+
+              <div>
+                <label className="text-sm font-medium">Bio</label>
+                {isEditing ? (
+                  <Textarea
+                    value={editedProfile.bio}
+                    onChange={(e) => setEditedProfile({...editedProfile, bio: e.target.value})}
+                    rows={4}
+                  />
+                ) : (
+                  <p className="text-muted-foreground">{profile.bio}</p>
+                )}
               </div>
             </CardContent>
           </Card>
+        </TabsContent>
 
-          {/* Profile Details */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Basic Information */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Basic Information</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="name">Full Name</Label>
-                    <Input
-                      id="name"
-                      value={profileData.name}
-                      onChange={(e) => setProfileData({...profileData, name: e.target.value})}
-                      disabled={!isEditing}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="title">Title</Label>
-                    <Input
-                      id="title"
-                      value={profileData.title}
-                      onChange={(e) => setProfileData({...profileData, title: e.target.value})}
-                      disabled={!isEditing}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={profileData.email}
-                      onChange={(e) => setProfileData({...profileData, email: e.target.value})}
-                      disabled={!isEditing}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">Phone</Label>
-                    <Input
-                      id="phone"
-                      value={profileData.phone}
-                      onChange={(e) => setProfileData({...profileData, phone: e.target.value})}
-                      disabled={!isEditing}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="location">Location</Label>
-                    <Input
-                      id="location"
-                      value={profileData.location}
-                      onChange={(e) => setProfileData({...profileData, location: e.target.value})}
-                      disabled={!isEditing}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="price">Hourly Rate</Label>
-                    <Input
-                      id="price"
-                      value={profileData.price}
-                      onChange={(e) => setProfileData({...profileData, price: e.target.value})}
-                      disabled={!isEditing}
-                    />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* About Me */}
-            <Card>
-              <CardHeader>
-                <CardTitle>About Me</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Textarea
-                  value={profileData.aboutMe}
-                  onChange={(e) => setProfileData({...profileData, aboutMe: e.target.value})}
-                  disabled={!isEditing}
-                  rows={4}
-                  placeholder="Tell clients about yourself, your experience, and what makes you unique..."
-                />
-              </CardContent>
-            </Card>
-
-            {/* Skills */}
+        <TabsContent value="skills">
+          <div className="space-y-6">
             <Card>
               <CardHeader>
                 <CardTitle>Skills</CardTitle>
-                <CardDescription>
-                  Your technical skills and expertise
-                </CardDescription>
+                <CardDescription>Manage your technical skills</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {profileData.skills.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="px-3 py-1">
+                  {profile.skills.map((skill) => (
+                    <Badge key={skill} variant="secondary">
                       {skill}
                     </Badge>
                   ))}
-                </div>
-                {isEditing && (
-                  <div className="mt-4">
-                    <Label htmlFor="skills">Add/Edit Skills (comma separated)</Label>
-                    <Input
-                      id="skills"
-                      placeholder="React, TypeScript, Node.js..."
-                      className="mt-2"
-                    />
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-
-            {/* Portfolio Section */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Portfolio</CardTitle>
-                <CardDescription>
-                  Showcase your work and projects
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-center py-8 text-muted-foreground">
-                  <User size={48} className="mx-auto mb-4 opacity-50" />
-                  <p>No portfolio items yet.</p>
                   {isEditing && (
-                    <Button variant="outline" className="mt-4">
-                      Add Portfolio Item
+                    <Button variant="outline" size="sm">
+                      <Plus className="mr-1 h-3 w-3" />
+                      Add Skill
                     </Button>
                   )}
                 </div>
               </CardContent>
             </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Experience</CardTitle>
+                <CardDescription>Your work experience</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {profile.experience.map((exp, index) => (
+                  <div key={index} className="border-l-2 border-primary/20 pl-4">
+                    <h3 className="font-medium">{exp.title}</h3>
+                    <p className="text-sm text-muted-foreground">{exp.company} • {exp.duration}</p>
+                    <p className="text-sm mt-1">{exp.description}</p>
+                  </div>
+                ))}
+                {isEditing && (
+                  <Button variant="outline" size="sm">
+                    <Plus className="mr-1 h-3 w-3" />
+                    Add Experience
+                  </Button>
+                )}
+              </CardContent>
+            </Card>
           </div>
-        </div>
-      </div>
+        </TabsContent>
+
+        <TabsContent value="settings">
+          <Card>
+            <CardHeader>
+              <CardTitle>Account Settings</CardTitle>
+              <CardDescription>Manage your account preferences</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="font-medium">Email Notifications</h4>
+                  <p className="text-sm text-muted-foreground">Receive email updates about your account</p>
+                </div>
+                <Button variant="outline" size="sm">Configure</Button>
+              </div>
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="font-medium">Privacy Settings</h4>
+                  <p className="text-sm text-muted-foreground">Control who can see your profile</p>
+                </div>
+                <Button variant="outline" size="sm">Manage</Button>
+              </div>
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="font-medium">Change Password</h4>
+                  <p className="text-sm text-muted-foreground">Update your account password</p>
+                </div>
+                <Button variant="outline" size="sm">Update</Button>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 };
