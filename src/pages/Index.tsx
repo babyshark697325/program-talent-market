@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FeaturedStudent from "@/components/FeaturedStudent";
 import StudentDashboard from "@/components/StudentDashboard";
 import AdminDashboard from "@/components/AdminDashboard";
@@ -10,7 +9,7 @@ import SearchFilters from "@/components/SearchFilters";
 import ContentGrid from "@/components/ContentGrid";
 import { mockStudents } from "@/data/mockStudents";
 import { mockJobs, JobPosting } from "@/data/mockJobs";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { useRole } from "@/contexts/RoleContext";
 
@@ -41,8 +40,18 @@ const Index: React.FC = () => {
   const [isPostJobOpen, setIsPostJobOpen] = useState(false);
   const [sortBy, setSortBy] = useState<"name" | "price" | "rating">("name");
   const navigate = useNavigate();
+  const location = useLocation();
   const { toast } = useToast();
   const { role } = useRole();
+
+  // Handle tab switching from sidebar navigation
+  useEffect(() => {
+    if (location.state?.activeTab) {
+      setActiveTab(location.state.activeTab);
+      // Clear the state to prevent it from persisting
+      navigate(location.pathname, { replace: true });
+    }
+  }, [location.state, navigate, location.pathname]);
 
   console.log("Current activeTab:", activeTab);
   console.log("Filtered students count:", mockStudents.length);

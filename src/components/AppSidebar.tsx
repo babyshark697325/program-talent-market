@@ -40,7 +40,8 @@ const clientNavigation = [
   },
   {
     title: "Post a Job",
-    url: "/?tab=jobs",
+    url: "/",
+    tab: "jobs",
     icon: Briefcase,
   },
 ]
@@ -71,7 +72,8 @@ const adminNavigation = [
 const studentQuickActions = [
   {
     title: "View Jobs",
-    url: "/?tab=jobs",
+    url: "/",
+    tab: "jobs",
     icon: Briefcase,
   },
   {
@@ -84,12 +86,14 @@ const studentQuickActions = [
 const clientQuickActions = [
   {
     title: "Browse Students",
-    url: "/?tab=students",
+    url: "/",
+    tab: "students",
     icon: Users,
   },
   {
     title: "Manage Jobs",
-    url: "/?tab=jobs",
+    url: "/",
+    tab: "jobs",
     icon: Settings,
   },
 ]
@@ -117,12 +121,12 @@ export function AppSidebar() {
   const quickActions = role === 'student' ? studentQuickActions : 
                       role === 'admin' ? adminQuickActions : clientQuickActions
 
-  const handleNavigation = (url: string) => {
-    if (url.includes('?tab=')) {
-      const [path, params] = url.split('?')
-      navigate(path)
+  const handleNavigation = (item: any) => {
+    if (item.tab) {
+      // Navigate to the URL and pass the tab in state
+      navigate(item.url, { state: { activeTab: item.tab } })
     } else {
-      navigate(url)
+      navigate(item.url)
     }
   }
 
@@ -168,7 +172,7 @@ export function AppSidebar() {
               {navigationItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton 
-                    onClick={() => handleNavigation(item.url)}
+                    onClick={() => handleNavigation(item)}
                     isActive={location.pathname === item.url}
                     className="cursor-pointer"
                   >
@@ -188,7 +192,7 @@ export function AppSidebar() {
               {quickActions.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton 
-                    onClick={() => handleNavigation(item.url)}
+                    onClick={() => handleNavigation(item)}
                     className="cursor-pointer"
                   >
                     <item.icon />
