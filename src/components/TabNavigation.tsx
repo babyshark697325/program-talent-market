@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import PostJobForm from "@/components/PostJobForm";
 import { Users, Briefcase, Plus } from "lucide-react";
+import { useRole } from "@/contexts/RoleContext";
 
 interface TabNavigationProps {
   activeTab: "students" | "jobs";
@@ -24,6 +25,8 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
   setIsPostJobOpen,
   onPostJob
 }) => {
+  const { role } = useRole();
+
   return (
     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-8 animate-fade-in">
       <div className="flex gap-3">
@@ -53,7 +56,7 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
         </Button>
       </div>
       
-      {activeTab === "jobs" && (
+      {role === 'client' && (
         <Dialog open={isPostJobOpen} onOpenChange={setIsPostJobOpen}>
           <DialogTrigger asChild>
             <Button className="flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
