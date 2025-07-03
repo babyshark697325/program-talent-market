@@ -1,4 +1,3 @@
-
 import { Calendar, Home, Users, Briefcase, BookOpen, Settings, HelpCircle, User, FileText, Shield, BarChart3, AlertTriangle } from "lucide-react"
 import { useNavigate, useLocation } from "react-router-dom"
 import { useRole } from "@/contexts/RoleContext"
@@ -130,6 +129,19 @@ export function AppSidebar() {
     }
   }
 
+  const isItemActive = (item: any) => {
+    if (location.pathname !== item.url) return false
+    
+    // For items with tabs, check if we're on the right tab
+    if (item.tab) {
+      // We can't directly access the activeTab state here, so we'll use a different approach
+      // For now, we'll only highlight "Browse Talent" when on the home page without a specific tab
+      return item.title === "Browse Talent"
+    }
+    
+    return true
+  }
+
   const getRoleColor = () => {
     switch (role) {
       case 'admin': return 'from-red-500 to-red-600'
@@ -173,7 +185,7 @@ export function AppSidebar() {
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton 
                     onClick={() => handleNavigation(item)}
-                    isActive={location.pathname === item.url}
+                    isActive={isItemActive(item)}
                     className="cursor-pointer"
                   >
                     <item.icon />
