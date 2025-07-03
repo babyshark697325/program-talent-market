@@ -27,13 +27,17 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
 }) => {
   const { role } = useRole();
 
-  const handleStudentsClick = () => {
-    console.log("Students tab clicked");
+  const handleStudentsClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("Students tab clicked, current activeTab:", activeTab);
     setActiveTab("students");
   };
 
-  const handleJobsClick = () => {
-    console.log("Jobs tab clicked");
+  const handleJobsClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("Jobs tab clicked, current activeTab:", activeTab);
     setActiveTab("jobs");
   };
 
@@ -41,24 +45,24 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-8 animate-fade-in">
       <div className="flex gap-3">
         <Button
-          variant={activeTab === "students" ? "default" : "outline"}
+          type="button"
           onClick={handleStudentsClick}
           className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 ${
             activeTab === "students" 
               ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-primary/25" 
-              : "bg-white/80 backdrop-blur-sm border-primary/20 hover:bg-primary/5"
+              : "bg-white/80 backdrop-blur-sm border border-primary/20 hover:bg-primary/5 text-foreground"
           }`}
         >
           <Users size={20} />
           Students ({studentsCount})
         </Button>
         <Button
-          variant={activeTab === "jobs" ? "default" : "outline"}
+          type="button"
           onClick={handleJobsClick}
           className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 ${
             activeTab === "jobs" 
               ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-primary/25" 
-              : "bg-white/80 backdrop-blur-sm border-primary/20 hover:bg-primary/5"
+              : "bg-white/80 backdrop-blur-sm border border-primary/20 hover:bg-primary/5 text-foreground"
           }`}
         >
           <Briefcase size={20} />
