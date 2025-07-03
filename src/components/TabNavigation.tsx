@@ -44,7 +44,7 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
   return (
     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-8 animate-fade-in">
       <div className="flex gap-3">
-        <Button
+        <button
           type="button"
           onClick={handleStudentsClick}
           className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 ${
@@ -55,8 +55,8 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
         >
           <Users size={20} />
           Students ({studentsCount})
-        </Button>
-        <Button
+        </button>
+        <button
           type="button"
           onClick={handleJobsClick}
           className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 ${
@@ -67,7 +67,7 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
         >
           <Briefcase size={20} />
           Jobs ({jobsCount})
-        </Button>
+        </button>
       </div>
       
       {role === 'client' && (
