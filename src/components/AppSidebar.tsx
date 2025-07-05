@@ -69,7 +69,8 @@ const adminNavigation = [
   },
 ]
 
-const studentQuickActions = []
+// Empty array for students - no quick actions
+const studentQuickActions: any[] = []
 
 const clientQuickActions = [
   {
