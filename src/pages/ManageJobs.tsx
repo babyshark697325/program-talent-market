@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import PostJobForm from "@/components/PostJobForm";
 import { Plus, Edit, Trash2 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const ManageJobs = () => {
@@ -29,7 +28,6 @@ const ManageJobs = () => {
       budget: formData.budget,
       duration: formData.duration || "To be discussed",
       postedDate: new Date().toISOString().split('T')[0],
-      applicants: 0,
       isUrgent: formData.urgent || false,
     };
 
@@ -93,10 +91,10 @@ const ManageJobs = () => {
             </Card>
             <Card>
               <CardHeader className="pb-2">
-                <h3 className="text-sm font-medium text-muted-foreground">Total Applicants</h3>
+                <h3 className="text-sm font-medium text-muted-foreground">Budget Range</h3>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{jobs.reduce((sum, job) => sum + job.applicants, 0)}</div>
+                <div className="text-2xl font-bold">$25-150</div>
               </CardContent>
             </Card>
           </div>
@@ -140,12 +138,6 @@ const ManageJobs = () => {
                     onView={() => handleJobView(job.id)}
                   />
                 </div>
-                
-                {job.applicants > 0 && (
-                  <Badge className="absolute bottom-4 left-4 bg-blue-500 hover:bg-blue-600">
-                    {job.applicants} applicant{job.applicants !== 1 ? 's' : ''}
-                  </Badge>
-                )}
               </div>
             ))}
           </div>
