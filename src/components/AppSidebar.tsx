@@ -1,4 +1,4 @@
-import { Calendar, Home, Users, Briefcase, BookOpen, Settings, HelpCircle, User, FileText, Shield, BarChart3, AlertTriangle } from "lucide-react"
+import { Calendar, Home, Users, Briefcase, BookOpen, Settings, HelpCircle, User, FileText, Shield, BarChart3, AlertTriangle, Search, Star } from "lucide-react"
 import { useNavigate, useLocation } from "react-router-dom"
 import { useRole } from "@/contexts/RoleContext"
 import {
@@ -68,8 +68,23 @@ const adminNavigation = [
   },
 ]
 
-// Empty array for students - no quick actions
-const studentQuickActions: any[] = []
+const studentQuickActions = [
+  {
+    title: "Browse Jobs",
+    url: "/browse-jobs",
+    icon: Search,
+  },
+  {
+    title: "My Applications",
+    url: "/my-applications",
+    icon: FileText,
+  },
+  {
+    title: "Saved Jobs",
+    url: "/saved-jobs",
+    icon: Star,
+  },
+]
 
 const clientQuickActions = [
   {

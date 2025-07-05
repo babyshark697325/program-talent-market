@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { mockJobs, JobPosting } from "@/data/mockJobs";
@@ -28,7 +27,6 @@ const ManageJobs = () => {
       budget: formData.budget,
       duration: formData.duration || "To be discussed",
       postedDate: new Date().toISOString().split('T')[0],
-      isUrgent: formData.urgent || false,
     };
 
     setJobs([newJob, ...jobs]);

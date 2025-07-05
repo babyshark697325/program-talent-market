@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -20,6 +21,9 @@ import AdminSettings from "./pages/AdminSettings";
 import AdminStats from "./pages/AdminStats";
 import BrowseStudents from "./pages/BrowseStudents";
 import ManageJobs from "./pages/ManageJobs";
+import BrowseJobs from "./pages/BrowseJobs";
+import MyApplications from "./pages/MyApplications";
+import SavedJobs from "./pages/SavedJobs";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +53,9 @@ const App = () => (
                     <Route path="/" element={<Index />} />
                     <Route path="/browse-students" element={<BrowseStudents />} />
                     <Route path="/manage-jobs" element={<ManageJobs />} />
+                    <Route path="/browse-jobs" element={<BrowseJobs />} />
+                    <Route path="/my-applications" element={<MyApplications />} />
+                    <Route path="/saved-jobs" element={<SavedJobs />} />
                     <Route path="/student/:id" element={<StudentProfile />} />
                     <Route path="/job/:id" element={<JobDetail />} />
                     <Route path="/resources" element={<StudentResources />} />
