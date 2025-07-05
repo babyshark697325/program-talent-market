@@ -1,4 +1,3 @@
-
 import { Calendar, Home, Users, Briefcase, BookOpen, Settings, HelpCircle, User, FileText, Shield, BarChart3, AlertTriangle } from "lucide-react"
 import { useNavigate, useLocation } from "react-router-dom"
 import { useRole } from "@/contexts/RoleContext"
@@ -75,14 +74,12 @@ const studentQuickActions: any[] = []
 const clientQuickActions = [
   {
     title: "Browse Students",
-    url: "/",
-    tab: "students",
+    url: "/browse-students",
     icon: Users,
   },
   {
     title: "Manage Jobs",
-    url: "/",
-    tab: "jobs",
+    url: "/manage-jobs",
     icon: Settings,
   },
 ]

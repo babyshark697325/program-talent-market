@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -19,6 +18,8 @@ import AdminAnalytics from "./pages/AdminAnalytics";
 import AdminReports from "./pages/AdminReports";
 import AdminSettings from "./pages/AdminSettings";
 import AdminStats from "./pages/AdminStats";
+import BrowseStudents from "./pages/BrowseStudents";
+import ManageJobs from "./pages/ManageJobs";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,8 @@ const App = () => (
                 <div className="flex-1">
                   <Routes>
                     <Route path="/" element={<Index />} />
+                    <Route path="/browse-students" element={<BrowseStudents />} />
+                    <Route path="/manage-jobs" element={<ManageJobs />} />
                     <Route path="/student/:id" element={<StudentProfile />} />
                     <Route path="/job/:id" element={<JobDetail />} />
                     <Route path="/resources" element={<StudentResources />} />
