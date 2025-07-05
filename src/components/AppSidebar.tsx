@@ -1,3 +1,4 @@
+
 import { Calendar, Home, Users, Briefcase, BookOpen, Settings, HelpCircle, User, FileText, Shield, BarChart3, AlertTriangle } from "lucide-react"
 import { useNavigate, useLocation } from "react-router-dom"
 import { useRole } from "@/contexts/RoleContext"
@@ -68,19 +69,7 @@ const adminNavigation = [
   },
 ]
 
-const studentQuickActions = [
-  {
-    title: "View Jobs",
-    url: "/",
-    tab: "jobs",
-    icon: Briefcase,
-  },
-  {
-    title: "Update Portfolio",
-    url: "/profile",
-    icon: FileText,
-  },
-]
+const studentQuickActions = []
 
 const clientQuickActions = [
   {
@@ -197,24 +186,26 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
 
-        <SidebarGroup>
-          <SidebarGroupLabel>Quick Actions</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {quickActions.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton 
-                    onClick={() => handleNavigation(item)}
-                    className="cursor-pointer"
-                  >
-                    <item.icon />
-                    <span>{item.title}</span>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+        {quickActions.length > 0 && (
+          <SidebarGroup>
+            <SidebarGroupLabel>Quick Actions</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                {quickActions.map((item) => (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton 
+                      onClick={() => handleNavigation(item)}
+                      className="cursor-pointer"
+                    >
+                      <item.icon />
+                      <span>{item.title}</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        )}
       </SidebarContent>
     </Sidebar>
   )
