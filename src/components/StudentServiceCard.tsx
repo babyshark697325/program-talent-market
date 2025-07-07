@@ -2,7 +2,7 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { StudentService } from "@/data/mockStudents";
+import { StudentService, identityTagsConfig } from "@/data/mockStudents";
 
 interface Props {
   student: StudentService;
@@ -22,6 +22,23 @@ const StudentServiceCard: React.FC<Props> = ({ student, onView }) => (
         <div className="text-sm text-muted-foreground">{student.title}</div>
       </div>
     </div>
+    
+    {student.identityTags && student.identityTags.length > 0 && (
+      <div className="flex flex-wrap gap-1 mb-3">
+        {student.identityTags.map((tag) => {
+          const config = identityTagsConfig[tag as keyof typeof identityTagsConfig];
+          return (
+            <Badge 
+              key={tag} 
+              className={`${config.color} text-xs px-2 py-1 rounded-md font-medium`}
+            >
+              {config.emoji} {config.label}
+            </Badge>
+          );
+        })}
+      </div>
+    )}
+    
     <div className="flex-1 mb-4 text-[15px] text-gray-700">
       {student.description}
     </div>
