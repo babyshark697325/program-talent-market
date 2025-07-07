@@ -3,15 +3,13 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { mockStudents, StudentService } from "@/data/mockStudents";
 import StudentServiceCard from "@/components/StudentServiceCard";
-import SearchFilters from "@/components/SearchFilters";
 
 const BrowseStudents = () => {
   const navigate = useNavigate();
   const [filteredStudents, setFilteredStudents] = useState<StudentService[]>(mockStudents);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
-  const [selectedIdentityTag, setSelectedIdentityTag] = useState<string | null>(null);
-  const [sortBy, setSortBy] = useState<"name" | "price" | "rating">("name");
+  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 200]);
 
   // Get all unique skills from students
   const allSkills = Array.from(
@@ -30,40 +28,30 @@ const BrowseStudents = () => {
       );
     }
 
-    if (selectedSkill) {
+    if (selectedSkills.length > 0) {
       filtered = filtered.filter((student) =>
-        student.skills.includes(selectedSkill)
+        selectedSkills.some((skill) => student.skills.includes(skill))
       );
     }
 
-    if (selectedIdentityTag) {
-      filtered = filtered.filter((student) =>
-        student.identityTags.includes(selectedIdentityTag)
-      );
-    }
-
-    // Sort students
-    filtered = [...filtered].sort((a, b) => {
-      switch (sortBy) {
-        case "name":
-          return a.name.localeCompare(b.name);
-        case "price":
-          const priceA = parseInt(a.price.replace(/[^0-9]/g, ""));
-          const priceB = parseInt(b.price.replace(/[^0-9]/g, ""));
-          return priceA - priceB;
-        case "rating":
-          // For demo purposes, using a mock rating based on name length
-          return b.name.length - a.name.length;
-        default:
-          return 0;
-      }
+    const minPrice = priceRange[0];
+    const maxPrice = priceRange[1];
+    filtered = filtered.filter((student) => {
+      const price = parseInt(student.price.replace(/[^0-9]/g, ""));
+      return price >= minPrice && price <= maxPrice;
     });
 
     setFilteredStudents(filtered);
-  }, [searchQuery, selectedSkill, selectedIdentityTag, sortBy]);
+  }, [searchQuery, selectedSkills, priceRange]);
 
   const handleStudentView = (id: number) => {
     navigate(`/student/${id}`);
+  };
+
+  const handleClearFilters = () => {
+    setSearchQuery("");
+    setSelectedSkills([]);
+    setPriceRange([0, 200]);
   };
 
   return (
@@ -78,19 +66,64 @@ const BrowseStudents = () => {
           </p>
         </div>
 
-        <SearchFilters
-          search={searchQuery}
-          setSearch={setSearchQuery}
-          selectedSkill={selectedSkill}
-          setSelectedSkill={setSelectedSkill}
-          selectedIdentityTag={selectedIdentityTag}
-          setSelectedIdentityTag={setSelectedIdentityTag}
-          activeTab="students"
-          allSkills={allSkills}
-          sortBy={sortBy}
-          setSortBy={setSortBy}
-          resultsCount={filteredStudents.length}
-        />
+        <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/20 mb-10">
+          <div className="flex flex-col lg:flex-row gap-6 mb-6">
+            <div className="relative flex-1">
+              <input
+                type="text"
+                placeholder="Search students by name, skill, or service..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-4 pr-4 py-4 text-lg rounded-2xl border border-primary/30 focus:border-primary focus:ring-primary/20 bg-white/90 backdrop-blur-sm shadow-sm focus:outline-none focus:ring-2"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground whitespace-nowrap">
+              Filter by skill:
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setSelectedSkills([])}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm ${
+                  selectedSkills.length === 0 
+                    ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-primary/25" 
+                    : "bg-white/90 text-primary border border-primary/30 hover:bg-primary/5"
+                }`}
+              >
+                All Skills
+              </button>
+              {allSkills.slice(0, 8).map((skill) => (
+                <button
+                  key={skill}
+                  onClick={() => {
+                    if (selectedSkills.includes(skill)) {
+                      setSelectedSkills(selectedSkills.filter(s => s !== skill));
+                    } else {
+                      setSelectedSkills([...selectedSkills, skill]);
+                    }
+                  }}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm ${
+                    selectedSkills.includes(skill)
+                      ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-primary/25" 
+                      : "bg-white/90 text-primary border border-primary/30 hover:bg-primary/5"
+                  }`}
+                >
+                  {skill}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6 pt-4 border-t border-primary/10">
+            <p className="text-sm text-muted-foreground">
+              Found {filteredStudents.length} student{filteredStudents.length !== 1 ? 's' : ''}
+              {selectedSkills.length > 0 && ` with selected skills`}
+              {searchQuery && ` matching "${searchQuery}"`}
+            </p>
+          </div>
+        </div>
 
         <div className="mb-6">
           <h2 className="text-xl font-semibold mb-4">
@@ -126,6 +159,12 @@ const BrowseStudents = () => {
                 We couldn't find any students matching your criteria. 
                 Try adjusting your search or filters.
               </p>
+              <button 
+                onClick={handleClearFilters}
+                className="bg-gradient-to-r from-primary to-primary/80 text-white px-6 py-2 rounded-lg hover:shadow-lg transition-shadow"
+              >
+                Clear Filters
+              </button>
             </div>
           </div>
         )}
