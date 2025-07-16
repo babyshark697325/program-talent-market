@@ -46,6 +46,12 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
     setIsPostJobOpen(open);
   };
 
+  const handleButtonClick = () => {
+    console.log("Button clicked! Current state:", isPostJobOpen);
+    console.log("Role:", role);
+    setIsPostJobOpen(true);
+  };
+
   console.log("TabNavigation render - isPostJobOpen:", isPostJobOpen, "role:", role);
 
   return (
@@ -78,25 +84,29 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
       </div>
       
       {role === 'client' && (
-        <Dialog open={isPostJobOpen} onOpenChange={handleDialogOpenChange}>
-          <DialogTrigger asChild>
-            <Button className="flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <Plus size={20} />
-              Post a Job
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto rounded-3xl border-0 shadow-2xl">
-            <DialogHeader className="pb-4">
-              <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Post a New Job
-              </DialogTitle>
-            </DialogHeader>
-            <PostJobForm 
-              onSubmit={onPostJob}
-              onCancel={() => setIsPostJobOpen(false)}
-            />
-          </DialogContent>
-        </Dialog>
+        <div>
+          <Button 
+            onClick={handleButtonClick}
+            className="flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
+            <Plus size={20} />
+            Post a Job
+          </Button>
+          
+          <Dialog open={isPostJobOpen} onOpenChange={handleDialogOpenChange}>
+            <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto rounded-3xl border-0 shadow-2xl">
+              <DialogHeader className="pb-4">
+                <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  Post a New Job
+                </DialogTitle>
+              </DialogHeader>
+              <PostJobForm 
+                onSubmit={onPostJob}
+                onCancel={() => setIsPostJobOpen(false)}
+              />
+            </DialogContent>
+          </Dialog>
+        </div>
       )}
     </div>
   );
