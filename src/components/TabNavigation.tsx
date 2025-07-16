@@ -41,6 +41,18 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
     setActiveTab("jobs");
   };
 
+  const handlePostJobClick = () => {
+    console.log("Post Job button clicked, current isPostJobOpen:", isPostJobOpen);
+    setIsPostJobOpen(true);
+  };
+
+  const handleDialogOpenChange = (open: boolean) => {
+    console.log("Dialog open change:", open);
+    setIsPostJobOpen(open);
+  };
+
+  console.log("TabNavigation render - isPostJobOpen:", isPostJobOpen, "role:", role);
+
   return (
     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-8 animate-fade-in">
       <div className="flex gap-3">
@@ -71,9 +83,12 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
       </div>
       
       {role === 'client' && (
-        <Dialog open={isPostJobOpen} onOpenChange={setIsPostJobOpen}>
+        <Dialog open={isPostJobOpen} onOpenChange={handleDialogOpenChange}>
           <DialogTrigger asChild>
-            <Button className="flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Button 
+              onClick={handlePostJobClick}
+              className="flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
               <Plus size={20} />
               Post a Job
             </Button>
