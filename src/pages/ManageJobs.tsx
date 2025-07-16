@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { mockJobs, JobPosting } from "@/data/mockJobs";
@@ -23,10 +24,12 @@ const ManageJobs = () => {
       title: formData.title,
       company: formData.company || "Your Company",
       description: formData.description,
-      skills: formData.skills || [],
+      requirements: formData.skills ? formData.skills.split(",").map((s: string) => s.trim()).filter(Boolean) : [],
+      skills: formData.skills ? formData.skills.split(",").map((s: string) => s.trim()).filter(Boolean) : [],
       budget: formData.budget,
       duration: formData.duration || "To be discussed",
       postedDate: new Date().toISOString().split('T')[0],
+      contactEmail: formData.contactEmail || "contact@yourcompany.com",
     };
 
     setJobs([newJob, ...jobs]);

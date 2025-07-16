@@ -78,9 +78,11 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
               Post a Job
             </Button>
           </DialogTrigger>
-          <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto rounded-3xl">
-            <DialogHeader>
-              <DialogTitle>Post a New Job</DialogTitle>
+          <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto rounded-3xl border-0 shadow-2xl">
+            <DialogHeader className="pb-4">
+              <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Post a New Job
+              </DialogTitle>
             </DialogHeader>
             <PostJobForm 
               onSubmit={onPostJob}
