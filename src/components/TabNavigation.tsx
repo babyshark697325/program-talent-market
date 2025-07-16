@@ -41,11 +41,6 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
     setActiveTab("jobs");
   };
 
-  const handlePostJobClick = () => {
-    console.log("Post Job button clicked, current isPostJobOpen:", isPostJobOpen);
-    setIsPostJobOpen(true);
-  };
-
   const handleDialogOpenChange = (open: boolean) => {
     console.log("Dialog open change:", open);
     setIsPostJobOpen(open);
@@ -85,10 +80,7 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
       {role === 'client' && (
         <Dialog open={isPostJobOpen} onOpenChange={handleDialogOpenChange}>
           <DialogTrigger asChild>
-            <Button 
-              onClick={handlePostJobClick}
-              className="flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            >
+            <Button className="flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               <Plus size={20} />
               Post a Job
             </Button>
