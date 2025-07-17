@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -7,17 +8,10 @@ import { Building, Calendar, Mail, DollarSign } from "lucide-react";
 
 interface JobCardProps {
   job: JobPosting;
-  onView: (id: number) => void;
+  onView: () => void;
 }
 
 const JobCard: React.FC<JobCardProps> = ({ job, onView }) => {
-  const handleViewClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    console.log("JobCard: View Details clicked for job:", job.id, job.title);
-    onView(job.id);
-  };
-
   return (
     <Card className="h-full flex flex-col hover:shadow-lg transition-shadow duration-200">
       <CardHeader className="pb-3">
@@ -62,7 +56,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, onView }) => {
       </CardContent>
       
       <CardFooter className="pt-4">
-        <Button onClick={handleViewClick} className="w-full">
+        <Button onClick={onView} className="w-full">
           View Details
         </Button>
       </CardFooter>
