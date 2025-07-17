@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import PostJobForm from "@/components/PostJobForm";
 import { Users, Briefcase, Plus } from "lucide-react";
 import { useRole } from "@/contexts/RoleContext";
@@ -41,7 +41,9 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
     setActiveTab("jobs");
   };
 
-  const handlePostJobClick = () => {
+  const handlePostJobClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     console.log("Post Job button clicked! Current state:", isPostJobOpen);
     console.log("Role:", role);
     setIsPostJobOpen(true);
@@ -97,6 +99,9 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
               <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Post a New Job
               </DialogTitle>
+              <DialogDescription className="text-muted-foreground">
+                Fill out the form below to post a new job opportunity for students.
+              </DialogDescription>
             </DialogHeader>
             <PostJobForm 
               onSubmit={onPostJob}
