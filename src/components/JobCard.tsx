@@ -12,6 +12,13 @@ interface JobCardProps {
 }
 
 const JobCard: React.FC<JobCardProps> = ({ job, onView }) => {
+  const handleViewClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("JobCard: View Details clicked for job:", job.id, job.title);
+    onView();
+  };
+
   return (
     <Card className="h-full flex flex-col hover:shadow-lg transition-shadow duration-200">
       <CardHeader className="pb-3">
@@ -56,7 +63,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, onView }) => {
       </CardContent>
       
       <CardFooter className="pt-4">
-        <Button onClick={onView} className="w-full">
+        <Button onClick={handleViewClick} className="w-full">
           View Details
         </Button>
       </CardFooter>

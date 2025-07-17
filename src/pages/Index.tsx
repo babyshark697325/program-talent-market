@@ -122,6 +122,16 @@ const Index: React.FC = () => {
     setSelectedSkill(null);
   };
 
+  const handleJobView = (id: number) => {
+    console.log("Index: Navigating to job detail page for job ID:", id);
+    navigate(`/job/${id}`);
+  };
+
+  const handleStudentView = (id: number) => {
+    console.log("Index: Navigating to student profile for student ID:", id);
+    navigate(`/student/${id}`);
+  };
+
   console.log("Rendering cards grid, activeTab:", activeTab, "filteredStudents:", filteredStudents.length);
 
   if (role === 'student') {
@@ -195,8 +205,8 @@ const Index: React.FC = () => {
           activeTab={activeTab}
           filteredStudents={filteredStudents}
           filteredJobs={filteredJobs}
-          onStudentView={(id) => navigate(`/student/${id}`)}
-          onJobView={(id) => navigate(`/job/${id}`)}
+          onStudentView={handleStudentView}
+          onJobView={handleJobView}
           onClearFilters={handleClearFilters}
         />
         
