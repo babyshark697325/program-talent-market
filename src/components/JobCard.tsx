@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -8,7 +7,7 @@ import { Building, Calendar, Mail, DollarSign } from "lucide-react";
 
 interface JobCardProps {
   job: JobPosting;
-  onView: () => void;
+  onView: (id: number) => void;
 }
 
 const JobCard: React.FC<JobCardProps> = ({ job, onView }) => {
@@ -16,7 +15,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, onView }) => {
     e.preventDefault();
     e.stopPropagation();
     console.log("JobCard: View Details clicked for job:", job.id, job.title);
-    onView();
+    onView(job.id);
   };
 
   return (
