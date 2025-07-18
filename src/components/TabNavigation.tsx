@@ -43,6 +43,8 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
     console.log("Navigation called");
   };
 
+  console.log("TabNavigation render - role:", role);
+
   return (
     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-8 animate-fade-in">
       <div className="flex gap-3">
@@ -73,14 +75,20 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
       </div>
       
       {role === 'client' && (
-        <Button 
-          type="button"
-          onClick={handlePostJobClick}
-          className="flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-        >
-          <Plus size={20} />
-          Post a Job
-        </Button>
+        <>
+          <Button 
+            type="button"
+            onClick={(e) => {
+              console.log("Post Job button clicked directly!");
+              handlePostJobClick(e);
+            }}
+            className="flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
+            <Plus size={20} />
+            Post a Job
+          </Button>
+          <div style={{color: 'red', fontSize: '12px'}}>Button should be visible (role: {role})</div>
+        </>
       )}
     </div>
   );
