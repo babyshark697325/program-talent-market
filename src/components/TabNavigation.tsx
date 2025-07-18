@@ -38,7 +38,9 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
   const handlePostJobClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    console.log("Post Job button clicked! Navigating to /post-job");
     navigate("/post-job");
+    console.log("Navigation called");
   };
 
   return (
