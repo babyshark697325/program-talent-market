@@ -37,7 +37,6 @@ const Index: React.FC = () => {
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<"students" | "jobs">("students");
   const [jobs, setJobs] = useState<JobPosting[]>(mockJobs);
-  const [isPostJobOpen, setIsPostJobOpen] = useState(false);
   const [sortBy, setSortBy] = useState<"name" | "price" | "rating">("name");
   const navigate = useNavigate();
   const location = useLocation();
@@ -95,27 +94,6 @@ const Index: React.FC = () => {
     return matchSearch && matchSkill;
   });
 
-  const handlePostJob = (formData: any) => {
-    const newJob: JobPosting = {
-      id: jobs.length + 1,
-      title: formData.title,
-      company: formData.company,
-      description: formData.description,
-      requirements: formData.skills.split(",").map((s: string) => s.trim()).filter(Boolean),
-      budget: formData.budget,
-      duration: formData.duration,
-      postedDate: new Date().toISOString().split('T')[0],
-      contactEmail: formData.contactEmail,
-      skills: formData.skills.split(",").map((s: string) => s.trim()).filter(Boolean),
-    };
-    
-    setJobs([newJob, ...jobs]);
-    setIsPostJobOpen(false);
-    toast({
-      title: "Job Posted Successfully!",
-      description: "Your job posting is now live and visible to students.",
-    });
-  };
 
   const handleClearFilters = () => {
     setSearch("");
@@ -174,9 +152,6 @@ const Index: React.FC = () => {
           setActiveTab={setActiveTab}
           studentsCount={mockStudents.length}
           jobsCount={jobs.length}
-          isPostJobOpen={isPostJobOpen}
-          setIsPostJobOpen={setIsPostJobOpen}
-          onPostJob={handlePostJob}
         />
 
         <SearchFilters

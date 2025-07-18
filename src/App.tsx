@@ -24,6 +24,7 @@ import ManageJobs from "./pages/ManageJobs";
 import BrowseJobs from "./pages/BrowseJobs";
 import MyApplications from "./pages/MyApplications";
 import SavedJobs from "./pages/SavedJobs";
+import PostJob from "./pages/PostJob";
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,7 @@ const App = () => (
                     <Route path="/browse-jobs" element={<BrowseJobs />} />
                     <Route path="/my-applications" element={<MyApplications />} />
                     <Route path="/saved-jobs" element={<SavedJobs />} />
+                    <Route path="/post-job" element={<PostJob />} />
                     <Route path="/student/:id" element={<StudentProfile />} />
                     <Route path="/job/:id" element={<JobDetail />} />
                     <Route path="/resources" element={<StudentResources />} />
