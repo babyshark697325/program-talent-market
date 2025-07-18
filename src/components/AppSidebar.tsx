@@ -39,8 +39,7 @@ const clientNavigation = [
   },
   {
     title: "Post a Job",
-    url: "/",
-    tab: "jobs",
+    url: "/post-job",
     icon: Briefcase,
   },
 ]
