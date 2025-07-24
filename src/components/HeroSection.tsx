@@ -32,6 +32,33 @@ const HeroSection: React.FC = () => {
         <div className="absolute bottom-32 right-1/5 w-30 h-20 bg-gradient-to-bl from-purple-200/6 to-orange-200/8 blur-md animate-pulse transform rotate-18" style={{ borderRadius: '70% 30% 30% 70% / 50% 50% 50% 50%', animationDelay: '0.8s' }}></div>
       </div>
       
+      {/* Lowered Horizon Line with City Silhouette - Full Width */}
+      <div className="absolute -bottom-10 left-0 w-screen h-40 pointer-events-none z-10">
+        {/* Hills/City skyline silhouette */}
+        <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 160" preserveAspectRatio="none">
+          <path d="M0,160 L0,100 L100,95 L180,85 L250,90 L320,80 L400,75 L480,85 L560,80 L640,70 L720,75 L800,65 L880,70 L960,60 L1040,65 L1120,55 L1200,60 L1200,160 Z" 
+                fill="url(#skylineGradient)" opacity="0.2"/>
+          <defs>
+            <linearGradient id="skylineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#374151" stopOpacity="0.6"/>
+              <stop offset="100%" stopColor="#111827" stopOpacity="0.8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        
+        {/* Distant hills */}
+        <svg className="absolute bottom-0 w-full h-24" viewBox="0 0 1200 96" preserveAspectRatio="none">
+          <path d="M0,96 L0,55 L200,50 L400,45 L600,50 L800,40 L1000,45 L1200,35 L1200,96 Z" 
+                fill="url(#hillsGradient)" opacity="0.15"/>
+          <defs>
+            <linearGradient id="hillsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#6b7280" stopOpacity="0.4"/>
+              <stop offset="100%" stopColor="#374151" stopOpacity="0.6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
       <div className="relative z-10 max-w-6xl mx-auto px-6 min-h-[80vh] flex items-center justify-center py-16">
         <div className="text-center overflow-visible">
           <div className="absolute inset-0 opacity-5 pointer-events-none">
@@ -67,33 +94,6 @@ const HeroSection: React.FC = () => {
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <Sparkles size={300} className="text-amber-300/20 animate-pulse" />
             </div>
-          </div>
-          
-           {/* Lowered Horizon Line with City Silhouette */}
-           <div className="absolute -bottom-10 left-0 w-full h-40 pointer-events-none z-10">
-            {/* Hills/City skyline silhouette */}
-            <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 160" preserveAspectRatio="none">
-              <path d="M0,160 L0,100 L100,95 L180,85 L250,90 L320,80 L400,75 L480,85 L560,80 L640,70 L720,75 L800,65 L880,70 L960,60 L1040,65 L1120,55 L1200,60 L1200,160 Z" 
-                    fill="url(#skylineGradient)" opacity="0.2"/>
-              <defs>
-                <linearGradient id="skylineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#374151" stopOpacity="0.6"/>
-                  <stop offset="100%" stopColor="#111827" stopOpacity="0.8"/>
-                </linearGradient>
-              </defs>
-            </svg>
-            
-            {/* Distant hills */}
-            <svg className="absolute bottom-0 w-full h-24" viewBox="0 0 1200 96" preserveAspectRatio="none">
-              <path d="M0,96 L0,55 L200,50 L400,45 L600,50 L800,40 L1000,45 L1200,35 L1200,96 Z" 
-                    fill="url(#hillsGradient)" opacity="0.15"/>
-              <defs>
-                <linearGradient id="hillsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#6b7280" stopOpacity="0.4"/>
-                  <stop offset="100%" stopColor="#374151" stopOpacity="0.6"/>
-                </linearGradient>
-              </defs>
-            </svg>
           </div>
           
           {/* Setting Sun with Glow Effect */}
