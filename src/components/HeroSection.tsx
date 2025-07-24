@@ -6,48 +6,13 @@ import { Button } from "@/components/ui/button";
 const HeroSection: React.FC = () => {
   return (
     <div className="relative overflow-hidden">
-      {/* Soft pastel purple-to-pink gradient at the top */}
+      {/* Warm Peach/Gold to Soft Lavender Vertical Gradient Background */}
       <div className="absolute inset-0" style={{ 
-        background: 'linear-gradient(to bottom, #fae8ff 0%, #f3e8ff 15%, #e879f9 25%, #fbbf24 40%, #f59e0b 55%, #fb923c 70%, #fde68a 85%, #f3e8ff 95%, #faf5ff 100%)'
+        background: 'linear-gradient(to top, #fbbf24 0%, #f59e0b 15%, #fb923c 30%, #fde68a 50%, #f3e8ff 75%, #faf5ff 100%)'
       }}></div>
-      
-      {/* Subtle sky texture overlay */}
       <div className="absolute inset-0" style={{ 
-        background: 'radial-gradient(ellipse at top, rgba(236, 72, 153, 0.08) 0%, transparent 50%), linear-gradient(to bottom, rgba(250, 232, 255, 0.2) 0%, rgba(243, 232, 255, 0.15) 20%, rgba(251, 191, 36, 0.2) 60%, transparent 100%)'
+        background: 'linear-gradient(to top, rgba(251, 191, 36, 0.4) 0%, rgba(245, 158, 11, 0.3) 20%, rgba(251, 146, 60, 0.25) 40%, rgba(253, 230, 138, 0.2) 60%, rgba(243, 232, 255, 0.15) 80%, rgba(250, 245, 255, 0.1) 100%)'
       }}></div>
-      
-      {/* Faint clouds */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
-        <div className="absolute top-16 left-1/4 w-48 h-12 bg-white/40 rounded-full blur-xl animate-pulse transform rotate-3" style={{ animationDelay: '0s' }}></div>
-        <div className="absolute top-24 right-1/3 w-32 h-8 bg-white/30 rounded-full blur-lg animate-pulse transform -rotate-2" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-32 left-1/2 w-40 h-10 bg-white/35 rounded-full blur-xl animate-pulse transform rotate-1" style={{ animationDelay: '4s' }}></div>
-        <div className="absolute top-20 right-1/4 w-28 h-6 bg-white/25 rounded-full blur-md animate-pulse transform rotate-2" style={{ animationDelay: '6s' }}></div>
-      </div>
-      
-      {/* Atmospheric haze */}
-      <div className="absolute inset-0 pointer-events-none opacity-30">
-        <div className="absolute top-1/3 left-0 w-full h-32 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-2xl animate-pulse" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute top-1/2 left-0 w-full h-24 bg-gradient-to-r from-transparent via-amber-100/15 to-transparent blur-xl animate-pulse" style={{ animationDelay: '5s' }}></div>
-      </div>
-      
-      {/* Flying birds silhouettes */}
-      <div className="absolute inset-0 pointer-events-none opacity-40">
-        <div className="absolute top-1/4 left-1/3 text-gray-800/60 transform rotate-12 animate-pulse" style={{ animationDelay: '1s' }}>
-          <svg width="20" height="8" viewBox="0 0 20 8" fill="currentColor">
-            <path d="M2 4c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2zm6 0c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z"/>
-          </svg>
-        </div>
-        <div className="absolute top-1/3 right-1/4 text-gray-800/50 transform -rotate-6 animate-pulse" style={{ animationDelay: '3s' }}>
-          <svg width="16" height="6" viewBox="0 0 16 6" fill="currentColor">
-            <path d="M1 3c0-1 1-1.5 1.5-1.5S4 2 4 3s-1 1.5-1.5 1.5S1 4 1 3zm5 0c0-1 1-1.5 1.5-1.5S9 2 9 3s-1 1.5-1.5 1.5S6 4 6 3z"/>
-          </svg>
-        </div>
-        <div className="absolute top-1/5 left-2/3 text-gray-800/40 transform rotate-3 animate-pulse" style={{ animationDelay: '7s' }}>
-          <svg width="12" height="5" viewBox="0 0 12 5" fill="currentColor">
-            <path d="M1 2.5c0-0.5 0.5-1 1-1s1 0.5 1 1-0.5 1-1 1-1-0.5-1-1zm4 0c0-0.5 0.5-1 1-1s1 0.5 1 1-0.5 1-1 1-1-0.5-1-1z"/>
-          </svg>
-        </div>
-      </div>
       
       {/* Sunset-Inspired Organic Shapes */}
       <div className="absolute inset-0 pointer-events-none">
@@ -72,14 +37,14 @@ const HeroSection: React.FC = () => {
         {/* Hills/City skyline silhouette */}
         <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 160" preserveAspectRatio="none">
           <path d="M0,160 L0,100 L100,95 L180,85 L250,90 L320,80 L400,75 L480,85 L560,80 L640,70 L720,75 L800,65 L880,70 L960,60 L1040,65 L1120,55 L1200,60 L1200,160 Z" 
-                fill="url(#skylineGradient)" opacity="0.4"/>
+                fill="url(#skylineGradient)" opacity="0.2"/>
           {/* Soft light rim along mountain peaks */}
           <path d="M0,100 L100,95 L180,85 L250,90 L320,80 L400,75 L480,85 L560,80 L640,70 L720,75 L800,65 L880,70 L960,60 L1040,65 L1120,55 L1200,60" 
                 stroke="url(#rimLightGradient)" strokeWidth="2" fill="none" opacity="0.6"/>
           <defs>
             <linearGradient id="skylineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#374151" stopOpacity="0.7"/>
-              <stop offset="100%" stopColor="#1f2937" stopOpacity="0.8"/>
+              <stop offset="0%" stopColor="#374151" stopOpacity="0.6"/>
+              <stop offset="100%" stopColor="#111827" stopOpacity="0.8"/>
             </linearGradient>
             <linearGradient id="rimLightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#fbbf24" stopOpacity="0.8"/>
@@ -94,14 +59,14 @@ const HeroSection: React.FC = () => {
         {/* Distant hills */}
         <svg className="absolute bottom-0 w-full h-24" viewBox="0 0 1200 96" preserveAspectRatio="none">
           <path d="M0,96 L0,55 L200,50 L400,45 L600,50 L800,40 L1000,45 L1200,35 L1200,96 Z" 
-                fill="url(#hillsGradient)" opacity="0.3"/>
+                fill="url(#hillsGradient)" opacity="0.15"/>
           {/* Soft light rim along distant hills */}
           <path d="M0,55 L200,50 L400,45 L600,50 L800,40 L1000,45 L1200,35" 
                 stroke="url(#distantRimGradient)" strokeWidth="1.5" fill="none" opacity="0.4"/>
           <defs>
             <linearGradient id="hillsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#6b7280" stopOpacity="0.6"/>
-              <stop offset="100%" stopColor="#374151" stopOpacity="0.7"/>
+              <stop offset="0%" stopColor="#6b7280" stopOpacity="0.4"/>
+              <stop offset="100%" stopColor="#374151" stopOpacity="0.6"/>
             </linearGradient>
             <linearGradient id="distantRimGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#fde68a" stopOpacity="0.5"/>
@@ -110,25 +75,15 @@ const HeroSection: React.FC = () => {
             </linearGradient>
           </defs>
         </svg>
-        
-        {/* Soft fog/haze near the base */}
-        <div className="absolute bottom-0 left-0 w-full h-32 pointer-events-none opacity-60">
-          <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-white/30 via-white/15 to-transparent blur-xl"></div>
-          <div className="absolute bottom-0 w-full h-16 bg-gradient-to-t from-amber-100/20 via-pink-100/10 to-transparent blur-lg"></div>
-        </div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 min-h-[80vh] flex items-center justify-center py-16">
-        <div className="text-center overflow-visible relative backdrop-blur-sm bg-white/8 rounded-3xl p-12 border border-white/15 shadow-xl" 
-             style={{ 
-               background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%)',
-               backdropFilter: 'blur(8px)'
-             }}>
+        <div className="text-center overflow-visible">
           <div className="absolute inset-0 opacity-5 pointer-events-none">
-          {/* Setting Sun - More blurred and lower opacity */}
-           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-             <div className="w-80 h-80 bg-gradient-to-r from-amber-300/15 via-orange-300/10 to-amber-300/15 rounded-full animate-pulse blur-xl" style={{ background: 'radial-gradient(circle, rgba(252, 211, 77, 0.15) 0%, rgba(251, 146, 60, 0.1) 50%, transparent 100%)' }}></div>
-           </div>
+            {/* Setting Sun */}
+             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+               <div className="w-80 h-80 bg-gradient-to-r from-amber-300/40 via-orange-300/30 to-amber-300/40 rounded-full animate-pulse" style={{ background: 'radial-gradient(circle, rgba(252, 211, 77, 0.4) 0%, rgba(251, 146, 60, 0.3) 50%, transparent 100%)' }}></div>
+             </div>
             
             {/* Sun Rays */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -159,17 +114,15 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           
-          {/* Setting Sun with Glow Effect - Lighter orange glow with white rim */}
+          {/* Setting Sun with Glow Effect */}
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 pointer-events-none z-0">
-            {/* Sun glow/halo - lighter orange */}
-            <div className="absolute w-[500px] h-[500px] -top-12 -left-12 rounded-full opacity-12 blur-[80px]" style={{ 
-              background: 'radial-gradient(circle, #fde68a 0%, #fbbf24 40%, transparent 70%)'
+            {/* Sun glow/halo */}
+            <div className="absolute w-[500px] h-[500px] -top-12 -left-12 rounded-full opacity-15 blur-3xl" style={{ 
+              background: 'radial-gradient(circle, #fbbf24 0%, #f59e0b 40%, transparent 70%)'
             }}></div>
-            {/* White rim around sun */}
-            <div className="w-96 h-96 rounded-full border-2 border-white/40 blur-sm opacity-60"></div>
             {/* Main sun */}
-            <div className="w-96 h-96 rounded-full opacity-20 blur-xl" style={{ 
-              background: 'radial-gradient(circle, #fde68a 0%, #fbbf24 30%, #f59e0b 60%, #d97706 100%)'
+            <div className="w-96 h-96 rounded-full opacity-30" style={{ 
+              background: 'radial-gradient(circle, #fbbf24 0%, #f59e0b 30%, #dc2626 60%, #7c2d12 100%)'
             }}></div>
             {/* Sun rays */}
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8">
@@ -207,7 +160,7 @@ const HeroSection: React.FC = () => {
             <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               Browse Talented Students
             </Button>
-            <Button variant="outline" size="lg" className="border-2 border-primary/20 hover:border-primary/40 bg-white/80 backdrop-blur-sm px-8 py-3 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
+            <Button variant="outline" size="lg" className="border-2 border-primary/60 hover:border-primary bg-white hover:bg-primary hover:text-white px-8 py-3 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
               Post a Job
             </Button>
           </div>
