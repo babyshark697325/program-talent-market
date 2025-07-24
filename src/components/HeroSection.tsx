@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Sparkles, Zap, Star, Heart, Code, Palette, Lightbulb } from "lucide-react";
+import { Sparkles, Zap, Star, Heart, Code, Palette, Lightbulb, Monitor, Smartphone, Cpu, Database, Globe, Wifi, Layers, Terminal } from "lucide-react";
 
 const HeroSection: React.FC = () => {
   return (
@@ -31,6 +31,30 @@ const HeroSection: React.FC = () => {
         </div>
         <div className="absolute top-1/4 left-16 opacity-10 animate-pulse" style={{ animationDelay: '4.5s' }}>
           <Heart size={14} className="text-primary" />
+        </div>
+        <div className="absolute top-20 left-1/3 opacity-10 animate-pulse" style={{ animationDelay: '1s' }}>
+          <Monitor size={22} className="text-accent" />
+        </div>
+        <div className="absolute bottom-1/4 left-20 opacity-10 animate-pulse" style={{ animationDelay: '2s' }}>
+          <Smartphone size={18} className="text-primary" />
+        </div>
+        <div className="absolute top-2/3 right-20 opacity-10 animate-pulse" style={{ animationDelay: '3s' }}>
+          <Cpu size={20} className="text-accent" />
+        </div>
+        <div className="absolute bottom-40 left-1/2 opacity-10 animate-pulse" style={{ animationDelay: '4s' }}>
+          <Database size={16} className="text-primary" />
+        </div>
+        <div className="absolute top-40 left-1/5 opacity-10 animate-pulse" style={{ animationDelay: '5s' }}>
+          <Globe size={24} className="text-accent" />
+        </div>
+        <div className="absolute bottom-32 right-1/5 opacity-10 animate-pulse" style={{ animationDelay: '0.8s' }}>
+          <Wifi size={18} className="text-primary" />
+        </div>
+        <div className="absolute top-1/3 right-1/6 opacity-10 animate-pulse" style={{ animationDelay: '1.8s' }}>
+          <Layers size={20} className="text-accent" />
+        </div>
+        <div className="absolute bottom-1/5 left-1/6 opacity-10 animate-pulse" style={{ animationDelay: '2.8s' }}>
+          <Terminal size={22} className="text-primary" />
         </div>
       </div>
       
