@@ -37,7 +37,7 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
       
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-32">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 min-h-[80vh] flex items-center justify-center py-16">
         <div className="text-center overflow-visible">
           <div className="absolute inset-0 opacity-5 pointer-events-none">
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
