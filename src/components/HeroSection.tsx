@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Sparkles, Zap, Star, Heart, Code, Palette, Lightbulb, Monitor, Smartphone, Cpu, Database, Globe, Wifi, Layers, Terminal } from "lucide-react";
+import { Sparkles, Star, Code, Palette, Lightbulb, Brush, Music, Camera, BookOpen, Pen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection: React.FC = () => {
@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
         <div className="absolute top-60 left-1/3 w-6 h-6 bg-accent/25 rotate-12 animate-pulse" style={{ animationDelay: '3s' }}></div>
         <div className="absolute bottom-60 right-1/4 w-10 h-10 border-2 border-primary/15 rounded-full animate-pulse" style={{ animationDelay: '4s' }}></div>
         
-        {/* Floating Icons - Positioned away from navigation */}
+        {/* Student Skill Icons */}
         <div className="absolute bottom-1/3 left-1/4 opacity-10 animate-pulse" style={{ animationDelay: '1.5s' }}>
           <Palette size={20} className="text-accent" />
         </div>
@@ -25,16 +25,16 @@ const HeroSection: React.FC = () => {
           <Code size={18} className="text-primary" />
         </div>
         <div className="absolute bottom-20 right-1/3 opacity-10 animate-pulse" style={{ animationDelay: '3.5s' }}>
-          <Monitor size={16} className="text-accent" />
+          <Camera size={16} className="text-accent" />
         </div>
         <div className="absolute bottom-1/4 left-20 opacity-10 animate-pulse" style={{ animationDelay: '2s' }}>
-          <Cpu size={18} className="text-primary" />
+          <Brush size={18} className="text-primary" />
         </div>
         <div className="absolute bottom-40 left-1/2 opacity-10 animate-pulse" style={{ animationDelay: '4s' }}>
-          <Database size={16} className="text-accent" />
+          <Music size={16} className="text-accent" />
         </div>
         <div className="absolute bottom-32 right-1/5 opacity-10 animate-pulse" style={{ animationDelay: '0.8s' }}>
-          <Terminal size={20} className="text-primary" />
+          <BookOpen size={20} className="text-primary" />
         </div>
       </div>
       
@@ -46,7 +46,7 @@ const HeroSection: React.FC = () => {
             </div>
             {/* Additional decorative elements */}
             <div className="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
-              <Zap size={80} className="text-accent animate-pulse rotate-12" style={{ animationDelay: '2s' }} />
+              <Lightbulb size={80} className="text-accent animate-pulse rotate-12" style={{ animationDelay: '2s' }} />
             </div>
             <div className="absolute bottom-1/4 right-1/4 transform translate-x-1/2 translate-y-1/2">
               <Star size={120} className="text-primary animate-pulse -rotate-12" style={{ animationDelay: '3s' }} />
