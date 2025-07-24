@@ -44,13 +44,13 @@ export const mockStudents: StudentService[] = [
     portfolio: [
       {
         id: 1,
-        imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&h=280&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&h=280&q=80",
         title: "E-commerce Website",
         description: "Full-stack online store with payment integration."
       },
       {
         id: 2,
-        imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=400&h=280&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=400&h=280&q=80",
         title: "Portfolio Website",
         description: "Modern responsive portfolio for creative agency."
       }
@@ -74,7 +74,7 @@ export const mockStudents: StudentService[] = [
     portfolio: [
       {
         id: 1,
-        imageUrl: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=400&h=280&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=400&h=280&q=80",
         title: "Restaurant Logo Design",
         description: "Complete brand identity for local restaurant."
       }
