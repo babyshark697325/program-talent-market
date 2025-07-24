@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 const HeroSection: React.FC = () => {
   return (
     <div className="relative overflow-hidden">
-      {/* Sunset Sky Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-t from-amber-100/30 via-orange-50/20 via-rose-50/15 to-white/5"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-200/20 via-pink-200/15 via-purple-200/10 to-indigo-200/15"></div>
+      {/* Warm to White Vertical Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-t from-amber-100/50 via-orange-50/30 via-rose-50/20 to-white"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-orange-200/30 via-amber-100/20 via-pink-100/10 to-transparent"></div>
       
       {/* Sunset-Inspired Organic Shapes */}
       <div className="absolute inset-0 pointer-events-none">
