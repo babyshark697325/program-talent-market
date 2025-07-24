@@ -160,7 +160,7 @@ const HeroSection: React.FC = () => {
             <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               Browse Talented Students
             </Button>
-            <Button variant="outline" size="lg" className="border-2 border-primary/60 hover:border-primary bg-white hover:bg-primary hover:text-white px-8 py-3 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
+            <Button variant="outline" size="lg" className="border-2 border-primary/20 hover:border-primary/40 bg-white/80 backdrop-blur-sm px-8 py-3 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
               Post a Job
             </Button>
           </div>
