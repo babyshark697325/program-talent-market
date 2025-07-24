@@ -129,16 +129,16 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-[1.8] font-medium mb-4 animate-fade-in pb-8 overflow-visible" style={{ animationDelay: '0.4s' }}>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-[1.8] font-medium mb-12 animate-fade-in overflow-visible" style={{ animationDelay: '0.4s' }}>
             Where exceptional talent meets extraordinary opportunities
           </p>
           
           {/* Call to Action */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 animate-fade-in bg-white/10 backdrop-blur-sm rounded-3xl p-6 border border-white/20" style={{ animationDelay: '0.6s' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in bg-white/20 backdrop-blur-md rounded-3xl p-8 border border-white/30 shadow-xl" style={{ animationDelay: '0.6s' }}>
             <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               Browse Talented Students
             </Button>
-            <Button variant="outline" size="lg" className="border-2 border-primary/20 hover:border-primary/40 bg-white/80 backdrop-blur-sm px-8 py-3 rounded-2xl font-semibold hover:shadow-md transition-all duration-300 hover:scale-105">
+            <Button variant="outline" size="lg" className="border-2 border-primary/20 hover:border-primary/40 bg-white/90 backdrop-blur-sm px-8 py-3 rounded-2xl font-semibold hover:shadow-md transition-all duration-300 hover:scale-105">
               Post a Job
             </Button>
           </div>
