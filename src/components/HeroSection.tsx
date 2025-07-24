@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 const HeroSection: React.FC = () => {
   return (
     <div className="relative overflow-hidden">
-      {/* Sunset Sky Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-t from-amber-100/30 via-orange-50/20 via-rose-50/15 to-white/5"></div>
+      {/* Sunset Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-200/20 via-pink-200/15 via-purple-200/10 to-indigo-200/15"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-amber-100/10 via-transparent to-rose-100/8"></div>
       
       {/* Sunset-Inspired Organic Shapes */}
       <div className="absolute inset-0 pointer-events-none">
@@ -65,59 +65,38 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           
-           {/* Raised Horizon Line with City Silhouette */}
-           <div className="absolute bottom-16 left-0 w-full h-40 pointer-events-none z-10">
+           {/* Horizon Line with City Silhouette */}
+           <div className="absolute -bottom-8 left-0 w-full h-32 pointer-events-none z-0">
             {/* Hills/City skyline silhouette */}
-            <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 160" preserveAspectRatio="none">
-              <path d="M0,160 L0,100 L100,95 L180,85 L250,90 L320,80 L400,75 L480,85 L560,80 L640,70 L720,75 L800,65 L880,70 L960,60 L1040,65 L1120,55 L1200,60 L1200,160 Z" 
-                    fill="url(#skylineGradient)" opacity="0.4"/>
+            <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 128" preserveAspectRatio="none">
+              <path d="M0,128 L0,90 L100,85 L180,75 L250,80 L320,70 L400,65 L480,75 L560,70 L640,60 L720,65 L800,55 L880,60 L960,50 L1040,55 L1120,45 L1200,50 L1200,128 Z" 
+                    fill="url(#skylineGradient)" opacity="0.3"/>
               <defs>
                 <linearGradient id="skylineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#374151" stopOpacity="0.6"/>
-                  <stop offset="100%" stopColor="#111827" stopOpacity="0.8"/>
+                  <stop offset="0%" stopColor="#7c3aed" stopOpacity="0.4"/>
+                  <stop offset="100%" stopColor="#1e1b4b" stopOpacity="0.6"/>
                 </linearGradient>
               </defs>
             </svg>
             
             {/* Distant hills */}
-            <svg className="absolute bottom-0 w-full h-24" viewBox="0 0 1200 96" preserveAspectRatio="none">
-              <path d="M0,96 L0,55 L200,50 L400,45 L600,50 L800,40 L1000,45 L1200,35 L1200,96 Z" 
-                    fill="url(#hillsGradient)" opacity="0.3"/>
+            <svg className="absolute bottom-0 w-full h-20" viewBox="0 0 1200 80" preserveAspectRatio="none">
+              <path d="M0,80 L0,45 L200,40 L400,35 L600,40 L800,30 L1000,35 L1200,25 L1200,80 Z" 
+                    fill="url(#hillsGradient)" opacity="0.2"/>
               <defs>
                 <linearGradient id="hillsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#6b7280" stopOpacity="0.4"/>
-                  <stop offset="100%" stopColor="#374151" stopOpacity="0.6"/>
+                  <stop offset="0%" stopColor="#a855f7" stopOpacity="0.3"/>
+                  <stop offset="100%" stopColor="#312e81" stopOpacity="0.5"/>
                 </linearGradient>
               </defs>
             </svg>
           </div>
           
-          {/* Setting Sun with Glow Effect */}
+          {/* Setting Sun Behind Logo - Positioned at Horizon */}
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 pointer-events-none z-0">
-            {/* Sun glow/halo */}
-            <div className="absolute w-[500px] h-[500px] -top-12 -left-12 rounded-full opacity-15 blur-3xl" style={{ 
-              background: 'radial-gradient(circle, #fbbf24 0%, #f59e0b 40%, transparent 70%)'
-            }}></div>
-            {/* Main sun */}
-            <div className="w-96 h-96 rounded-full opacity-30" style={{ 
+            <div className="w-96 h-96 rounded-full opacity-25" style={{ 
               background: 'radial-gradient(circle, #fbbf24 0%, #f59e0b 30%, #dc2626 60%, #7c2d12 100%)'
             }}></div>
-            {/* Sun rays */}
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8">
-              <div className="w-1 h-20 bg-gradient-to-t from-amber-300/20 to-transparent blur-sm"></div>
-            </div>
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 -translate-y-8 rotate-15">
-              <div className="w-0.5 h-16 bg-gradient-to-t from-orange-300/15 to-transparent blur-sm"></div>
-            </div>
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 -translate-y-8 -rotate-15">
-              <div className="w-0.5 h-16 bg-gradient-to-t from-amber-300/15 to-transparent blur-sm"></div>
-            </div>
-            <div className="absolute top-8 left-1/2 transform -translate-x-1/2 -translate-y-8 rotate-30">
-              <div className="w-0.5 h-12 bg-gradient-to-t from-rose-300/10 to-transparent blur-sm"></div>
-            </div>
-            <div className="absolute top-8 left-1/2 transform -translate-x-1/2 -translate-y-8 -rotate-30">
-              <div className="w-0.5 h-12 bg-gradient-to-t from-orange-300/10 to-transparent blur-sm"></div>
-            </div>
           </div>
           
           <div className="relative z-10 mb-8">
