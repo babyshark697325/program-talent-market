@@ -92,6 +92,13 @@ const HeroSection: React.FC = () => {
             </svg>
           </div>
           
+          {/* Setting Sun Behind Logo */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0">
+            <div className="w-96 h-96 rounded-full opacity-20" style={{ 
+              background: 'radial-gradient(circle, #fbbf24 0%, #f59e0b 30%, #dc2626 60%, #7c2d12 100%)'
+            }}></div>
+          </div>
+          
           <div className="relative z-10 mb-8">
             <h1 className="text-7xl md:text-8xl font-black mb-3 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-[1.8] tracking-tight animate-fade-in pb-8">
               MyVillage
