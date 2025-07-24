@@ -72,7 +72,7 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
               {student.skills.map((skill, index) => (
                 <Badge 
                   key={skill} 
-                  className="bg-gradient-to-r from-primary/20 to-accent/20 text-primary border-primary/30 px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+                  className="bg-gradient-to-r from-primary/80 to-accent/70 text-white border-primary/30 px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {skill}
