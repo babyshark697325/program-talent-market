@@ -73,8 +73,8 @@ const HeroSection: React.FC = () => {
                     fill="url(#skylineGradient)" opacity="0.2"/>
               <defs>
                 <linearGradient id="skylineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#1f2937" stopOpacity="0.3"/>
-                  <stop offset="100%" stopColor="#111827" stopOpacity="0.6"/>
+                  <stop offset="0%" stopColor="#374151" stopOpacity="0.6"/>
+                  <stop offset="100%" stopColor="#111827" stopOpacity="0.8"/>
                 </linearGradient>
               </defs>
             </svg>
@@ -85,49 +85,38 @@ const HeroSection: React.FC = () => {
                     fill="url(#hillsGradient)" opacity="0.15"/>
               <defs>
                 <linearGradient id="hillsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#4b5563" stopOpacity="0.2"/>
-                  <stop offset="100%" stopColor="#374151" stopOpacity="0.4"/>
+                  <stop offset="0%" stopColor="#6b7280" stopOpacity="0.4"/>
+                  <stop offset="100%" stopColor="#374151" stopOpacity="0.6"/>
                 </linearGradient>
               </defs>
             </svg>
           </div>
           
-          {/* Setting Sun with Glow Effect - Partially Hidden */}
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-3/4 pointer-events-none z-0">
-            {/* Sun glow/halo - larger and more diffused */}
-            <div className="absolute w-[600px] h-[400px] -top-24 -left-24 rounded-full opacity-20 blur-3xl" style={{ 
-              background: 'radial-gradient(ellipse, #fbbf24 0%, #f59e0b 20%, #dc2626 40%, transparent 70%)'
+          {/* Setting Sun with Glow Effect */}
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 pointer-events-none z-0">
+            {/* Sun glow/halo */}
+            <div className="absolute w-[500px] h-[500px] -top-12 -left-12 rounded-full opacity-15 blur-3xl" style={{ 
+              background: 'radial-gradient(circle, #fbbf24 0%, #f59e0b 40%, transparent 70%)'
             }}></div>
-            {/* Atmospheric light scatter */}
-            <div className="absolute w-[800px] h-[200px] -top-32 -left-32 opacity-10 blur-2xl" style={{ 
-              background: 'linear-gradient(to top, #fbbf24 0%, #f59e0b 30%, transparent 80%)'
+            {/* Main sun */}
+            <div className="w-96 h-96 rounded-full opacity-30" style={{ 
+              background: 'radial-gradient(circle, #fbbf24 0%, #f59e0b 30%, #dc2626 60%, #7c2d12 100%)'
             }}></div>
-            {/* Main sun - partially visible */}
-            <div className="w-80 h-80 rounded-full opacity-40" style={{ 
-              background: 'radial-gradient(circle, #fbbf24 0%, #f59e0b 25%, #dc2626 50%, #7c2d12 80%)'
-            }}></div>
-            {/* Golden hour light rays - more realistic upward scatter */}
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-12">
-              <div className="w-2 h-32 bg-gradient-to-t from-amber-300/30 via-amber-200/15 to-transparent blur-sm"></div>
+            {/* Sun rays */}
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8">
+              <div className="w-1 h-20 bg-gradient-to-t from-amber-300/20 to-transparent blur-sm"></div>
             </div>
-            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 -translate-y-12 rotate-12">
-              <div className="w-1 h-28 bg-gradient-to-t from-orange-300/25 via-orange-200/10 to-transparent blur-sm"></div>
+            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 -translate-y-8 rotate-15">
+              <div className="w-0.5 h-16 bg-gradient-to-t from-orange-300/15 to-transparent blur-sm"></div>
             </div>
-            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 -translate-y-12 -rotate-12">
-              <div className="w-1 h-28 bg-gradient-to-t from-amber-300/25 via-amber-200/10 to-transparent blur-sm"></div>
+            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 -translate-y-8 -rotate-15">
+              <div className="w-0.5 h-16 bg-gradient-to-t from-amber-300/15 to-transparent blur-sm"></div>
             </div>
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 -translate-y-12 rotate-25">
-              <div className="w-0.5 h-24 bg-gradient-to-t from-rose-300/15 via-rose-200/8 to-transparent blur-sm"></div>
+            <div className="absolute top-8 left-1/2 transform -translate-x-1/2 -translate-y-8 rotate-30">
+              <div className="w-0.5 h-12 bg-gradient-to-t from-rose-300/10 to-transparent blur-sm"></div>
             </div>
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 -translate-y-12 -rotate-25">
-              <div className="w-0.5 h-24 bg-gradient-to-t from-orange-300/15 via-orange-200/8 to-transparent blur-sm"></div>
-            </div>
-            {/* Wider atmospheric scatter */}
-            <div className="absolute top-6 left-1/2 transform -translate-x-1/2 -translate-y-12 rotate-35">
-              <div className="w-0.5 h-20 bg-gradient-to-t from-amber-300/12 via-amber-200/6 to-transparent blur-md"></div>
-            </div>
-            <div className="absolute top-6 left-1/2 transform -translate-x-1/2 -translate-y-12 -rotate-35">
-              <div className="w-0.5 h-20 bg-gradient-to-t from-orange-300/12 via-orange-200/6 to-transparent blur-md"></div>
+            <div className="absolute top-8 left-1/2 transform -translate-x-1/2 -translate-y-8 -rotate-30">
+              <div className="w-0.5 h-12 bg-gradient-to-t from-orange-300/10 to-transparent blur-sm"></div>
             </div>
           </div>
           
