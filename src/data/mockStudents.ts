@@ -44,13 +44,13 @@ export const mockStudents: StudentService[] = [
     portfolio: [
       {
         id: 1,
-        imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=facearea&w=400&h=280&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&h=280&q=80",
         title: "E-commerce Website",
         description: "Full-stack online store with payment integration."
       },
       {
         id: 2,
-        imageUrl: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=facearea&w=400&h=280&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=400&h=280&q=80",
         title: "Portfolio Website",
         description: "Modern responsive portfolio for creative agency."
       }
@@ -74,7 +74,7 @@ export const mockStudents: StudentService[] = [
     portfolio: [
       {
         id: 1,
-        imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=facearea&w=400&h=280&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=400&h=280&q=80",
         title: "Restaurant Logo Design",
         description: "Complete brand identity for local restaurant."
       }
@@ -98,7 +98,7 @@ export const mockStudents: StudentService[] = [
     portfolio: [
       {
         id: 1,
-        imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=facearea&w=400&h=280&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=400&h=280&q=80",
         title: "Product Visualization",
         description: "3D render for tech product marketing."
       }
@@ -122,7 +122,7 @@ export const mockStudents: StudentService[] = [
     portfolio: [
       {
         id: 1,
-        imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=facearea&w=400&h=280&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=400&h=280&q=80",
         title: "2D Platformer Game",
         description: "Indie game with custom mechanics and art."
       }
@@ -146,7 +146,7 @@ export const mockStudents: StudentService[] = [
     portfolio: [
       {
         id: 1,
-        imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=facearea&w=400&h=280&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1493421419110-74f4e85ba126?auto=format&fit=crop&w=400&h=280&q=80",
         title: "Marketing Materials",
         description: "Complete design package for startup launch."
       }
