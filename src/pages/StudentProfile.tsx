@@ -120,6 +120,41 @@ const StudentProfile = () => {
             </CardContent>
           </Card>
 
+          {/* Portfolio Section */}
+          {student.portfolio && student.portfolio.length > 0 && (
+            <Card>
+              <CardHeader>
+                <CardTitle>Portfolio</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {student.portfolio.map((item) => (
+                    <div key={item.id} className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                      <img 
+                        src={item.imageUrl} 
+                        alt={item.title}
+                        className="w-full h-40 object-cover"
+                      />
+                      <div className="p-4">
+                        <h3 className="font-semibold mb-2">{item.title}</h3>
+                        {item.description && (
+                          <p className="text-muted-foreground text-sm mb-3">{item.description}</p>
+                        )}
+                        {item.link && (
+                          <Button variant="outline" size="sm" asChild>
+                            <a href={item.link} target="_blank" rel="noopener noreferrer">
+                              View Project
+                            </a>
+                          </Button>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
           <Card>
             <CardHeader>
               <CardTitle>Recent Reviews</CardTitle>

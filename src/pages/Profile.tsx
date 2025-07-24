@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { User, Mail, Phone, MapPin, Edit, Save, X, Plus } from 'lucide-react';
+import { User, Mail, Phone, MapPin, Edit, Save, X, Plus, Image, ExternalLink, Trash2 } from 'lucide-react';
 
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -29,6 +29,21 @@ const Profile = () => {
         company: 'Local Business Solutions',
         duration: '2022 - 2023',
         description: 'Designed and developed custom websites with focus on user experience and brand identity'
+      }
+    ],
+    portfolio: [
+      {
+        id: 1,
+        imageUrl: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=facearea&w=400&h=280&q=80',
+        title: 'E-commerce Website',
+        description: 'Full-stack online store with payment integration',
+        link: 'https://example.com'
+      },
+      {
+        id: 2,
+        imageUrl: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=facearea&w=400&h=280&q=80',
+        title: 'Portfolio Website',
+        description: 'Modern responsive portfolio for creative agency'
       }
     ]
   });
@@ -75,6 +90,7 @@ const Profile = () => {
         <TabsList>
           <TabsTrigger value="general">General</TabsTrigger>
           <TabsTrigger value="skills">Skills & Experience</TabsTrigger>
+          <TabsTrigger value="portfolio">Portfolio</TabsTrigger>
           <TabsTrigger value="settings">Settings</TabsTrigger>
         </TabsList>
 
@@ -213,6 +229,55 @@ const Profile = () => {
               </CardContent>
             </Card>
           </div>
+        </TabsContent>
+
+        <TabsContent value="portfolio">
+          <Card>
+            <CardHeader>
+              <CardTitle>Portfolio</CardTitle>
+              <CardDescription>Showcase your best work and projects</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                {profile.portfolio?.map((item) => (
+                  <div key={item.id} className="border rounded-lg overflow-hidden">
+                    <img 
+                      src={item.imageUrl} 
+                      alt={item.title}
+                      className="w-full h-40 object-cover"
+                    />
+                    <div className="p-4">
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="font-semibold">{item.title}</h3>
+                        {isEditing && (
+                          <Button variant="ghost" size="sm" className="text-red-500 hover:text-red-700">
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        )}
+                      </div>
+                      {item.description && (
+                        <p className="text-muted-foreground text-sm mb-3">{item.description}</p>
+                      )}
+                      {item.link && (
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={item.link} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="mr-2 h-3 w-3" />
+                            View Project
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              {isEditing && (
+                <Button variant="outline">
+                  <Plus className="mr-2 h-4 w-4" />
+                  Add Portfolio Item
+                </Button>
+              )}
+            </CardContent>
+          </Card>
         </TabsContent>
 
         <TabsContent value="settings">
