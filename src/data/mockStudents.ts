@@ -29,14 +29,14 @@ export const mockStudents: StudentService[] = [
   {
     id: 1,
     name: "Alex Rivera",
-    title: "Resume Review & Editing",
+    title: "Full-Stack Web Developer",
     description:
-      "I help transform resumes and cover letters into powerful career tools—quickly and professionally.",
+      "I create modern, responsive websites and web applications using the latest technologies.",
     avatarUrl:
       "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80",
-    skills: ["Career", "Writing", "Editing"],
-    price: "$25/hr",
-    aboutMe: "I am passionate about helping students land their dream jobs. With 5 years of experience in career development and a background in professional writing, I've worked with dozens of clients worldwide. In my spare time, I enjoy hiking and reading sci-fi novels.",
+    skills: ["Web Development", "Programming", "UI/UX Design"],
+    price: "$35/hr",
+    aboutMe: "I'm passionate about creating beautiful, functional web experiences. With expertise in modern web technologies, I help businesses establish their online presence. In my spare time, I enjoy gaming and exploring new coding frameworks.",
     contact: {
       email: "alex.rivera@myvillage.com",
       phone: "(555) 123-4567"
@@ -45,28 +45,28 @@ export const mockStudents: StudentService[] = [
       {
         id: 1,
         imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=facearea&w=400&h=280&q=80",
-        title: "Resume Makeover Example",
-        description: "Before and after resume transformation."
+        title: "E-commerce Website",
+        description: "Full-stack online store with payment integration."
       },
       {
         id: 2,
         imageUrl: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=facearea&w=400&h=280&q=80",
-        title: "Cover Letter Success",
-        description: "Client got hired after edits."
+        title: "Portfolio Website",
+        description: "Modern responsive portfolio for creative agency."
       }
     ]
   },
   {
     id: 2,
     name: "Jamie Patel",
-    title: "One-on-One Python Tutoring",
+    title: "Logo & Brand Designer",
     description:
-      "Friendly, step-by-step guidance for all skill levels. Flexible schedule available.",
+      "Creating memorable logos and brand identities that help businesses stand out from the crowd.",
     avatarUrl:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80",
-    skills: ["Programming", "Python", "Tutoring"],
-    price: "$20/hr",
-    aboutMe: "I'm a Computer Science major with a love for teaching and sharing knowledge. My tutoring style is patient and encouraging—no question is too small! When I'm not coding, you'll find me baking bread or playing guitar.",
+    skills: ["Logo Design", "Graphic Design", "Animation"],
+    price: "$40/hr",
+    aboutMe: "I specialize in creating visual identities that tell your brand's story. From concept to final design, I ensure every element works harmoniously. When I'm not designing, you'll find me sketching in cafes or exploring art galleries.",
     contact: {
       email: "jamie.patel@myvillage.com",
       phone: "(555) 234-5678"
@@ -75,22 +75,22 @@ export const mockStudents: StudentService[] = [
       {
         id: 1,
         imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=facearea&w=400&h=280&q=80",
-        title: "Beginner Python Crash Course",
-        description: "Example slides & resources."
+        title: "Restaurant Logo Design",
+        description: "Complete brand identity for local restaurant."
       }
     ]
   },
   {
     id: 3,
     name: "Morgan Lee",
-    title: "Logo & Visual Design",
+    title: "3D Artist & Animator",
     description:
-      "Let's bring your ideas to life! Modern, professional graphics tailored to your needs.",
+      "Bringing ideas to life through 3D modeling and animation using Blender and industry-standard tools.",
     avatarUrl:
       "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80",
-    skills: ["Design", "Branding", "Graphics"],
+    skills: ["3D Modeling", "Blender", "Animation"],
     price: "$45/hr",
-    aboutMe: "Design isn't just my career—it's my passion. I specialize in minimal, memorable visuals and love collaborating on fresh ideas. Outside of design, I enjoy photography and practicing yoga.",
+    aboutMe: "I create stunning 3D visuals and animations for games, movies, and marketing. Every project is an opportunity to push creative boundaries and tell compelling stories through visual art. Outside work, I love gaming and attending animation festivals.",
     contact: {
       email: "morgan.lee@myvillage.com",
       phone: "(555) 345-6789"
@@ -99,22 +99,22 @@ export const mockStudents: StudentService[] = [
       {
         id: 1,
         imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=facearea&w=400&h=280&q=80",
-        title: "Brand Logo",
-        description: "Minimalist rebrand for local business."
+        title: "Product Visualization",
+        description: "3D render for tech product marketing."
       }
     ]
   },
   {
     id: 4,
     name: "Samira Chen",
-    title: "Social Media Growth Strategy",
+    title: "Game Designer & Developer",
     description:
-      "I'll analyze, plan and optimize your social profiles for maximum engagement and reach.",
+      "Creating engaging game experiences from concept to completion, specializing in indie and mobile games.",
     avatarUrl:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80",
-    skills: ["Social Media", "Marketing", "Consulting"],
-    price: "$35/hr",
-    aboutMe: "From launching campaigns to boosting engagement, I love all things social! I have a knack for turning analytics into actionable strategies. Off the clock, I'm traveling or mastering new recipes.",
+    skills: ["Game Design", "Programming", "Animation"],
+    price: "$50/hr",
+    aboutMe: "Games are my passion! I design and develop engaging experiences that captivate players. From mechanics to storytelling, I handle every aspect of game creation. When not coding, I'm analyzing the latest games or speedrunning classics.",
     contact: {
       email: "samira.chen@myvillage.com",
       phone: "(555) 456-7890"
@@ -123,22 +123,22 @@ export const mockStudents: StudentService[] = [
       {
         id: 1,
         imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=facearea&w=400&h=280&q=80",
-        title: "Instagram Growth",
-        description: "Doubled follower count for a client."
+        title: "2D Platformer Game",
+        description: "Indie game with custom mechanics and art."
       }
     ]
   },
   {
     id: 5,
     name: "Ethan Smith",
-    title: "WordPress Website Setup",
+    title: "Graphic Designer & Illustrator",
     description:
-      "Professional website installation, theme setup, and troubleshooting for businesses or personal use.",
+      "Professional graphic design services for print and digital media, specializing in creative illustrations.",
     avatarUrl:
       "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80",
-    skills: ["Web Development", "WordPress", "Tech Support"],
+    skills: ["Graphic Design", "Logo Design", "Animation"],
     price: "$30/hr",
-    aboutMe: "I'm a web enthusiast with a focus on usability and performance. Helping small businesses get online is what motivates me every day! In my downtime, I'm tinkering with open-source or mountain biking.",
+    aboutMe: "I bring creativity to every project, whether it's a business card or a full marketing campaign. My style blends modern aesthetics with timeless design principles. In my free time, I enjoy digital painting and collecting vintage design books.",
     contact: {
       email: "ethan.smith@myvillage.com",
       phone: "(555) 567-8901"
@@ -147,8 +147,8 @@ export const mockStudents: StudentService[] = [
       {
         id: 1,
         imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=facearea&w=400&h=280&q=80",
-        title: "WordPress Demo Site",
-        description: "Small business site build."
+        title: "Marketing Materials",
+        description: "Complete design package for startup launch."
       }
     ]
   }
