@@ -134,7 +134,7 @@ const HeroSection: React.FC = () => {
           </p>
           
           {/* Call to Action */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 animate-fade-in bg-white/10 backdrop-blur-sm rounded-3xl p-6 border border-white/20" style={{ animationDelay: '0.6s' }}>
             <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               Browse Talented Students
             </Button>
