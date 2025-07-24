@@ -31,16 +31,65 @@ const HeroSection: React.FC = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-6 min-h-[80vh] flex items-center justify-center py-16">
         <div className="text-center overflow-visible">
           <div className="absolute inset-0 opacity-5 pointer-events-none">
+            {/* Setting Sun */}
+             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+               <div className="w-80 h-80 bg-gradient-to-r from-amber-300/40 via-orange-300/30 to-amber-300/40 rounded-full animate-pulse" style={{ background: 'radial-gradient(circle, rgba(252, 211, 77, 0.4) 0%, rgba(251, 146, 60, 0.3) 50%, transparent 100%)' }}></div>
+             </div>
+            
+            {/* Sun Rays */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <Sparkles size={300} className="text-primary animate-pulse" />
+              {/* Primary rays */}
+              <div className="absolute w-1 h-32 bg-gradient-to-t from-transparent via-amber-200/30 to-transparent rotate-0 -translate-y-16"></div>
+              <div className="absolute w-1 h-28 bg-gradient-to-t from-transparent via-orange-200/25 to-transparent rotate-45 -translate-y-14"></div>
+              <div className="absolute w-1 h-24 bg-gradient-to-t from-transparent via-amber-200/20 to-transparent rotate-90 -translate-y-12"></div>
+              <div className="absolute w-1 h-28 bg-gradient-to-t from-transparent via-rose-200/25 to-transparent rotate-135 -translate-y-14"></div>
+              <div className="absolute w-1 h-32 bg-gradient-to-t from-transparent via-amber-200/30 to-transparent rotate-180 -translate-y-16"></div>
+              <div className="absolute w-1 h-28 bg-gradient-to-t from-transparent via-orange-200/25 to-transparent rotate-225 -translate-y-14"></div>
+              <div className="absolute w-1 h-24 bg-gradient-to-t from-transparent via-amber-200/20 to-transparent rotate-270 -translate-y-12"></div>
+              <div className="absolute w-1 h-28 bg-gradient-to-t from-transparent via-rose-200/25 to-transparent rotate-315 -translate-y-14"></div>
+              
+              {/* Secondary shorter rays */}
+              <div className="absolute w-0.5 h-20 bg-gradient-to-t from-transparent via-amber-200/15 to-transparent rotate-22 -translate-y-10"></div>
+              <div className="absolute w-0.5 h-18 bg-gradient-to-t from-transparent via-orange-200/15 to-transparent rotate-67 -translate-y-9"></div>
+              <div className="absolute w-0.5 h-20 bg-gradient-to-t from-transparent via-rose-200/15 to-transparent rotate-112 -translate-y-10"></div>
+              <div className="absolute w-0.5 h-18 bg-gradient-to-t from-transparent via-amber-200/15 to-transparent rotate-157 -translate-y-9"></div>
+              <div className="absolute w-0.5 h-20 bg-gradient-to-t from-transparent via-orange-200/15 to-transparent rotate-202 -translate-y-10"></div>
+              <div className="absolute w-0.5 h-18 bg-gradient-to-t from-transparent via-rose-200/15 to-transparent rotate-247 -translate-y-9"></div>
+              <div className="absolute w-0.5 h-20 bg-gradient-to-t from-transparent via-amber-200/15 to-transparent rotate-292 -translate-y-10"></div>
+              <div className="absolute w-0.5 h-18 bg-gradient-to-t from-transparent via-orange-200/15 to-transparent rotate-337 -translate-y-9"></div>
             </div>
-            {/* Sunset decorative elements */}
-            <div className="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
-              <Lightbulb size={80} className="text-orange-300/40 animate-pulse rotate-12" style={{ animationDelay: '2s' }} />
+            
+            {/* Sparkles effect */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <Sparkles size={300} className="text-amber-300/20 animate-pulse" />
             </div>
-            <div className="absolute bottom-1/4 right-1/4 transform translate-x-1/2 translate-y-1/2">
-              <Star size={120} className="text-rose-300/30 animate-pulse -rotate-12" style={{ animationDelay: '3s' }} />
-            </div>
+          </div>
+          
+           {/* Horizon Line with City Silhouette */}
+           <div className="absolute -bottom-8 left-0 w-full h-32 pointer-events-none z-0">
+            {/* Hills/City skyline silhouette */}
+            <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 128" preserveAspectRatio="none">
+              <path d="M0,128 L0,90 L100,85 L180,75 L250,80 L320,70 L400,65 L480,75 L560,70 L640,60 L720,65 L800,55 L880,60 L960,50 L1040,55 L1120,45 L1200,50 L1200,128 Z" 
+                    fill="url(#skylineGradient)" opacity="0.3"/>
+              <defs>
+                <linearGradient id="skylineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#7c3aed" stopOpacity="0.4"/>
+                  <stop offset="100%" stopColor="#1e1b4b" stopOpacity="0.6"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            
+            {/* Distant hills */}
+            <svg className="absolute bottom-0 w-full h-20" viewBox="0 0 1200 80" preserveAspectRatio="none">
+              <path d="M0,80 L0,45 L200,40 L400,35 L600,40 L800,30 L1000,35 L1200,25 L1200,80 Z" 
+                    fill="url(#hillsGradient)" opacity="0.2"/>
+              <defs>
+                <linearGradient id="hillsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#a855f7" stopOpacity="0.3"/>
+                  <stop offset="100%" stopColor="#312e81" stopOpacity="0.5"/>
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
           
           <div className="relative z-10 mb-8">
