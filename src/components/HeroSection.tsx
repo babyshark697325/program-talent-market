@@ -93,7 +93,7 @@ const HeroSection: React.FC = () => {
           </div>
           
           {/* Setting Sun Behind Logo - Positioned at Horizon */}
-          <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 pointer-events-none z-0">
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 pointer-events-none z-0">
             <div className="w-96 h-96 rounded-full opacity-25" style={{ 
               background: 'radial-gradient(circle, #fbbf24 0%, #f59e0b 30%, #dc2626 60%, #7c2d12 100%)'
             }}></div>
