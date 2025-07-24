@@ -37,14 +37,14 @@ const Profile = () => {
         imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=400&h=280&q=80',
         title: 'E-commerce Website',
         description: 'Full-stack online store with payment integration',
-        link: 'https://demo-ecommerce.example.com'
+        link: 'https://example.com'
       },
       {
         id: 2,
         imageUrl: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=400&h=280&q=80',
         title: 'Portfolio Website',
         description: 'Modern responsive portfolio for creative agency',
-        link: 'https://creative-portfolio.example.com'
+        link: 'https://example.com'
       }
     ]
   });
