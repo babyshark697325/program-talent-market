@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Sparkles, Zap, Star, Heart, Code, Palette, Lightbulb, Monitor, Smartphone, Cpu, Database, Globe, Wifi, Layers, Terminal } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const HeroSection: React.FC = () => {
   return (
@@ -65,7 +66,17 @@ const HeroSection: React.FC = () => {
             Where exceptional talent meets extraordinary opportunities
           </p>
           
-          <div className="flex justify-center gap-2 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          {/* Call to Action */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              Browse Talented Students
+            </Button>
+            <Button variant="outline" size="lg" className="border-2 border-primary/20 hover:border-primary/40 bg-white/80 backdrop-blur-sm px-8 py-3 rounded-2xl font-semibold hover:shadow-md transition-all duration-300 hover:scale-105">
+              Post a Job
+            </Button>
+          </div>
+          
+          <div className="flex justify-center gap-2 animate-fade-in" style={{ animationDelay: '0.8s' }}>
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             <div className="w-16 h-1 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full"></div>
             <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
