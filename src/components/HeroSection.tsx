@@ -16,45 +16,24 @@ const HeroSection: React.FC = () => {
         <div className="absolute top-60 left-1/3 w-6 h-6 bg-accent/25 rotate-12 animate-pulse" style={{ animationDelay: '3s' }}></div>
         <div className="absolute bottom-60 right-1/4 w-10 h-10 border-2 border-primary/15 rounded-full animate-pulse" style={{ animationDelay: '4s' }}></div>
         
-        {/* Floating Icons */}
-        <div className="absolute top-32 right-1/4 opacity-10 animate-pulse" style={{ animationDelay: '0.5s' }}>
-          <Code size={24} className="text-primary" />
-        </div>
+        {/* Floating Icons - Positioned away from navigation */}
         <div className="absolute bottom-1/3 left-1/4 opacity-10 animate-pulse" style={{ animationDelay: '1.5s' }}>
           <Palette size={20} className="text-accent" />
         </div>
         <div className="absolute top-1/2 right-16 opacity-10 animate-pulse" style={{ animationDelay: '2.5s' }}>
-          <Lightbulb size={18} className="text-primary" />
+          <Code size={18} className="text-primary" />
         </div>
         <div className="absolute bottom-20 right-1/3 opacity-10 animate-pulse" style={{ animationDelay: '3.5s' }}>
-          <Star size={16} className="text-accent" />
-        </div>
-        <div className="absolute top-1/4 left-16 opacity-10 animate-pulse" style={{ animationDelay: '4.5s' }}>
-          <Heart size={14} className="text-primary" />
-        </div>
-        <div className="absolute top-20 left-1/3 opacity-10 animate-pulse" style={{ animationDelay: '1s' }}>
-          <Monitor size={22} className="text-accent" />
+          <Monitor size={16} className="text-accent" />
         </div>
         <div className="absolute bottom-1/4 left-20 opacity-10 animate-pulse" style={{ animationDelay: '2s' }}>
-          <Smartphone size={18} className="text-primary" />
-        </div>
-        <div className="absolute top-2/3 right-20 opacity-10 animate-pulse" style={{ animationDelay: '3s' }}>
-          <Cpu size={20} className="text-accent" />
+          <Cpu size={18} className="text-primary" />
         </div>
         <div className="absolute bottom-40 left-1/2 opacity-10 animate-pulse" style={{ animationDelay: '4s' }}>
-          <Database size={16} className="text-primary" />
-        </div>
-        <div className="absolute top-40 left-1/5 opacity-10 animate-pulse" style={{ animationDelay: '5s' }}>
-          <Globe size={24} className="text-accent" />
+          <Database size={16} className="text-accent" />
         </div>
         <div className="absolute bottom-32 right-1/5 opacity-10 animate-pulse" style={{ animationDelay: '0.8s' }}>
-          <Wifi size={18} className="text-primary" />
-        </div>
-        <div className="absolute top-1/3 right-1/6 opacity-10 animate-pulse" style={{ animationDelay: '1.8s' }}>
-          <Layers size={20} className="text-accent" />
-        </div>
-        <div className="absolute bottom-1/5 left-1/6 opacity-10 animate-pulse" style={{ animationDelay: '2.8s' }}>
-          <Terminal size={22} className="text-primary" />
+          <Terminal size={20} className="text-primary" />
         </div>
       </div>
       
