@@ -6,24 +6,26 @@ import { Button } from "@/components/ui/button";
 const HeroSection: React.FC = () => {
   return (
     <div className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-accent/8"></div>
+      {/* Sunset Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-200/20 via-pink-200/15 via-purple-200/10 to-indigo-200/15"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-amber-100/10 via-transparent to-rose-100/8"></div>
       
-      {/* Organic Background Shapes */}
+      {/* Sunset-Inspired Organic Shapes */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Floating organic blobs */}
-        <div className="absolute top-20 left-10 w-32 h-24 bg-gradient-to-br from-primary/8 to-accent/12 rounded-full blur-xl animate-pulse transform rotate-12" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}></div>
-        <div className="absolute top-40 right-20 w-28 h-36 bg-gradient-to-tr from-accent/10 to-primary/8 blur-lg animate-pulse" style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%', animationDelay: '1s' }}></div>
-        <div className="absolute bottom-40 left-20 w-20 h-20 bg-gradient-to-bl from-primary/15 to-accent/10 rounded-full blur-md animate-pulse" style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%', animationDelay: '2s' }}></div>
-        <div className="absolute top-60 left-1/3 w-16 h-24 bg-gradient-to-r from-accent/12 to-primary/6 blur-sm animate-pulse transform -rotate-12" style={{ borderRadius: '50% 50% 80% 20% / 60% 40% 60% 40%', animationDelay: '3s' }}></div>
-        <div className="absolute bottom-60 right-1/4 w-24 h-18 bg-gradient-to-tl from-primary/10 to-accent/15 blur-lg animate-pulse transform rotate-45" style={{ borderRadius: '70% 30% 50% 50% / 30% 70% 30% 70%', animationDelay: '4s' }}></div>
+        {/* Floating organic blobs with sunset colors */}
+        <div className="absolute top-20 left-10 w-32 h-24 bg-gradient-to-br from-amber-200/12 to-rose-200/8 rounded-full blur-xl animate-pulse transform rotate-12" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}></div>
+        <div className="absolute top-40 right-20 w-28 h-36 bg-gradient-to-tr from-peach-200/10 to-lavender-200/6 blur-lg animate-pulse" style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%', animationDelay: '1s' }}></div>
+        <div className="absolute bottom-40 left-20 w-20 h-20 bg-gradient-to-bl from-orange-200/15 to-pink-200/8 rounded-full blur-md animate-pulse" style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%', animationDelay: '2s' }}></div>
+        <div className="absolute top-60 left-1/3 w-16 h-24 bg-gradient-to-r from-rose-200/10 to-amber-200/6 blur-sm animate-pulse transform -rotate-12" style={{ borderRadius: '50% 50% 80% 20% / 60% 40% 60% 40%', animationDelay: '3s' }}></div>
+        <div className="absolute bottom-60 right-1/4 w-24 h-18 bg-gradient-to-tl from-purple-200/8 to-orange-200/12 blur-lg animate-pulse transform rotate-45" style={{ borderRadius: '70% 30% 50% 50% / 30% 70% 30% 70%', animationDelay: '4s' }}></div>
         
-        {/* Flowing wave shapes */}
-        <div className="absolute bottom-1/3 left-1/4 w-40 h-16 bg-gradient-to-r from-primary/6 via-accent/10 to-transparent blur-md animate-pulse transform rotate-12" style={{ borderRadius: '100% 0% 100% 0% / 50% 50% 50% 50%', animationDelay: '1.5s' }}></div>
-        <div className="absolute top-1/2 right-16 w-36 h-20 bg-gradient-to-l from-accent/8 via-primary/12 to-transparent blur-lg animate-pulse transform -rotate-6" style={{ borderRadius: '0% 100% 0% 100% / 50% 50% 50% 50%', animationDelay: '2.5s' }}></div>
-        <div className="absolute bottom-20 right-1/3 w-28 h-12 bg-gradient-to-br from-primary/8 to-accent/6 blur-sm animate-pulse" style={{ borderRadius: '80% 20% 60% 40% / 30% 70% 30% 70%', animationDelay: '3.5s' }}></div>
-        <div className="absolute bottom-1/4 left-20 w-32 h-28 bg-gradient-to-tr from-accent/10 to-primary/8 blur-md animate-pulse transform rotate-30" style={{ borderRadius: '40% 60% 80% 20% / 70% 30% 70% 30%', animationDelay: '2s' }}></div>
-        <div className="absolute bottom-40 left-1/2 w-24 h-32 bg-gradient-to-t from-primary/6 via-accent/12 to-transparent blur-lg animate-pulse transform -rotate-15" style={{ borderRadius: '50% 50% 20% 80% / 60% 40% 60% 40%', animationDelay: '4s' }}></div>
-        <div className="absolute bottom-32 right-1/5 w-30 h-20 bg-gradient-to-bl from-accent/8 to-primary/10 blur-md animate-pulse transform rotate-18" style={{ borderRadius: '70% 30% 30% 70% / 50% 50% 50% 50%', animationDelay: '0.8s' }}></div>
+        {/* Flowing sunset wave shapes */}
+        <div className="absolute bottom-1/3 left-1/4 w-40 h-16 bg-gradient-to-r from-amber-200/8 via-rose-200/12 to-transparent blur-md animate-pulse transform rotate-12" style={{ borderRadius: '100% 0% 100% 0% / 50% 50% 50% 50%', animationDelay: '1.5s' }}></div>
+        <div className="absolute top-1/2 right-16 w-36 h-20 bg-gradient-to-l from-pink-200/6 via-orange-200/10 to-transparent blur-lg animate-pulse transform -rotate-6" style={{ borderRadius: '0% 100% 0% 100% / 50% 50% 50% 50%', animationDelay: '2.5s' }}></div>
+        <div className="absolute bottom-20 right-1/3 w-28 h-12 bg-gradient-to-br from-purple-200/8 to-amber-200/6 blur-sm animate-pulse" style={{ borderRadius: '80% 20% 60% 40% / 30% 70% 30% 70%', animationDelay: '3.5s' }}></div>
+        <div className="absolute bottom-1/4 left-20 w-32 h-28 bg-gradient-to-tr from-rose-200/10 to-orange-200/8 blur-md animate-pulse transform rotate-30" style={{ borderRadius: '40% 60% 80% 20% / 70% 30% 70% 30%', animationDelay: '2s' }}></div>
+        <div className="absolute bottom-40 left-1/2 w-24 h-32 bg-gradient-to-t from-amber-200/6 via-pink-200/10 to-transparent blur-lg animate-pulse transform -rotate-15" style={{ borderRadius: '50% 50% 20% 80% / 60% 40% 60% 40%', animationDelay: '4s' }}></div>
+        <div className="absolute bottom-32 right-1/5 w-30 h-20 bg-gradient-to-bl from-purple-200/6 to-orange-200/8 blur-md animate-pulse transform rotate-18" style={{ borderRadius: '70% 30% 30% 70% / 50% 50% 50% 50%', animationDelay: '0.8s' }}></div>
       </div>
       
       <div className="relative z-10 max-w-6xl mx-auto px-6 min-h-[80vh] flex items-center justify-center py-16">
@@ -32,12 +34,12 @@ const HeroSection: React.FC = () => {
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <Sparkles size={300} className="text-primary animate-pulse" />
             </div>
-            {/* Additional decorative elements */}
+            {/* Sunset decorative elements */}
             <div className="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
-              <Lightbulb size={80} className="text-accent animate-pulse rotate-12" style={{ animationDelay: '2s' }} />
+              <Lightbulb size={80} className="text-orange-300/40 animate-pulse rotate-12" style={{ animationDelay: '2s' }} />
             </div>
             <div className="absolute bottom-1/4 right-1/4 transform translate-x-1/2 translate-y-1/2">
-              <Star size={120} className="text-primary animate-pulse -rotate-12" style={{ animationDelay: '3s' }} />
+              <Star size={120} className="text-rose-300/30 animate-pulse -rotate-12" style={{ animationDelay: '3s' }} />
             </div>
           </div>
           
