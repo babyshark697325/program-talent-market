@@ -6,14 +6,14 @@ import { Button } from "@/components/ui/button";
 const HeroSection: React.FC = () => {
   return (
     <div className="relative overflow-hidden">
-      {/* Sky texture with purple-to-blue gradient at the top */}
+      {/* Soft pastel purple-to-pink gradient at the top */}
       <div className="absolute inset-0" style={{ 
-        background: 'linear-gradient(to bottom, #1e1b4b 0%, #3730a3 15%, #4338ca 25%, #fbbf24 40%, #f59e0b 55%, #fb923c 70%, #fde68a 85%, #f3e8ff 95%, #faf5ff 100%)'
+        background: 'linear-gradient(to bottom, #fae8ff 0%, #f3e8ff 15%, #e879f9 25%, #fbbf24 40%, #f59e0b 55%, #fb923c 70%, #fde68a 85%, #f3e8ff 95%, #faf5ff 100%)'
       }}></div>
       
       {/* Subtle sky texture overlay */}
       <div className="absolute inset-0" style={{ 
-        background: 'radial-gradient(ellipse at top, rgba(139, 92, 246, 0.1) 0%, transparent 50%), linear-gradient(to bottom, rgba(30, 27, 75, 0.3) 0%, rgba(55, 48, 163, 0.2) 20%, rgba(251, 191, 36, 0.2) 60%, transparent 100%)'
+        background: 'radial-gradient(ellipse at top, rgba(236, 72, 153, 0.08) 0%, transparent 50%), linear-gradient(to bottom, rgba(250, 232, 255, 0.2) 0%, rgba(243, 232, 255, 0.15) 20%, rgba(251, 191, 36, 0.2) 60%, transparent 100%)'
       }}></div>
       
       {/* Faint clouds */}
@@ -72,14 +72,14 @@ const HeroSection: React.FC = () => {
         {/* Hills/City skyline silhouette */}
         <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 160" preserveAspectRatio="none">
           <path d="M0,160 L0,100 L100,95 L180,85 L250,90 L320,80 L400,75 L480,85 L560,80 L640,70 L720,75 L800,65 L880,70 L960,60 L1040,65 L1120,55 L1200,60 L1200,160 Z" 
-                fill="url(#skylineGradient)" opacity="0.6"/>
+                fill="url(#skylineGradient)" opacity="0.4"/>
           {/* Soft light rim along mountain peaks */}
           <path d="M0,100 L100,95 L180,85 L250,90 L320,80 L400,75 L480,85 L560,80 L640,70 L720,75 L800,65 L880,70 L960,60 L1040,65 L1120,55 L1200,60" 
                 stroke="url(#rimLightGradient)" strokeWidth="2" fill="none" opacity="0.6"/>
           <defs>
             <linearGradient id="skylineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#1f2937" stopOpacity="0.9"/>
-              <stop offset="100%" stopColor="#111827" stopOpacity="1"/>
+              <stop offset="0%" stopColor="#374151" stopOpacity="0.7"/>
+              <stop offset="100%" stopColor="#1f2937" stopOpacity="0.8"/>
             </linearGradient>
             <linearGradient id="rimLightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#fbbf24" stopOpacity="0.8"/>
@@ -94,14 +94,14 @@ const HeroSection: React.FC = () => {
         {/* Distant hills */}
         <svg className="absolute bottom-0 w-full h-24" viewBox="0 0 1200 96" preserveAspectRatio="none">
           <path d="M0,96 L0,55 L200,50 L400,45 L600,50 L800,40 L1000,45 L1200,35 L1200,96 Z" 
-                fill="url(#hillsGradient)" opacity="0.4"/>
+                fill="url(#hillsGradient)" opacity="0.3"/>
           {/* Soft light rim along distant hills */}
           <path d="M0,55 L200,50 L400,45 L600,50 L800,40 L1000,45 L1200,35" 
                 stroke="url(#distantRimGradient)" strokeWidth="1.5" fill="none" opacity="0.4"/>
           <defs>
             <linearGradient id="hillsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#4b5563" stopOpacity="0.8"/>
-              <stop offset="100%" stopColor="#1f2937" stopOpacity="1"/>
+              <stop offset="0%" stopColor="#6b7280" stopOpacity="0.6"/>
+              <stop offset="100%" stopColor="#374151" stopOpacity="0.7"/>
             </linearGradient>
             <linearGradient id="distantRimGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#fde68a" stopOpacity="0.5"/>
@@ -110,14 +110,19 @@ const HeroSection: React.FC = () => {
             </linearGradient>
           </defs>
         </svg>
+        
+        {/* Soft fog/haze near the base */}
+        <div className="absolute bottom-0 left-0 w-full h-32 pointer-events-none opacity-60">
+          <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-white/30 via-white/15 to-transparent blur-xl"></div>
+          <div className="absolute bottom-0 w-full h-16 bg-gradient-to-t from-amber-100/20 via-pink-100/10 to-transparent blur-lg"></div>
+        </div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 min-h-[80vh] flex items-center justify-center py-16">
-        <div className="text-center overflow-visible relative backdrop-blur-md bg-white/5 rounded-3xl p-12 border border-white/10 shadow-2xl" 
+        <div className="text-center overflow-visible relative backdrop-blur-sm bg-white/8 rounded-3xl p-12 border border-white/15 shadow-xl" 
              style={{ 
-               background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
-               backdropFilter: 'blur(20px)',
-               boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+               background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%)',
+               backdropFilter: 'blur(8px)'
              }}>
           <div className="absolute inset-0 opacity-5 pointer-events-none">
           {/* Setting Sun - More blurred and lower opacity */}
@@ -154,15 +159,17 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           
-          {/* Setting Sun with Glow Effect - More blurred and subtle */}
+          {/* Setting Sun with Glow Effect - Lighter orange glow with white rim */}
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 pointer-events-none z-0">
-            {/* Sun glow/halo */}
-            <div className="absolute w-[500px] h-[500px] -top-12 -left-12 rounded-full opacity-8 blur-[100px]" style={{ 
-              background: 'radial-gradient(circle, #fbbf24 0%, #f59e0b 40%, transparent 70%)'
+            {/* Sun glow/halo - lighter orange */}
+            <div className="absolute w-[500px] h-[500px] -top-12 -left-12 rounded-full opacity-12 blur-[80px]" style={{ 
+              background: 'radial-gradient(circle, #fde68a 0%, #fbbf24 40%, transparent 70%)'
             }}></div>
+            {/* White rim around sun */}
+            <div className="w-96 h-96 rounded-full border-2 border-white/40 blur-sm opacity-60"></div>
             {/* Main sun */}
-            <div className="w-96 h-96 rounded-full opacity-15 blur-2xl" style={{ 
-              background: 'radial-gradient(circle, #fbbf24 0%, #f59e0b 30%, #dc2626 60%, #7c2d12 100%)'
+            <div className="w-96 h-96 rounded-full opacity-20 blur-xl" style={{ 
+              background: 'radial-gradient(circle, #fde68a 0%, #fbbf24 30%, #f59e0b 60%, #d97706 100%)'
             }}></div>
             {/* Sun rays */}
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8">
