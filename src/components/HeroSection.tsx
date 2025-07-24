@@ -66,7 +66,7 @@ const HeroSection: React.FC = () => {
           </div>
           
            {/* Raised Horizon Line with City Silhouette */}
-           <div className="absolute bottom-16 left-0 w-full h-40 pointer-events-none z-10">
+           <div className="absolute bottom-4 left-0 w-full h-40 pointer-events-none z-10">
             {/* Hills/City skyline silhouette */}
             <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 160" preserveAspectRatio="none">
               <path d="M0,160 L0,100 L100,95 L180,85 L250,90 L320,80 L400,75 L480,85 L560,80 L640,70 L720,75 L800,65 L880,70 L960,60 L1040,65 L1120,55 L1200,60 L1200,160 Z" 
