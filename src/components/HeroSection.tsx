@@ -12,11 +12,11 @@ const HeroSection: React.FC = () => {
             <Sparkles size={300} className="text-primary animate-pulse" />
           </div>
           
-          <div className="relative z-10 mb-12">
-            <h1 className="text-7xl md:text-8xl font-black mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-[1.4] tracking-tight animate-fade-in pb-2">
+          <div className="relative z-10 mb-16">
+            <h1 className="text-7xl md:text-8xl font-black mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-[1.6] tracking-tight animate-fade-in pb-4">
               MyVillage
             </h1>
-            <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent mb-8 leading-[1.4] animate-fade-in pb-3" style={{ animationDelay: '0.2s' }}>
+            <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent mb-10 leading-[1.6] animate-fade-in pb-6" style={{ animationDelay: '0.2s' }}>
               Talent
             </div>
           </div>
