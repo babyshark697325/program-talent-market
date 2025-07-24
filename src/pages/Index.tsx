@@ -23,7 +23,7 @@ const featuredStudent = {
   name: "Alex Rivera",
   title: "Resume Review & Career Coach",
   avatarUrl: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80",
-  skills: ["Career Development", "Professional Writing", "Interview Prep"],
+  skills: ["Web Development", "Logo Design", "UI/UX Design"],
   quote: "Helping students achieve their career dreams is what drives me every day. Every success story makes it all worthwhile!",
   clientReview: {
     text: "Alex completely transformed my resume and helped me land my dream job at a Fortune 500 company. The guidance was invaluable and the turnaround was incredibly fast!",
