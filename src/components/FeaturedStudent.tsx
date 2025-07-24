@@ -37,7 +37,7 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/20 to-accent/20 backdrop-blur-sm text-primary px-6 py-3 rounded-full text-sm font-bold mb-6 shadow-lg border border-primary/30">
             <Star size={18} className="fill-current animate-pulse" />
             Featured Student of the Week
-            <Star size={16} className="text-accent animate-pulse fill-current" style={{ animationDelay: '1s' }} />
+            <Star size={16} className="text-green-500 animate-pulse fill-current" style={{ animationDelay: '1s' }} />
           </div>
           <h3 className="text-3xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-3 leading-relaxed pb-2">
             Spotlight Success
