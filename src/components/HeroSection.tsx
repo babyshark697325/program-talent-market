@@ -13,10 +13,10 @@ const HeroSection: React.FC = () => {
           </div>
           
           <div className="relative z-10 mb-8">
-            <h1 className="text-7xl md:text-8xl font-black mb-2 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight tracking-tight animate-fade-in">
+            <h1 className="text-7xl md:text-8xl font-black mb-2 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-[1.1] tracking-tight animate-fade-in">
               MyVillage
             </h1>
-            <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent mb-6 leading-[1.2] animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Talent
             </div>
           </div>
