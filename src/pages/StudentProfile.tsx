@@ -127,9 +127,21 @@ const StudentProfile = () => {
             <CardContent>
               <div className="space-y-4">
                 {[
-                  { name: "Sarah Johnson", days: 2 },
-                  { name: "Mike Chen", days: 5 },
-                  { name: "Emily Rodriguez", days: 8 }
+                  { 
+                    name: "Sarah Johnson", 
+                    days: 2,
+                    text: `Amazing experience working with ${student.name.split(' ')[0]}! Their expertise in ${student.skills[0].toLowerCase()} really showed. The project was completed ahead of schedule and exceeded my expectations.`
+                  },
+                  { 
+                    name: "Mike Chen", 
+                    days: 5,
+                    text: `${student.name.split(' ')[0]} is incredibly talented and professional. The ${student.title.toLowerCase()} work was top-notch and communication was excellent throughout the entire process.`
+                  },
+                  { 
+                    name: "Emily Rodriguez", 
+                    days: 8,
+                    text: `Highly recommend ${student.name.split(' ')[0]}! Very knowledgeable about ${student.skills[1] ? student.skills[1].toLowerCase() : student.skills[0].toLowerCase()} and delivered exactly what I needed. Will definitely work together again!`
+                  }
                 ].map((review, index) => (
                   <div key={index} className="border-b pb-4 last:border-b-0">
                     <div className="flex items-center gap-2 mb-2">
@@ -142,8 +154,7 @@ const StudentProfile = () => {
                       <span className="text-muted-foreground text-sm">{review.days} days ago</span>
                     </div>
                     <p className="text-muted-foreground text-sm">
-                      "Great work with {student.skills[0].toLowerCase()}! {student.name.split(' ')[0]} delivered exactly what I needed. 
-                      Highly recommend for {student.title.toLowerCase()} projects."
+                      "{review.text}"
                     </p>
                   </div>
                 ))}
