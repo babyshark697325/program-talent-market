@@ -45,7 +45,7 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
           <p className="text-muted-foreground font-medium text-lg">Celebrating excellence in our community</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid md:grid-cols-2 gap-10 items-start">
           {/* Enhanced Student Info */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <div className="flex items-center gap-6 mb-6">
