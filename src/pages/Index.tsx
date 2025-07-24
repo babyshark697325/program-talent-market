@@ -21,13 +21,13 @@ const ALL_SKILLS = Array.from(
 const featuredStudent = {
   id: 1,
   name: "Alex Rivera",
-  title: "Resume Review & Career Coach",
+  title: "Full-Stack Web Developer",
   avatarUrl: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80",
-  skills: ["Web Development", "Logo Design", "UI/UX Design"],
-  quote: "Helping students achieve their career dreams is what drives me every day. Every success story makes it all worthwhile!",
+  skills: ["Web Development", "Programming", "UI/UX Design"],
+  quote: "Building amazing web experiences is my passion. Every line of code I write aims to create something that users will love and businesses will thrive with!",
   clientReview: {
-    text: "Alex completely transformed my resume and helped me land my dream job at a Fortune 500 company. The guidance was invaluable and the turnaround was incredibly fast!",
-    clientName: "Sarah Johnson, Marketing Manager",
+    text: "Alex built our entire e-commerce platform from scratch and it's been a game-changer for our business. The site is fast, beautiful, and user-friendly. Sales increased by 40% in the first month!",
+    clientName: "Sarah Johnson, Store Owner",
     rating: 5
   }
 };
