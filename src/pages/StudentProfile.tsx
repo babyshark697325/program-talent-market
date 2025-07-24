@@ -126,16 +126,20 @@ const StudentProfile = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {[1, 2, 3].map((review) => (
-                  <div key={review} className="border-b pb-4 last:border-b-0">
+                {[
+                  { name: "Sarah Johnson", days: 2 },
+                  { name: "Mike Chen", days: 5 },
+                  { name: "Emily Rodriguez", days: 8 }
+                ].map((review, index) => (
+                  <div key={index} className="border-b pb-4 last:border-b-0">
                     <div className="flex items-center gap-2 mb-2">
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <Star key={star} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
-                      <span className="font-medium">{student.name.split(' ')[0]} Client #{review}</span>
-                      <span className="text-muted-foreground text-sm">{review} days ago</span>
+                      <span className="font-medium">{review.name}</span>
+                      <span className="text-muted-foreground text-sm">{review.days} days ago</span>
                     </div>
                     <p className="text-muted-foreground text-sm">
                       "Great work with {student.skills[0].toLowerCase()}! {student.name.split(' ')[0]} delivered exactly what I needed. 
