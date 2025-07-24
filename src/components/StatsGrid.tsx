@@ -17,10 +17,10 @@ const StatsGrid: React.FC<StatsGridProps> = ({ studentsCount, skillsCount }) => 
               <Users className="text-white" size={40} />
             </div>
           </div>
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-[1.2] pb-4 overflow-visible">
             Discover Amazing Talent
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-[1.6] pb-2 overflow-visible">
             Connect with skilled students ready to bring your projects to life
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
