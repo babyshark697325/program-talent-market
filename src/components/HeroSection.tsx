@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-[1.6] font-medium mb-8 animate-fade-in pb-4" style={{ animationDelay: '0.4s' }}>
             Where exceptional talent meets extraordinary opportunities
           </p>
           
