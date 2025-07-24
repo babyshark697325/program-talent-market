@@ -70,7 +70,7 @@ const HeroSection: React.FC = () => {
             {/* Hills/City skyline silhouette */}
             <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 160" preserveAspectRatio="none">
               <path d="M0,160 L0,100 L100,95 L180,85 L250,90 L320,80 L400,75 L480,85 L560,80 L640,70 L720,75 L800,65 L880,70 L960,60 L1040,65 L1120,55 L1200,60 L1200,160 Z" 
-                    fill="url(#skylineGradient)" opacity="0.4"/>
+                    fill="url(#skylineGradient)" opacity="0.2"/>
               <defs>
                 <linearGradient id="skylineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop offset="0%" stopColor="#374151" stopOpacity="0.6"/>
@@ -82,7 +82,7 @@ const HeroSection: React.FC = () => {
             {/* Distant hills */}
             <svg className="absolute bottom-0 w-full h-24" viewBox="0 0 1200 96" preserveAspectRatio="none">
               <path d="M0,96 L0,55 L200,50 L400,45 L600,50 L800,40 L1000,45 L1200,35 L1200,96 Z" 
-                    fill="url(#hillsGradient)" opacity="0.3"/>
+                    fill="url(#hillsGradient)" opacity="0.15"/>
               <defs>
                 <linearGradient id="hillsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop offset="0%" stopColor="#6b7280" stopOpacity="0.4"/>
