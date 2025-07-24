@@ -95,10 +95,7 @@ const StudentProfile = () => {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed">
-                I'm a passionate computer science student with expertise in full-stack development. 
-                I love helping fellow students with their coding challenges and building innovative solutions. 
-                With over 2 years of experience in web development, I specialize in React, Node.js, and Python.
-                I've completed multiple internships and have a strong track record of delivering quality projects on time.
+                {student.aboutMe || student.description}
               </p>
             </CardContent>
           </Card>
@@ -110,33 +107,13 @@ const StudentProfile = () => {
             <CardContent>
               <div className="space-y-4">
                 <div className="border rounded-lg p-4">
-                  <h3 className="font-semibold mb-2">Code Review & Debugging</h3>
+                  <h3 className="font-semibold mb-2">{student.title}</h3>
                   <p className="text-muted-foreground text-sm mb-2">
-                    I'll review your code and help fix bugs while explaining best practices.
+                    {student.description}
                   </p>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">Starting at</span>
-                    <span className="font-semibold text-primary">$25/hour</span>
-                  </div>
-                </div>
-                <div className="border rounded-lg p-4">
-                  <h3 className="font-semibold mb-2">Project Development</h3>
-                  <p className="text-muted-foreground text-sm mb-2">
-                    Full-stack web application development from concept to deployment.
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">Starting at</span>
-                    <span className="font-semibold text-primary">$30/hour</span>
-                  </div>
-                </div>
-                <div className="border rounded-lg p-4">
-                  <h3 className="font-semibold mb-2">Tutoring Sessions</h3>
-                  <p className="text-muted-foreground text-sm mb-2">
-                    One-on-one tutoring for programming concepts and assignments.
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">Starting at</span>
-                    <span className="font-semibold text-primary">$20/hour</span>
+                    <span className="text-sm text-muted-foreground">Rate</span>
+                    <span className="font-semibold text-primary">{student.price}</span>
                   </div>
                 </div>
               </div>
@@ -157,12 +134,12 @@ const StudentProfile = () => {
                           <Star key={star} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
-                      <span className="font-medium">Sarah Johnson</span>
-                      <span className="text-muted-foreground text-sm">2 days ago</span>
+                      <span className="font-medium">{student.name.split(' ')[0]} Client #{review}</span>
+                      <span className="text-muted-foreground text-sm">{review} days ago</span>
                     </div>
                     <p className="text-muted-foreground text-sm">
-                      "Excellent work! Alex helped me debug my React application and explained everything clearly. 
-                      Highly recommend for anyone needing coding help."
+                      "Great work with {student.skills[0].toLowerCase()}! {student.name.split(' ')[0]} delivered exactly what I needed. 
+                      Highly recommend for {student.title.toLowerCase()} projects."
                     </p>
                   </div>
                 ))}
