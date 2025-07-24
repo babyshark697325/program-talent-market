@@ -39,7 +39,7 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
             Featured Student of the Week
             <Sparkles size={16} className="text-accent animate-pulse" style={{ animationDelay: '1s' }} />
           </div>
-          <h3 className="text-3xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-3">
+          <h3 className="text-3xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-3 leading-relaxed pb-2">
             Spotlight Success
           </h3>
           <p className="text-muted-foreground font-medium text-lg">Celebrating excellence in our community</p>
