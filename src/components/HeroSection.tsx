@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Sparkles, Zap, Star, Heart, Code, Palette, Lightbulb, Monitor, Smartphone, Cpu, Database, Globe, Wifi, Layers, Terminal } from "lucide-react";
+import { Sparkles, Zap, Star, Heart, Code, Palette, Lightbulb, Monitor, Smartphone, Cpu, Database, Globe, Wifi, Layers, Terminal, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection: React.FC = () => {
@@ -80,6 +80,16 @@ const HeroSection: React.FC = () => {
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             <div className="w-16 h-1 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full"></div>
             <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+          </div>
+          
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in" style={{ animationDelay: '1s' }}>
+            <div className="flex flex-col items-center gap-2">
+              <span className="text-sm text-muted-foreground font-medium">Scroll to explore</span>
+              <div className="animate-bounce">
+                <ChevronDown size={24} className="text-primary/60" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
