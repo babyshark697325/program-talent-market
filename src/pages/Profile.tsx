@@ -15,20 +15,20 @@ const Profile = () => {
     email: 'alex.rivera@email.com',
     phone: '+1 (555) 123-4567',
     location: 'San Francisco, CA',
-    bio: 'Passionate software developer with 3 years of experience in full-stack development. Specializing in React, Node.js, and modern web technologies.',
-    skills: ['React', 'JavaScript', 'TypeScript', 'Node.js', 'Python', 'SQL'],
+    bio: 'Passionate full-stack web developer with expertise in creating modern, responsive websites and web applications. I love bringing creative ideas to life through clean code and beautiful design.',
+    skills: ['Web Development', 'Programming', 'UI/UX Design', 'Graphic Design', 'Logo Design', 'Animation'],
     experience: [
       {
-        title: 'Frontend Developer',
-        company: 'Tech Startup Inc.',
+        title: 'Full-Stack Web Developer',
+        company: 'Creative Digital Agency',
         duration: '2023 - Present',
-        description: 'Developed responsive web applications using React and TypeScript'
+        description: 'Built responsive e-commerce websites and web applications using modern frameworks and design principles'
       },
       {
-        title: 'Junior Developer',
-        company: 'Web Solutions LLC',
+        title: 'Frontend Developer & Designer',
+        company: 'Local Business Solutions',
         duration: '2022 - 2023',
-        description: 'Built and maintained client websites using modern web technologies'
+        description: 'Designed and developed custom websites with focus on user experience and brand identity'
       }
     ]
   });
