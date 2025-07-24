@@ -17,8 +17,8 @@ const HeroSection: React.FC = () => {
       {/* Sunset-Inspired Organic Shapes */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Floating organic blobs with sunset colors */}
-        <div className="absolute top-20 left-10 w-32 h-24 bg-gradient-to-br from-amber-200/12 to-rose-200/8 rounded-full blur-xl animate-pulse transform rotate-12" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}></div>
-        <div className="absolute top-40 right-20 w-28 h-36 bg-gradient-to-tr from-peach-200/10 to-lavender-200/6 blur-lg animate-pulse" style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%', animationDelay: '1s' }}></div>
+        <div className="absolute top-20 left-10 w-32 h-24 bg-gradient-to-br from-amber-200/4 to-rose-200/3 rounded-full blur-3xl animate-pulse transform rotate-12" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}></div>
+        <div className="absolute top-40 right-20 w-28 h-36 bg-gradient-to-tr from-peach-200/3 to-lavender-200/2 blur-2xl animate-pulse" style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%', animationDelay: '1s' }}></div>
         <div className="absolute bottom-40 left-20 w-20 h-20 bg-gradient-to-bl from-orange-200/15 to-pink-200/8 rounded-full blur-md animate-pulse" style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%', animationDelay: '2s' }}></div>
         <div className="absolute top-60 left-1/3 w-16 h-24 bg-gradient-to-r from-rose-200/10 to-amber-200/6 blur-sm animate-pulse transform -rotate-12" style={{ borderRadius: '50% 50% 80% 20% / 60% 40% 60% 40%', animationDelay: '3s' }}></div>
         <div className="absolute bottom-60 right-1/4 w-24 h-18 bg-gradient-to-tl from-purple-200/8 to-orange-200/12 blur-lg animate-pulse transform rotate-45" style={{ borderRadius: '70% 30% 50% 50% / 30% 70% 30% 70%', animationDelay: '4s' }}></div>
