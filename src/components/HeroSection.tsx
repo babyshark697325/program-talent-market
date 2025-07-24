@@ -6,7 +6,7 @@ const HeroSection: React.FC = () => {
   return (
     <div className="relative">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-accent/8"></div>
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-24">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-32">
         <div className="text-center">
           <div className="absolute inset-0 flex items-center justify-center opacity-5">
             <Sparkles size={300} className="text-primary animate-pulse" />
