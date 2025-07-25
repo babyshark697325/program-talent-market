@@ -8,6 +8,8 @@ import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/s
 import { AppSidebar } from "@/components/AppSidebar";
 import { RoleProvider } from "@/contexts/RoleContext";
 import RoleSelector from "@/components/RoleSelector";
+import { ThemeProvider } from "next-themes";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import StudentProfile from "./pages/StudentProfile";
@@ -30,11 +32,17 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <RoleProvider>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <RoleProvider>
           <SidebarProvider>
             <div className="min-h-screen flex w-full">
               <AppSidebar />
@@ -47,7 +55,10 @@ const App = () => (
                       MyVillage Talent Platform
                     </span>
                   </div>
-                  <RoleSelector />
+                  <div className="flex items-center gap-2">
+                    <ThemeToggle />
+                    <RoleSelector />
+                  </div>
                 </div>
                 <div className="flex-1">
                   <Routes>
@@ -74,9 +85,10 @@ const App = () => (
               </SidebarInset>
             </div>
           </SidebarProvider>
-        </RoleProvider>
-      </BrowserRouter>
-    </TooltipProvider>
+          </RoleProvider>
+        </BrowserRouter>
+      </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 
