@@ -47,44 +47,6 @@ const Profile = () => {
         link: 'https://example.com'
       }
     ],
-    connections: [
-      {
-        id: 1,
-        name: 'Sarah Johnson',
-        title: 'Marketing Manager',
-        company: 'Tech Startup Inc.',
-        avatarUrl: 'https://images.unsplash.com/photo-1494790108755-2616b612b950?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80',
-        connectedDate: '2024-01-15',
-        mutual: 5
-      },
-      {
-        id: 2,
-        name: 'Mike Chen',
-        title: 'Senior Developer',
-        company: 'Digital Solutions Co.',
-        avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80',
-        connectedDate: '2024-01-10',
-        mutual: 12
-      },
-      {
-        id: 3,
-        name: 'Emily Rodriguez',
-        title: 'UI/UX Designer',
-        company: 'Creative Agency',
-        avatarUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80',
-        connectedDate: '2024-01-08',
-        mutual: 8
-      },
-      {
-        id: 4,
-        name: 'David Kim',
-        title: 'Project Manager',
-        company: 'Business Solutions Ltd.',
-        avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80',
-        connectedDate: '2024-01-05',
-        mutual: 3
-      }
-    ],
     platformLinks: {
       linkedin: '',
       upwork: '',
@@ -361,177 +323,122 @@ const Profile = () => {
         <TabsContent value="connections">
           <Card>
             <CardHeader>
-              <CardTitle>My Connections</CardTitle>
-              <CardDescription>Manage your professional network and connections</CardDescription>
+              <CardTitle>Platform Links</CardTitle>
+              <CardDescription>Connect your professional platform profiles</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                {profile.connections?.map((connection) => (
-                  <div key={connection.id} className="flex items-center justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full overflow-hidden">
-                        <img 
-                          src={connection.avatarUrl} 
-                          alt={connection.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold">{connection.name}</h3>
-                        <p className="text-sm text-muted-foreground">{connection.title}</p>
-                        <p className="text-sm text-muted-foreground">{connection.company}</p>
-                        <div className="flex items-center gap-4 mt-1">
-                          <span className="text-xs text-muted-foreground">
-                            Connected: {new Date(connection.connectedDate).toLocaleDateString()}
-                          </span>
-                          <span className="text-xs text-muted-foreground">
-                            {connection.mutual} mutual connections
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex gap-2">
-                      <Button variant="outline" size="sm">
-                        <Mail className="mr-2 h-3 w-3" />
-                        Message
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-sm font-medium flex items-center gap-2 mb-2">
+                    <Linkedin className="h-4 w-4 text-[#0077B5]" />
+                    LinkedIn
+                  </label>
+                  {isEditing ? (
+                    <Input
+                      placeholder="https://linkedin.com/in/yourprofile"
+                      value={editedProfile.platformLinks.linkedin}
+                      onChange={(e) => setEditedProfile({
+                        ...editedProfile,
+                        platformLinks: { ...editedProfile.platformLinks, linkedin: e.target.value }
+                      })}
+                    />
+                  ) : (
+                    profile.platformLinks.linkedin ? (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={profile.platformLinks.linkedin} target="_blank" rel="noopener noreferrer">
+                          <Linkedin className="mr-2 h-3 w-3" />
+                          View LinkedIn
+                        </a>
                       </Button>
-                      {isEditing && (
-                        <Button variant="ghost" size="sm" className="text-red-500 hover:text-red-700">
-                          <X className="h-3 w-3" />
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="mt-6">
-                <h3 className="text-lg font-semibold mb-4">Professional Platform Links</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-medium flex items-center gap-2 mb-2">
-                      <Linkedin className="h-4 w-4 text-[#0077B5]" />
-                      LinkedIn
-                    </label>
-                    {isEditing ? (
-                      <Input
-                        placeholder="https://linkedin.com/in/yourprofile"
-                        value={editedProfile.platformLinks.linkedin}
-                        onChange={(e) => setEditedProfile({
-                          ...editedProfile,
-                          platformLinks: { ...editedProfile.platformLinks, linkedin: e.target.value }
-                        })}
-                      />
                     ) : (
-                      profile.platformLinks.linkedin ? (
-                        <Button variant="outline" size="sm" asChild>
-                          <a href={profile.platformLinks.linkedin} target="_blank" rel="noopener noreferrer">
-                            <Linkedin className="mr-2 h-3 w-3" />
-                            View LinkedIn
-                          </a>
-                        </Button>
-                      ) : (
-                        <p className="text-muted-foreground text-sm">Not linked</p>
-                      )
-                    )}
-                  </div>
-                  
-                  <div>
-                    <label className="text-sm font-medium flex items-center gap-2 mb-2">
-                      <Github className="h-4 w-4" />
-                      GitHub
-                    </label>
-                    {isEditing ? (
-                      <Input
-                        placeholder="https://github.com/yourusername"
-                        value={editedProfile.platformLinks.github}
-                        onChange={(e) => setEditedProfile({
-                          ...editedProfile,
-                          platformLinks: { ...editedProfile.platformLinks, github: e.target.value }
-                        })}
-                      />
-                    ) : (
-                      profile.platformLinks.github ? (
-                        <Button variant="outline" size="sm" asChild>
-                          <a href={profile.platformLinks.github} target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-2 h-3 w-3" />
-                            View GitHub
-                          </a>
-                        </Button>
-                      ) : (
-                        <p className="text-muted-foreground text-sm">Not linked</p>
-                      )
-                    )}
-                  </div>
-                  
-                  <div>
-                    <label className="text-sm font-medium flex items-center gap-2 mb-2">
-                      <Link className="h-4 w-4 text-[#6FDA44]" />
-                      Upwork
-                    </label>
-                    {isEditing ? (
-                      <Input
-                        placeholder="https://upwork.com/freelancers/yourprofile"
-                        value={editedProfile.platformLinks.upwork}
-                        onChange={(e) => setEditedProfile({
-                          ...editedProfile,
-                          platformLinks: { ...editedProfile.platformLinks, upwork: e.target.value }
-                        })}
-                      />
-                    ) : (
-                      profile.platformLinks.upwork ? (
-                        <Button variant="outline" size="sm" asChild>
-                          <a href={profile.platformLinks.upwork} target="_blank" rel="noopener noreferrer">
-                            <Link className="mr-2 h-3 w-3" />
-                            View Upwork
-                          </a>
-                        </Button>
-                      ) : (
-                        <p className="text-muted-foreground text-sm">Not linked</p>
-                      )
-                    )}
-                  </div>
-                  
-                  <div>
-                    <label className="text-sm font-medium flex items-center gap-2 mb-2">
-                      <Link className="h-4 w-4 text-[#1DBF73]" />
-                      Fiverr
-                    </label>
-                    {isEditing ? (
-                      <Input
-                        placeholder="https://fiverr.com/yourusername"
-                        value={editedProfile.platformLinks.fiverr}
-                        onChange={(e) => setEditedProfile({
-                          ...editedProfile,
-                          platformLinks: { ...editedProfile.platformLinks, fiverr: e.target.value }
-                        })}
-                      />
-                    ) : (
-                      profile.platformLinks.fiverr ? (
-                        <Button variant="outline" size="sm" asChild>
-                          <a href={profile.platformLinks.fiverr} target="_blank" rel="noopener noreferrer">
-                            <Link className="mr-2 h-3 w-3" />
-                            View Fiverr
-                          </a>
-                        </Button>
-                      ) : (
-                        <p className="text-muted-foreground text-sm">Not linked</p>
-                      )
-                    )}
-                  </div>
+                      <p className="text-muted-foreground text-sm">Not linked</p>
+                    )
+                  )}
                 </div>
-              </div>
-              
-              <div className="mt-6 p-6 border-2 border-dashed border-muted-foreground/25 rounded-lg text-center">
-                <Users className="mx-auto h-12 w-12 text-muted-foreground/50 mb-4" />
-                <h3 className="text-lg font-medium mb-2">Grow Your Network</h3>
-                <p className="text-muted-foreground mb-4">
-                  Connect with other students, mentors, and professionals to expand your opportunities.
-                </p>
-                <Button>
-                  <Plus className="mr-2 h-4 w-4" />
-                  Find Connections
-                </Button>
+                
+                <div>
+                  <label className="text-sm font-medium flex items-center gap-2 mb-2">
+                    <Github className="h-4 w-4" />
+                    GitHub
+                  </label>
+                  {isEditing ? (
+                    <Input
+                      placeholder="https://github.com/yourusername"
+                      value={editedProfile.platformLinks.github}
+                      onChange={(e) => setEditedProfile({
+                        ...editedProfile,
+                        platformLinks: { ...editedProfile.platformLinks, github: e.target.value }
+                      })}
+                    />
+                  ) : (
+                    profile.platformLinks.github ? (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={profile.platformLinks.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2 h-3 w-3" />
+                          View GitHub
+                        </a>
+                      </Button>
+                    ) : (
+                      <p className="text-muted-foreground text-sm">Not linked</p>
+                    )
+                  )}
+                </div>
+                
+                <div>
+                  <label className="text-sm font-medium flex items-center gap-2 mb-2">
+                    <Link className="h-4 w-4 text-[#6FDA44]" />
+                    Upwork
+                  </label>
+                  {isEditing ? (
+                    <Input
+                      placeholder="https://upwork.com/freelancers/yourprofile"
+                      value={editedProfile.platformLinks.upwork}
+                      onChange={(e) => setEditedProfile({
+                        ...editedProfile,
+                        platformLinks: { ...editedProfile.platformLinks, upwork: e.target.value }
+                      })}
+                    />
+                  ) : (
+                    profile.platformLinks.upwork ? (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={profile.platformLinks.upwork} target="_blank" rel="noopener noreferrer">
+                          <Link className="mr-2 h-3 w-3" />
+                          View Upwork
+                        </a>
+                      </Button>
+                    ) : (
+                      <p className="text-muted-foreground text-sm">Not linked</p>
+                    )
+                  )}
+                </div>
+                
+                <div>
+                  <label className="text-sm font-medium flex items-center gap-2 mb-2">
+                    <Link className="h-4 w-4 text-[#1DBF73]" />
+                    Fiverr
+                  </label>
+                  {isEditing ? (
+                    <Input
+                      placeholder="https://fiverr.com/yourusername"
+                      value={editedProfile.platformLinks.fiverr}
+                      onChange={(e) => setEditedProfile({
+                        ...editedProfile,
+                        platformLinks: { ...editedProfile.platformLinks, fiverr: e.target.value }
+                      })}
+                    />
+                  ) : (
+                    profile.platformLinks.fiverr ? (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={profile.platformLinks.fiverr} target="_blank" rel="noopener noreferrer">
+                          <Link className="mr-2 h-3 w-3" />
+                          View Fiverr
+                        </a>
+                      </Button>
+                    ) : (
+                      <p className="text-muted-foreground text-sm">Not linked</p>
+                    )
+                  )}
+                </div>
               </div>
             </CardContent>
           </Card>
