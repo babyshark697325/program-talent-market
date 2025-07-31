@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { User, Mail, Phone, MapPin, Edit, Save, X, Plus, Image, ExternalLink, Trash2 } from 'lucide-react';
+import { User, Mail, Phone, MapPin, Edit, Save, X, Plus, Image, ExternalLink, Trash2, Users } from 'lucide-react';
 
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -45,6 +45,44 @@ const Profile = () => {
         title: 'Portfolio Website',
         description: 'Modern responsive portfolio for creative agency',
         link: 'https://example.com'
+      }
+    ],
+    connections: [
+      {
+        id: 1,
+        name: 'Sarah Johnson',
+        title: 'Marketing Manager',
+        company: 'Tech Startup Inc.',
+        avatarUrl: 'https://images.unsplash.com/photo-1494790108755-2616b612b950?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80',
+        connectedDate: '2024-01-15',
+        mutual: 5
+      },
+      {
+        id: 2,
+        name: 'Mike Chen',
+        title: 'Senior Developer',
+        company: 'Digital Solutions Co.',
+        avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80',
+        connectedDate: '2024-01-10',
+        mutual: 12
+      },
+      {
+        id: 3,
+        name: 'Emily Rodriguez',
+        title: 'UI/UX Designer',
+        company: 'Creative Agency',
+        avatarUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80',
+        connectedDate: '2024-01-08',
+        mutual: 8
+      },
+      {
+        id: 4,
+        name: 'David Kim',
+        title: 'Project Manager',
+        company: 'Business Solutions Ltd.',
+        avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80',
+        connectedDate: '2024-01-05',
+        mutual: 3
       }
     ]
   });
@@ -92,6 +130,7 @@ const Profile = () => {
           <TabsTrigger value="general">General</TabsTrigger>
           <TabsTrigger value="skills">Skills & Experience</TabsTrigger>
           <TabsTrigger value="portfolio">Portfolio</TabsTrigger>
+          <TabsTrigger value="connections">Connections</TabsTrigger>
           <TabsTrigger value="settings">Settings</TabsTrigger>
         </TabsList>
 
@@ -308,6 +347,68 @@ const Profile = () => {
                   <p className="text-sm text-muted-foreground">Update your account password</p>
                 </div>
                 <Button variant="outline" size="sm">Update</Button>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="connections">
+          <Card>
+            <CardHeader>
+              <CardTitle>My Connections</CardTitle>
+              <CardDescription>Manage your professional network and connections</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                {profile.connections?.map((connection) => (
+                  <div key={connection.id} className="flex items-center justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full overflow-hidden">
+                        <img 
+                          src={connection.avatarUrl} 
+                          alt={connection.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold">{connection.name}</h3>
+                        <p className="text-sm text-muted-foreground">{connection.title}</p>
+                        <p className="text-sm text-muted-foreground">{connection.company}</p>
+                        <div className="flex items-center gap-4 mt-1">
+                          <span className="text-xs text-muted-foreground">
+                            Connected: {new Date(connection.connectedDate).toLocaleDateString()}
+                          </span>
+                          <span className="text-xs text-muted-foreground">
+                            {connection.mutual} mutual connections
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex gap-2">
+                      <Button variant="outline" size="sm">
+                        <Mail className="mr-2 h-3 w-3" />
+                        Message
+                      </Button>
+                      {isEditing && (
+                        <Button variant="ghost" size="sm" className="text-red-500 hover:text-red-700">
+                          <X className="h-3 w-3" />
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="mt-6 p-6 border-2 border-dashed border-muted-foreground/25 rounded-lg text-center">
+                <Users className="mx-auto h-12 w-12 text-muted-foreground/50 mb-4" />
+                <h3 className="text-lg font-medium mb-2">Grow Your Network</h3>
+                <p className="text-muted-foreground mb-4">
+                  Connect with other students, mentors, and professionals to expand your opportunities.
+                </p>
+                <Button>
+                  <Plus className="mr-2 h-4 w-4" />
+                  Find Connections
+                </Button>
               </div>
             </CardContent>
           </Card>
