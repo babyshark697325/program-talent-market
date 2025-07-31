@@ -10,6 +10,7 @@ export interface StudentPortfolioItem {
 export interface StudentContact {
   email?: string;
   phone?: string;
+  linkedinUrl?: string;
 }
 
 export interface StudentService {
@@ -39,7 +40,8 @@ export const mockStudents: StudentService[] = [
     aboutMe: "I'm passionate about creating beautiful, functional web experiences. With expertise in modern web technologies, I help businesses establish their online presence. In my spare time, I enjoy gaming and exploring new coding frameworks.",
     contact: {
       email: "alex.rivera@myvillage.com",
-      phone: "(555) 123-4567"
+      phone: "(555) 123-4567",
+      linkedinUrl: "https://www.linkedin.com/in/alex-rivera"
     },
     portfolio: [
       {
@@ -71,7 +73,8 @@ export const mockStudents: StudentService[] = [
     aboutMe: "I specialize in creating visual identities that tell your brand's story. From concept to final design, I ensure every element works harmoniously. When I'm not designing, you'll find me sketching in cafes or exploring art galleries.",
     contact: {
       email: "jamie.patel@myvillage.com",
-      phone: "(555) 234-5678"
+      phone: "(555) 234-5678",
+      linkedinUrl: "https://www.linkedin.com/in/jamie-patel"
     },
     portfolio: [
       {
@@ -96,7 +99,8 @@ export const mockStudents: StudentService[] = [
     aboutMe: "I create stunning 3D visuals and animations for games, movies, and marketing. Every project is an opportunity to push creative boundaries and tell compelling stories through visual art. Outside work, I love gaming and attending animation festivals.",
     contact: {
       email: "morgan.lee@myvillage.com",
-      phone: "(555) 345-6789"
+      phone: "(555) 345-6789",
+      linkedinUrl: "https://www.linkedin.com/in/morgan-lee"
     },
     portfolio: [
       {
@@ -121,7 +125,8 @@ export const mockStudents: StudentService[] = [
     aboutMe: "Games are my passion! I design and develop engaging experiences that captivate players. From mechanics to storytelling, I handle every aspect of game creation. When not coding, I'm analyzing the latest games or speedrunning classics.",
     contact: {
       email: "samira.chen@myvillage.com",
-      phone: "(555) 456-7890"
+      phone: "(555) 456-7890",
+      linkedinUrl: "https://www.linkedin.com/in/samira-chen"
     },
     portfolio: [
       {
@@ -146,7 +151,8 @@ export const mockStudents: StudentService[] = [
     aboutMe: "I bring creativity to every project, whether it's a business card or a full marketing campaign. My style blends modern aesthetics with timeless design principles. In my free time, I enjoy digital painting and collecting vintage design books.",
     contact: {
       email: "ethan.smith@myvillage.com",
-      phone: "(555) 567-8901"
+      phone: "(555) 567-8901",
+      linkedinUrl: "https://www.linkedin.com/in/ethan-smith"
     },
     portfolio: [
       {

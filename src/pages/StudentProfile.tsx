@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Star, MapPin, Clock, Mail, Phone, Award, Users } from 'lucide-react';
+import { Star, MapPin, Clock, Mail, Phone, Award, Users, Linkedin } from 'lucide-react';
 import { mockStudents } from '@/data/mockStudents';
 
 const StudentProfile = () => {
@@ -75,6 +75,23 @@ const StudentProfile = () => {
                   <Phone className="mr-2 h-4 w-4" />
                   Schedule Call
                 </Button>
+                {student.contact?.linkedinUrl && (
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    asChild
+                    className="bg-[#0077b5] text-white border-[#0077b5] hover:bg-[#005885] hover:border-[#005885]"
+                  >
+                    <a 
+                      href={student.contact.linkedinUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <Linkedin className="mr-2 h-4 w-4" />
+                      LinkedIn
+                    </a>
+                  </Button>
+                )}
               </div>
             </div>
 
