@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { User, Mail, Phone, MapPin, Edit, Save, X, Plus, Image, ExternalLink, Trash2, Users } from 'lucide-react';
+import { User, Mail, Phone, MapPin, Edit, Save, X, Plus, Image, ExternalLink, Trash2, Users, Linkedin, Github, Link } from 'lucide-react';
 
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -84,7 +84,13 @@ const Profile = () => {
         connectedDate: '2024-01-05',
         mutual: 3
       }
-    ]
+    ],
+    platformLinks: {
+      linkedin: '',
+      upwork: '',
+      fiverr: '',
+      github: ''
+    }
   });
 
   const [editedProfile, setEditedProfile] = useState(profile);
@@ -397,6 +403,123 @@ const Profile = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+              
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold mb-4">Professional Platform Links</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium flex items-center gap-2 mb-2">
+                      <Linkedin className="h-4 w-4 text-[#0077B5]" />
+                      LinkedIn
+                    </label>
+                    {isEditing ? (
+                      <Input
+                        placeholder="https://linkedin.com/in/yourprofile"
+                        value={editedProfile.platformLinks.linkedin}
+                        onChange={(e) => setEditedProfile({
+                          ...editedProfile,
+                          platformLinks: { ...editedProfile.platformLinks, linkedin: e.target.value }
+                        })}
+                      />
+                    ) : (
+                      profile.platformLinks.linkedin ? (
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={profile.platformLinks.linkedin} target="_blank" rel="noopener noreferrer">
+                            <Linkedin className="mr-2 h-3 w-3" />
+                            View LinkedIn
+                          </a>
+                        </Button>
+                      ) : (
+                        <p className="text-muted-foreground text-sm">Not linked</p>
+                      )
+                    )}
+                  </div>
+                  
+                  <div>
+                    <label className="text-sm font-medium flex items-center gap-2 mb-2">
+                      <Github className="h-4 w-4" />
+                      GitHub
+                    </label>
+                    {isEditing ? (
+                      <Input
+                        placeholder="https://github.com/yourusername"
+                        value={editedProfile.platformLinks.github}
+                        onChange={(e) => setEditedProfile({
+                          ...editedProfile,
+                          platformLinks: { ...editedProfile.platformLinks, github: e.target.value }
+                        })}
+                      />
+                    ) : (
+                      profile.platformLinks.github ? (
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={profile.platformLinks.github} target="_blank" rel="noopener noreferrer">
+                            <Github className="mr-2 h-3 w-3" />
+                            View GitHub
+                          </a>
+                        </Button>
+                      ) : (
+                        <p className="text-muted-foreground text-sm">Not linked</p>
+                      )
+                    )}
+                  </div>
+                  
+                  <div>
+                    <label className="text-sm font-medium flex items-center gap-2 mb-2">
+                      <Link className="h-4 w-4 text-[#6FDA44]" />
+                      Upwork
+                    </label>
+                    {isEditing ? (
+                      <Input
+                        placeholder="https://upwork.com/freelancers/yourprofile"
+                        value={editedProfile.platformLinks.upwork}
+                        onChange={(e) => setEditedProfile({
+                          ...editedProfile,
+                          platformLinks: { ...editedProfile.platformLinks, upwork: e.target.value }
+                        })}
+                      />
+                    ) : (
+                      profile.platformLinks.upwork ? (
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={profile.platformLinks.upwork} target="_blank" rel="noopener noreferrer">
+                            <Link className="mr-2 h-3 w-3" />
+                            View Upwork
+                          </a>
+                        </Button>
+                      ) : (
+                        <p className="text-muted-foreground text-sm">Not linked</p>
+                      )
+                    )}
+                  </div>
+                  
+                  <div>
+                    <label className="text-sm font-medium flex items-center gap-2 mb-2">
+                      <Link className="h-4 w-4 text-[#1DBF73]" />
+                      Fiverr
+                    </label>
+                    {isEditing ? (
+                      <Input
+                        placeholder="https://fiverr.com/yourusername"
+                        value={editedProfile.platformLinks.fiverr}
+                        onChange={(e) => setEditedProfile({
+                          ...editedProfile,
+                          platformLinks: { ...editedProfile.platformLinks, fiverr: e.target.value }
+                        })}
+                      />
+                    ) : (
+                      profile.platformLinks.fiverr ? (
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={profile.platformLinks.fiverr} target="_blank" rel="noopener noreferrer">
+                            <Link className="mr-2 h-3 w-3" />
+                            View Fiverr
+                          </a>
+                        </Button>
+                      ) : (
+                        <p className="text-muted-foreground text-sm">Not linked</p>
+                      )
+                    )}
+                  </div>
+                </div>
               </div>
               
               <div className="mt-6 p-6 border-2 border-dashed border-muted-foreground/25 rounded-lg text-center">
