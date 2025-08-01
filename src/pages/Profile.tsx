@@ -327,124 +327,116 @@ const Profile = () => {
               <CardDescription>Connect your professional platform profiles</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <Linkedin className="h-5 w-5 text-[#0077B5]" />
-                    <div className="flex-1">
-                      <label className="text-sm font-medium">LinkedIn</label>
-                      {isEditing && (
-                        <Input
-                          placeholder="https://linkedin.com/in/yourprofile"
-                          value={editedProfile.platformLinks.linkedin}
-                          onChange={(e) => setEditedProfile({
-                            ...editedProfile,
-                            platformLinks: { ...editedProfile.platformLinks, linkedin: e.target.value }
-                          })}
-                          className="mt-1"
-                        />
-                      )}
-                    </div>
-                  </div>
-                  {!isEditing && profile.platformLinks.linkedin && (
-                    <a 
-                      href={profile.platformLinks.linkedin} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-[#0077B5] hover:opacity-80 transition-opacity"
-                    >
-                      <Linkedin className="h-6 w-6" />
-                    </a>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-sm font-medium flex items-center gap-2 mb-2">
+                    <Linkedin className="h-4 w-4 text-[#0077B5]" />
+                    LinkedIn
+                  </label>
+                  {isEditing ? (
+                    <Input
+                      placeholder="https://linkedin.com/in/yourprofile"
+                      value={editedProfile.platformLinks.linkedin}
+                      onChange={(e) => setEditedProfile({
+                        ...editedProfile,
+                        platformLinks: { ...editedProfile.platformLinks, linkedin: e.target.value }
+                      })}
+                    />
+                  ) : (
+                    profile.platformLinks.linkedin ? (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={profile.platformLinks.linkedin} target="_blank" rel="noopener noreferrer">
+                          <Linkedin className="mr-2 h-3 w-3" />
+                          View LinkedIn
+                        </a>
+                      </Button>
+                    ) : (
+                      <p className="text-muted-foreground text-sm">Not linked</p>
+                    )
                   )}
                 </div>
                 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <Github className="h-5 w-5" />
-                    <div className="flex-1">
-                      <label className="text-sm font-medium">GitHub</label>
-                      {isEditing && (
-                        <Input
-                          placeholder="https://github.com/yourusername"
-                          value={editedProfile.platformLinks.github}
-                          onChange={(e) => setEditedProfile({
-                            ...editedProfile,
-                            platformLinks: { ...editedProfile.platformLinks, github: e.target.value }
-                          })}
-                          className="mt-1"
-                        />
-                      )}
-                    </div>
-                  </div>
-                  {!isEditing && profile.platformLinks.github && (
-                    <a 
-                      href={profile.platformLinks.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="hover:opacity-80 transition-opacity"
-                    >
-                      <Github className="h-6 w-6" />
-                    </a>
+                <div>
+                  <label className="text-sm font-medium flex items-center gap-2 mb-2">
+                    <Github className="h-4 w-4" />
+                    GitHub
+                  </label>
+                  {isEditing ? (
+                    <Input
+                      placeholder="https://github.com/yourusername"
+                      value={editedProfile.platformLinks.github}
+                      onChange={(e) => setEditedProfile({
+                        ...editedProfile,
+                        platformLinks: { ...editedProfile.platformLinks, github: e.target.value }
+                      })}
+                    />
+                  ) : (
+                    profile.platformLinks.github ? (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={profile.platformLinks.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2 h-3 w-3" />
+                          View GitHub
+                        </a>
+                      </Button>
+                    ) : (
+                      <p className="text-muted-foreground text-sm">Not linked</p>
+                    )
                   )}
                 </div>
                 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <Link className="h-5 w-5 text-[#6FDA44]" />
-                    <div className="flex-1">
-                      <label className="text-sm font-medium">Upwork</label>
-                      {isEditing && (
-                        <Input
-                          placeholder="https://upwork.com/freelancers/yourprofile"
-                          value={editedProfile.platformLinks.upwork}
-                          onChange={(e) => setEditedProfile({
-                            ...editedProfile,
-                            platformLinks: { ...editedProfile.platformLinks, upwork: e.target.value }
-                          })}
-                          className="mt-1"
-                        />
-                      )}
-                    </div>
-                  </div>
-                  {!isEditing && profile.platformLinks.upwork && (
-                    <a 
-                      href={profile.platformLinks.upwork} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-[#6FDA44] hover:opacity-80 transition-opacity"
-                    >
-                      <Link className="h-6 w-6" />
-                    </a>
+                <div>
+                  <label className="text-sm font-medium flex items-center gap-2 mb-2">
+                    <Link className="h-4 w-4 text-[#6FDA44]" />
+                    Upwork
+                  </label>
+                  {isEditing ? (
+                    <Input
+                      placeholder="https://upwork.com/freelancers/yourprofile"
+                      value={editedProfile.platformLinks.upwork}
+                      onChange={(e) => setEditedProfile({
+                        ...editedProfile,
+                        platformLinks: { ...editedProfile.platformLinks, upwork: e.target.value }
+                      })}
+                    />
+                  ) : (
+                    profile.platformLinks.upwork ? (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={profile.platformLinks.upwork} target="_blank" rel="noopener noreferrer">
+                          <Link className="mr-2 h-3 w-3" />
+                          View Upwork
+                        </a>
+                      </Button>
+                    ) : (
+                      <p className="text-muted-foreground text-sm">Not linked</p>
+                    )
                   )}
                 </div>
                 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <Link className="h-5 w-5 text-[#1DBF73]" />
-                    <div className="flex-1">
-                      <label className="text-sm font-medium">Fiverr</label>
-                      {isEditing && (
-                        <Input
-                          placeholder="https://fiverr.com/yourusername"
-                          value={editedProfile.platformLinks.fiverr}
-                          onChange={(e) => setEditedProfile({
-                            ...editedProfile,
-                            platformLinks: { ...editedProfile.platformLinks, fiverr: e.target.value }
-                          })}
-                          className="mt-1"
-                        />
-                      )}
-                    </div>
-                  </div>
-                  {!isEditing && profile.platformLinks.fiverr && (
-                    <a 
-                      href={profile.platformLinks.fiverr} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-[#1DBF73] hover:opacity-80 transition-opacity"
-                    >
-                      <Link className="h-6 w-6" />
-                    </a>
+                <div>
+                  <label className="text-sm font-medium flex items-center gap-2 mb-2">
+                    <Link className="h-4 w-4 text-[#1DBF73]" />
+                    Fiverr
+                  </label>
+                  {isEditing ? (
+                    <Input
+                      placeholder="https://fiverr.com/yourusername"
+                      value={editedProfile.platformLinks.fiverr}
+                      onChange={(e) => setEditedProfile({
+                        ...editedProfile,
+                        platformLinks: { ...editedProfile.platformLinks, fiverr: e.target.value }
+                      })}
+                    />
+                  ) : (
+                    profile.platformLinks.fiverr ? (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={profile.platformLinks.fiverr} target="_blank" rel="noopener noreferrer">
+                          <Link className="mr-2 h-3 w-3" />
+                          View Fiverr
+                        </a>
+                      </Button>
+                    ) : (
+                      <p className="text-muted-foreground text-sm">Not linked</p>
+                    )
                   )}
                 </div>
               </div>
