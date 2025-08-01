@@ -11,6 +11,9 @@ export interface StudentContact {
   email?: string;
   phone?: string;
   linkedinUrl?: string;
+  upworkUrl?: string;
+  fiverrUrl?: string;
+  githubUrl?: string;
 }
 
 export interface StudentService {
@@ -41,7 +44,9 @@ export const mockStudents: StudentService[] = [
     contact: {
       email: "alex.rivera@myvillage.com",
       phone: "(555) 123-4567",
-      linkedinUrl: "https://www.linkedin.com/in/alex-rivera"
+      linkedinUrl: "https://www.linkedin.com/in/alex-rivera",
+      githubUrl: "https://github.com/alex-rivera",
+      upworkUrl: "https://www.upwork.com/freelancers/alex-rivera"
     },
     portfolio: [
       {

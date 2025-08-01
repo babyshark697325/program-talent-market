@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Star, MapPin, Clock, Mail, Phone, Award, Users, Linkedin } from 'lucide-react';
+import { Star, MapPin, Clock, Mail, Phone, Award, Users, Linkedin, Github, Link } from 'lucide-react';
 import { mockStudents } from '@/data/mockStudents';
 
 const StudentProfile = () => {
@@ -66,32 +66,61 @@ const StudentProfile = () => {
                 ))}
               </div>
 
-              <div className="flex gap-3">
-                <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80">
-                  <Mail className="mr-2 h-4 w-4" />
-                  Contact Student
-                </Button>
-                <Button variant="outline" size="lg">
-                  <Phone className="mr-2 h-4 w-4" />
-                  Schedule Call
-                </Button>
-                {student.contact?.linkedinUrl && (
-                  <Button 
-                    variant="outline" 
-                    size="lg" 
-                    asChild
-                    className="bg-[#0077b5] text-white border-[#0077b5] hover:bg-[#005885] hover:border-[#005885]"
-                  >
+              <div className="flex items-center justify-between">
+                <div className="flex gap-3">
+                  <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80">
+                    <Mail className="mr-2 h-4 w-4" />
+                    Contact Student
+                  </Button>
+                  <Button variant="outline" size="lg">
+                    <Phone className="mr-2 h-4 w-4" />
+                    Schedule Call
+                  </Button>
+                </div>
+                
+                {/* Platform Links with Logos */}
+                <div className="flex items-center gap-3">
+                  {student.contact?.linkedinUrl && (
                     <a 
                       href={student.contact.linkedinUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
+                      className="p-2 rounded-lg bg-[#0077b5] hover:bg-[#005885] transition-colors"
                     >
-                      <Linkedin className="mr-2 h-4 w-4" />
-                      LinkedIn
+                      <Linkedin className="h-5 w-5 text-white" />
                     </a>
-                  </Button>
-                )}
+                  )}
+                  {student.contact?.githubUrl && (
+                    <a 
+                      href={student.contact.githubUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-lg bg-[#24292e] hover:bg-[#1a1e22] transition-colors"
+                    >
+                      <Github className="h-5 w-5 text-white" />
+                    </a>
+                  )}
+                  {student.contact?.upworkUrl && (
+                    <a 
+                      href={student.contact.upworkUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-lg bg-[#6FDA44] hover:bg-[#5bc434] transition-colors"
+                    >
+                      <Link className="h-5 w-5 text-white" />
+                    </a>
+                  )}
+                  {student.contact?.fiverrUrl && (
+                    <a 
+                      href={student.contact.fiverrUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-lg bg-[#1DBF73] hover:bg-[#19a463] transition-colors"
+                    >
+                      <Link className="h-5 w-5 text-white" />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
 
