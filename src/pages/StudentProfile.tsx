@@ -26,12 +26,12 @@ const StudentProfile = () => {
   }
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="p-3 sm:p-4 lg:p-6 space-y-4 sm:space-y-6">
       {/* Header Section */}
       <Card>
-        <CardContent className="p-8">
-          <div className="flex flex-col lg:flex-row items-start gap-6">
-            <Avatar className="w-24 h-24">
+        <CardContent className="p-4 sm:p-6 lg:p-8">
+          <div className="flex flex-col lg:flex-row items-start gap-4 sm:gap-6">
+            <Avatar className="w-20 h-20 sm:w-24 sm:h-24">
               <AvatarImage src={student.avatarUrl} alt={student.name} />
               <AvatarFallback className="text-xl">
                 {student.name.split(' ').map(n => n[0]).join('')}
@@ -39,10 +39,10 @@ const StudentProfile = () => {
             </Avatar>
             
             <div className="flex-1">
-              <h1 className="text-3xl font-bold mb-2">{student.name}</h1>
-              <p className="text-xl text-muted-foreground mb-4">{student.title}</p>
+              <h1 className="text-2xl sm:text-3xl font-bold mb-2">{student.name}</h1>
+              <p className="text-lg sm:text-xl text-muted-foreground mb-4">{student.title}</p>
               
-              <div className="flex flex-wrap items-center gap-4 mb-4">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-4 text-sm sm:text-base">
                 <div className="flex items-center gap-1">
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   <span className="font-medium">4.9</span>
@@ -66,28 +66,31 @@ const StudentProfile = () => {
                 ))}
               </div>
 
-              <div className="flex items-center justify-between">
-                <div className="flex gap-3">
-                  <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80">
+              {/* Mobile-first responsive layout */}
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                  <Button size="sm" className="bg-gradient-to-r from-primary to-primary/80 sm:size-default lg:size-lg">
                     <Mail className="mr-2 h-4 w-4" />
-                    Contact Student
+                    <span className="hidden sm:inline">Contact Student</span>
+                    <span className="sm:hidden">Contact</span>
                   </Button>
-                  <Button variant="outline" size="lg">
+                  <Button variant="outline" size="sm" className="sm:size-default lg:size-lg">
                     <Phone className="mr-2 h-4 w-4" />
-                    Schedule Call
+                    <span className="hidden sm:inline">Schedule Call</span>
+                    <span className="sm:hidden">Call</span>
                   </Button>
                 </div>
                 
                 {/* Platform Links with Logos */}
-                <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center sm:justify-end gap-2 sm:gap-3">
                   {student.contact?.linkedinUrl && (
                     <a 
                       href={student.contact.linkedinUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-[#0077b5] hover:bg-[#005885] transition-colors"
+                      className="p-2 sm:p-2.5 rounded-lg bg-[#0077b5] hover:bg-[#005885] transition-colors touch-manipulation"
                     >
-                      <Linkedin className="h-5 w-5 text-white" />
+                      <Linkedin className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                     </a>
                   )}
                   {student.contact?.githubUrl && (
@@ -95,9 +98,9 @@ const StudentProfile = () => {
                       href={student.contact.githubUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-[#24292e] hover:bg-[#1a1e22] transition-colors"
+                      className="p-2 sm:p-2.5 rounded-lg bg-[#24292e] hover:bg-[#1a1e22] transition-colors touch-manipulation"
                     >
-                      <Github className="h-5 w-5 text-white" />
+                      <Github className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                     </a>
                   )}
                   {student.contact?.upworkUrl && (
@@ -105,9 +108,9 @@ const StudentProfile = () => {
                       href={student.contact.upworkUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-[#6FDA44] hover:bg-[#5bc434] transition-colors"
+                      className="p-2 sm:p-2.5 rounded-lg bg-[#6FDA44] hover:bg-[#5bc434] transition-colors touch-manipulation"
                     >
-                      <Link className="h-5 w-5 text-white" />
+                      <Link className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                     </a>
                   )}
                   {student.contact?.fiverrUrl && (
@@ -115,26 +118,26 @@ const StudentProfile = () => {
                       href={student.contact.fiverrUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-[#1DBF73] hover:bg-[#19a463] transition-colors"
+                      className="p-2 sm:p-2.5 rounded-lg bg-[#1DBF73] hover:bg-[#19a463] transition-colors touch-manipulation"
                     >
-                      <Link className="h-5 w-5 text-white" />
+                      <Link className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                     </a>
                   )}
                 </div>
               </div>
             </div>
 
-            <div className="text-right">
-              <div className="text-3xl font-bold text-primary mb-1">{student.price}</div>
-              <div className="text-muted-foreground">per hour</div>
+            <div className="text-center lg:text-right mt-4 lg:mt-0">
+              <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">{student.price}</div>
+              <div className="text-sm sm:text-base text-muted-foreground">per hour</div>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
         {/* About Section */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className="lg:col-span-2 space-y-4 sm:space-y-6">
           <Card>
             <CardHeader>
               <CardTitle>About</CardTitle>
@@ -245,7 +248,7 @@ const StudentProfile = () => {
         </div>
 
         {/* Sidebar */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           <Card>
             <CardHeader>
               <CardTitle>Quick Stats</CardTitle>
