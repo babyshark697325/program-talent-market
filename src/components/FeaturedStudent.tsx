@@ -31,40 +31,41 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
         <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse opacity-30" style={{ animationDelay: '4s' }}></div>
       </div>
       
-      <div className="relative z-10 p-8">
+      <div className="relative z-10 p-4 md:p-8">
         {/* Enhanced Header */}
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/20 to-accent/20 backdrop-blur-sm text-primary px-6 py-3 rounded-full text-sm font-bold mb-6 shadow-lg border border-primary/30">
-            <Star size={18} className="text-green-700 fill-current animate-pulse" />
-            Featured Student of the Week
-            <Star size={16} className="text-green-700 animate-pulse fill-current" style={{ animationDelay: '1s' }} />
+        <div className="text-center mb-6 md:mb-10">
+          <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-primary/20 to-accent/20 backdrop-blur-sm text-primary px-4 md:px-6 py-2 md:py-3 rounded-full text-xs md:text-sm font-bold mb-4 md:mb-6 shadow-lg border border-primary/30">
+            <Star size={14} className="md:w-[18px] md:h-[18px] text-green-700 fill-current animate-pulse" />
+            <span className="hidden sm:inline">Featured Student of the Week</span>
+            <span className="sm:hidden">Featured Student</span>
+            <Star size={12} className="md:w-4 md:h-4 text-green-700 animate-pulse fill-current" style={{ animationDelay: '1s' }} />
           </div>
-          <h3 className="text-3xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-3 leading-relaxed pb-2">
+          <h3 className="text-xl md:text-3xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2 md:mb-3 leading-relaxed pb-2">
             Spotlight Success
           </h3>
-          <p className="text-muted-foreground font-medium text-lg">Celebrating excellence in our community</p>
+          <p className="text-muted-foreground font-medium text-sm md:text-lg">Celebrating excellence in our community</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-start">
           {/* Enhanced Student Info */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="flex items-center gap-6 mb-6">
+            <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 mb-4 md:mb-6">
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
                 <img
                   src={student.avatarUrl}
                   alt={`${student.name} profile`}
-                  className="relative w-24 h-24 rounded-full object-cover border-4 border-white shadow-xl group-hover:scale-105 transition-transform duration-300"
+                  className="relative w-20 md:w-24 h-20 md:h-24 rounded-full object-cover border-4 border-white shadow-xl group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-primary to-accent text-white rounded-full p-2 shadow-lg animate-pulse">
-                  <Star size={14} className="fill-current" />
+                <div className="absolute -bottom-1 md:-bottom-2 -right-1 md:-right-2 bg-gradient-to-r from-primary to-accent text-white rounded-full p-1.5 md:p-2 shadow-lg animate-pulse">
+                  <Star size={12} className="md:w-[14px] md:h-[14px] fill-current" />
                 </div>
               </div>
-              <div>
-                <h4 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent/80 bg-clip-text text-transparent">
+              <div className="text-center sm:text-left">
+                <h4 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary to-accent/80 bg-clip-text text-transparent">
                   {student.name}
                 </h4>
-                <p className="text-muted-foreground font-semibold text-lg">{student.title}</p>
+                <p className="text-muted-foreground font-semibold text-base md:text-lg">{student.title}</p>
               </div>
             </div>
             

@@ -77,7 +77,7 @@ const HeroSection: React.FC = () => {
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 min-h-[80vh] flex items-center justify-center py-16">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6 min-h-[70vh] md:min-h-[80vh] flex items-center justify-center py-8 md:py-16">
         <div className="text-center overflow-visible">
           <div className="absolute inset-0 opacity-5 pointer-events-none">
             {/* Setting Sun */}
@@ -143,24 +143,24 @@ const HeroSection: React.FC = () => {
           </div>
           
           <div className="relative z-10 mb-8">
-            <h1 className="text-7xl md:text-8xl font-black mb-3 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-[1.8] tracking-tight animate-fade-in pb-8">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-3 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-[1.8] tracking-tight animate-fade-in pb-4 md:pb-8">
               MyVillage
             </h1>
-            <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent mb-6 leading-[1.8] animate-fade-in pb-8" style={{ animationDelay: '0.2s' }}>
+            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent mb-4 md:mb-6 leading-[1.8] animate-fade-in pb-4 md:pb-8" style={{ animationDelay: '0.2s' }}>
               Talent
             </div>
           </div>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-[1.8] font-medium mb-4 animate-fade-in pb-8 overflow-visible" style={{ animationDelay: '0.4s' }}>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-[1.8] font-medium mb-4 md:mb-6 animate-fade-in pb-4 md:pb-8 overflow-visible px-4" style={{ animationDelay: '0.4s' }}>
             Where exceptional talent meets extraordinary opportunities
           </p>
           
           {/* Call to Action */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-6 md:mb-8 animate-fade-in px-4" style={{ animationDelay: '0.6s' }}>
+            <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-6 md:px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-sm md:text-base">
               Browse Talented Students
             </Button>
-            <Button variant="outline" size="lg" className="border-2 border-primary/60 hover:border-primary bg-white hover:bg-primary hover:text-white px-8 py-3 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
+            <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-primary/60 hover:border-primary bg-white hover:bg-primary hover:text-white px-6 md:px-8 py-3 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 text-sm md:text-base">
               Post a Job
             </Button>
           </div>

@@ -47,15 +47,18 @@ const App = () => (
             <div className="min-h-screen flex w-full">
               <AppSidebar />
               <SidebarInset className="flex-1">
-                <div className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
-                  <SidebarTrigger className="h-8 w-8" />
-                  <div className="h-4 w-px bg-border mx-2" />
+                <div className="flex h-14 md:h-16 shrink-0 items-center gap-2 border-b px-2 md:px-4">
+                  <SidebarTrigger className="h-6 w-6 md:h-8 md:w-8" />
+                  <div className="h-4 w-px bg-border mx-1 md:mx-2" />
                   <div className="flex items-center gap-2 flex-1">
-                    <span className="font-semibold text-sm text-muted-foreground">
+                    <span className="font-semibold text-xs md:text-sm text-muted-foreground hidden sm:block">
                       MyVillage Talent Platform
                     </span>
+                    <span className="font-semibold text-xs text-muted-foreground sm:hidden">
+                      MyVillage
+                    </span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1 md:gap-2">
                     <ThemeToggle />
                     <RoleSelector />
                   </div>

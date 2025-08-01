@@ -130,7 +130,7 @@ const Index: React.FC = () => {
 
       <HeroSection />
 
-      <div className="max-w-6xl mx-auto w-full px-6 pb-16 relative z-10">
+      <div className="max-w-6xl mx-auto w-full px-4 md:px-6 pb-16 relative z-10">
         {/* Featured Student Section */}
         <div className="mb-12 animate-fade-in">
           <FeaturedStudent 
