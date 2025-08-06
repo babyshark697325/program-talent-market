@@ -1,6 +1,7 @@
-import { Calendar, Home, Users, Briefcase, BookOpen, Settings, HelpCircle, User, FileText, Shield, BarChart3, AlertTriangle, Search, Star } from "lucide-react"
+import { Calendar, Home, Users, Briefcase, BookOpen, Settings, HelpCircle, User, FileText, Shield, BarChart3, AlertTriangle, Search, Star, UserPlus } from "lucide-react"
 import { useNavigate, useLocation } from "react-router-dom"
 import { useRole } from "@/contexts/RoleContext"
+import { useAuth } from "@/contexts/AuthContext"
 import {
   Sidebar,
   SidebarContent,
@@ -115,6 +116,7 @@ export function AppSidebar() {
   const navigate = useNavigate()
   const location = useLocation()
   const { role } = useRole()
+  const { isGuest } = useAuth()
 
   const navigationItems = role === 'student' ? studentNavigation : 
                          role === 'admin' ? adminNavigation : clientNavigation
@@ -214,6 +216,24 @@ export function AppSidebar() {
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        )}
+
+        {isGuest && (
+          <SidebarGroup>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton 
+                    onClick={() => navigate('/auth')}
+                    className="cursor-pointer text-muted-foreground hover:text-foreground"
+                  >
+                    <UserPlus />
+                    <span className="text-xs">Create Account</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>

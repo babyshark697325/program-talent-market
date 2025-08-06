@@ -9,10 +9,27 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { useAuth } from '@/contexts/AuthContext';
-import { LogOut, User, Settings } from 'lucide-react';
+import { LogOut, User, Settings, UserPlus } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const UserMenu: React.FC = () => {
-  const { user, userRole, signOut } = useAuth();
+  const { user, userRole, signOut, isGuest } = useAuth();
+  const navigate = useNavigate();
+
+  // Show sign up button for guests
+  if (isGuest) {
+    return (
+      <Button 
+        variant="outline" 
+        size="sm"
+        onClick={() => navigate('/auth')}
+        className="text-xs"
+      >
+        <UserPlus className="mr-1 h-3 w-3" />
+        Sign Up
+      </Button>
+    );
+  }
 
   if (!user) return null;
 
