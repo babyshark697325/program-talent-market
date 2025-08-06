@@ -22,7 +22,7 @@ const Auth: React.FC = () => {
     adminPin: ''
   });
   
-  const { user, signIn, signUp } = useAuth();
+  const { user, signIn, signUp, continueAsGuest } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -292,6 +292,22 @@ const Auth: React.FC = () => {
               </CardContent>
             </TabsContent>
           </Tabs>
+          
+          <div className="mt-6 text-center">
+            <Button 
+              variant="ghost" 
+              className="text-sm text-muted-foreground hover:text-foreground"
+              onClick={() => {
+                continueAsGuest();
+                navigate('/');
+              }}
+            >
+              Continue as Guest
+            </Button>
+            <p className="text-xs text-muted-foreground mt-2">
+              Browse jobs and students • Account required to post jobs
+            </p>
+          </div>
         </Card>
       </div>
     </div>

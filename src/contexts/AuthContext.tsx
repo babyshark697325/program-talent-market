@@ -7,9 +7,11 @@ interface AuthContextType {
   session: Session | null;
   userRole: string | null;
   loading: boolean;
+  isGuest: boolean;
   signUp: (email: string, password: string, firstName: string, lastName: string, role: string) => Promise<{ error: any }>;
   signIn: (email: string, password: string) => Promise<{ error: any }>;
   signOut: () => Promise<void>;
+  continueAsGuest: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -31,6 +33,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [session, setSession] = useState<Session | null>(null);
   const [userRole, setUserRole] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isGuest, setIsGuest] = useState(false);
 
   const fetchUserRole = async (userId: string) => {
     try {
@@ -125,8 +128,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     if (error) {
       console.error('Sign out error:', error);
     }
+    setIsGuest(false);
     // Force page reload for clean state
     window.location.href = '/auth';
+  };
+
+  const continueAsGuest = () => {
+    setIsGuest(true);
+    setLoading(false);
   };
 
   const value = {
@@ -134,9 +143,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     session,
     userRole,
     loading,
+    isGuest,
     signUp,
     signIn,
     signOut,
+    continueAsGuest,
   };
 
   return (
