@@ -18,7 +18,8 @@ const Auth: React.FC = () => {
     password: '',
     firstName: '',
     lastName: '',
-    role: 'client'
+    role: 'client',
+    adminPin: ''
   });
   
   const { user, signIn, signUp } = useAuth();
@@ -67,6 +68,20 @@ const Auth: React.FC = () => {
     setIsLoading(true);
 
     try {
+      // Validate admin PIN if admin role is selected
+      if (signUpData.role === 'admin') {
+        const ADMIN_PIN = '2024'; // You can change this PIN as needed
+        if (signUpData.adminPin !== ADMIN_PIN) {
+          toast({
+            title: "Invalid PIN",
+            description: "The admin PIN you entered is incorrect.",
+            variant: "destructive",
+          });
+          setIsLoading(false);
+          return;
+        }
+      }
+
       const { error } = await signUp(
         signUpData.email,
         signUpData.password,
@@ -229,9 +244,25 @@ const Auth: React.FC = () => {
                       onChange={(e) => setSignUpData({ ...signUpData, password: e.target.value })}
                       required
                     />
-                  </div>
-                  <div className="space-y-3">
-                    <Label>I'm joining as a:</Label>
+                   </div>
+                   {signUpData.role === 'admin' && (
+                     <div className="space-y-2">
+                       <Label htmlFor="admin-pin">Admin PIN</Label>
+                       <Input
+                         id="admin-pin"
+                         type="password"
+                         placeholder="Enter admin PIN"
+                         value={signUpData.adminPin}
+                         onChange={(e) => setSignUpData({ ...signUpData, adminPin: e.target.value })}
+                         required
+                       />
+                       <p className="text-sm text-muted-foreground">
+                         Contact your administrator for the admin PIN
+                       </p>
+                     </div>
+                   )}
+                   <div className="space-y-3">
+                     <Label>I'm joining as a:</Label>
                     <RadioGroup
                       value={signUpData.role}
                       onValueChange={(value) => setSignUpData({ ...signUpData, role: value })}
