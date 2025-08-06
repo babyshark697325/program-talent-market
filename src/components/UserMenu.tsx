@@ -11,27 +11,23 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { useAuth } from '@/contexts/AuthContext';
 import { LogOut, User, Settings, UserPlus } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { ThemeToggle } from './ThemeToggle';
 
 const UserMenu: React.FC = () => {
   const { user, userRole, signOut, isGuest } = useAuth();
   const navigate = useNavigate();
 
-  // Show sign up button and theme toggle for guests
+  // Show sign up button for guests
   if (isGuest) {
     return (
-      <div className="flex items-center gap-2">
-        <ThemeToggle />
-        <Button 
-          variant="outline" 
-          size="sm"
-          onClick={() => navigate('/auth')}
-          className="text-xs"
-        >
-          <UserPlus className="mr-1 h-3 w-3" />
-          Sign Up
-        </Button>
-      </div>
+      <Button 
+        variant="outline" 
+        size="sm"
+        onClick={() => navigate('/auth')}
+        className="text-xs"
+      >
+        <UserPlus className="mr-1 h-3 w-3" />
+        Sign Up
+      </Button>
     );
   }
 
@@ -47,17 +43,16 @@ const UserMenu: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center gap-2">
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="relative h-10 w-10 rounded-full">
-            <Avatar className="h-10 w-10">
-              <AvatarFallback className="bg-primary/10 text-primary">
-                {getInitials(user.email || 'U')}
-              </AvatarFallback>
-            </Avatar>
-          </Button>
-        </DropdownMenuTrigger>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" className="relative h-10 w-10 rounded-full">
+          <Avatar className="h-10 w-10">
+            <AvatarFallback className="bg-primary/10 text-primary">
+              {getInitials(user.email || 'U')}
+            </AvatarFallback>
+          </Avatar>
+        </Button>
+      </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="end">
         <div className="flex flex-col space-y-1 p-2">
           <p className="text-sm font-medium leading-none">{user.email}</p>
@@ -81,7 +76,6 @@ const UserMenu: React.FC = () => {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-    </div>
   );
 };
 

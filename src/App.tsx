@@ -68,6 +68,7 @@ const App = () => (
                               </span>
                             </div>
                             <div className="flex items-center gap-1 md:gap-2">
+                              <ThemeToggle />
                               <RoleSelector />
                               <UserMenu />
                             </div>
