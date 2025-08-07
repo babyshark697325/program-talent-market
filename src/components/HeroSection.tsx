@@ -2,8 +2,11 @@
 import React from "react";
 import { Sparkles, Star, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="relative overflow-hidden">
       {/* Warm Peach/Gold to Soft Lavender Vertical Gradient Background */}
@@ -157,10 +160,19 @@ const HeroSection: React.FC = () => {
           
           {/* Call to Action */}
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-6 md:mb-8 animate-fade-in px-4" style={{ animationDelay: '0.6s' }}>
-            <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-6 md:px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-sm md:text-base">
+            <Button 
+              size="lg" 
+              onClick={() => navigate('/browse-students')}
+              className="w-full sm:w-auto bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-6 md:px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-sm md:text-base"
+            >
               Browse Talented Students
             </Button>
-            <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-primary/60 hover:border-primary bg-white hover:bg-primary hover:text-white px-6 md:px-8 py-3 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 text-sm md:text-base">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              onClick={() => navigate('/post-job')}
+              className="w-full sm:w-auto border-2 border-primary/60 hover:border-primary bg-white hover:bg-primary hover:text-white px-6 md:px-8 py-3 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 text-sm md:text-base"
+            >
               Post a Job
             </Button>
           </div>
