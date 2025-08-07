@@ -23,7 +23,7 @@ interface FeaturedStudentProps {
 
 const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfile }) => {
   return (
-    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white via-primary/5 to-accent/10 border border-primary/20 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-card via-primary/5 to-accent/10 border border-primary/20 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
       {/* Animated background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl animate-pulse opacity-60"></div>
@@ -55,7 +55,7 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
                 <img
                   src={student.avatarUrl}
                   alt={`${student.name} profile`}
-                  className="relative w-20 md:w-24 h-20 md:h-24 rounded-full object-cover border-4 border-white shadow-xl group-hover:scale-105 transition-transform duration-300"
+                  className="relative w-20 md:w-24 h-20 md:h-24 rounded-full object-cover border-4 border-card shadow-xl group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute -bottom-1 md:-bottom-2 -right-1 md:-right-2 bg-gradient-to-r from-primary to-accent text-white rounded-full p-1.5 md:p-2 shadow-lg animate-pulse">
                   <Star size={12} className="md:w-[14px] md:h-[14px] fill-current" />
@@ -82,9 +82,9 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
             </div>
 
             {/* Enhanced Student Quote */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 mb-6 relative shadow-lg border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 mb-6 relative shadow-lg border border-primary/10 hover:shadow-xl transition-all duration-300">
               <Quote size={20} className="text-primary/50 absolute top-4 left-4" />
-              <p className="text-gray-700 italic pl-8 pr-4 font-medium leading-relaxed">
+              <p className="text-card-foreground italic pl-8 pr-4 font-medium leading-relaxed">
                 "{student.quote}"
               </p>
               <div className="absolute bottom-2 right-4">
@@ -94,16 +94,16 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
 
             <Button 
               onClick={onViewProfile} 
-              className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               View Full Profile
             </Button>
           </div>
 
           {/* Enhanced Client Review */}
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-primary/10 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
+          <div className="bg-card/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-primary/10 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
             <div className="mb-6">
-              <h5 className="font-bold text-gray-900 mb-3 text-lg">Recent Client Review</h5>
+              <h5 className="font-bold text-card-foreground mb-3 text-lg">Recent Client Review</h5>
               <div className="flex items-center gap-2 mb-4">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
@@ -123,7 +123,7 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
               </div>
             </div>
             
-            <blockquote className="text-gray-700 mb-6 leading-relaxed font-medium text-lg">
+            <blockquote className="text-card-foreground mb-6 leading-relaxed font-medium text-lg">
               "{student.clientReview.text}"
             </blockquote>
             

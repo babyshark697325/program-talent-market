@@ -10,7 +10,7 @@ interface StatsGridProps {
 const StatsGrid: React.FC<StatsGridProps> = ({ studentsCount, skillsCount }) => {
   return (
     <div className="mb-8 md:mb-12 animate-fade-in">
-      <div className="bg-gradient-to-r from-white/90 to-primary/10 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-12 shadow-xl border border-primary/20 text-center">
+      <div className="bg-gradient-to-r from-card/90 to-primary/10 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-12 shadow-xl border border-primary/20 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-4 md:mb-6">
             <div className="w-16 md:w-20 h-16 md:h-20 bg-gradient-to-r from-primary to-accent rounded-2xl md:rounded-3xl flex items-center justify-center shadow-lg">
@@ -24,19 +24,19 @@ const StatsGrid: React.FC<StatsGridProps> = ({ studentsCount, skillsCount }) => 
             Connect with skilled students ready to bring your projects to life
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 text-center">
-            <div className="bg-white/60 rounded-xl md:rounded-2xl p-3 md:p-4 backdrop-blur-sm border border-primary/10">
+            <div className="bg-card/60 rounded-xl md:rounded-2xl p-3 md:p-4 backdrop-blur-sm border border-primary/10">
               <div className="text-lg md:text-2xl font-bold text-primary">{studentsCount}+</div>
               <div className="text-xs md:text-sm text-muted-foreground">Talented Students</div>
             </div>
-            <div className="bg-white/60 rounded-xl md:rounded-2xl p-3 md:p-4 backdrop-blur-sm border border-primary/10">
+            <div className="bg-card/60 rounded-xl md:rounded-2xl p-3 md:p-4 backdrop-blur-sm border border-primary/10">
               <div className="text-lg md:text-2xl font-bold text-accent">{skillsCount}+</div>
               <div className="text-xs md:text-sm text-muted-foreground">Skills Available</div>
             </div>
-            <div className="bg-white/60 rounded-xl md:rounded-2xl p-3 md:p-4 backdrop-blur-sm border border-primary/10">
+            <div className="bg-card/60 rounded-xl md:rounded-2xl p-3 md:p-4 backdrop-blur-sm border border-primary/10">
               <div className="text-lg md:text-2xl font-bold text-green-600">4.9★</div>
               <div className="text-xs md:text-sm text-muted-foreground">Average Rating</div>
             </div>
-            <div className="bg-white/60 rounded-xl md:rounded-2xl p-3 md:p-4 backdrop-blur-sm border border-primary/10">
+            <div className="bg-card/60 rounded-xl md:rounded-2xl p-3 md:p-4 backdrop-blur-sm border border-primary/10">
               <div className="text-lg md:text-2xl font-bold text-purple-600">24h</div>
               <div className="text-xs md:text-sm text-muted-foreground">Response Time</div>
             </div>
