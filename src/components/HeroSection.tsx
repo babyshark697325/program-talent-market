@@ -259,7 +259,7 @@ const HeroSection: React.FC = () => {
             <Button 
               size="lg" 
               onClick={() => navigate('/browse-students')}
-              className="w-full sm:w-auto bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-6 md:px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-sm md:text-base"
+              className="w-full sm:w-auto bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground px-6 md:px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-sm md:text-base"
             >
               Browse Talented Students
             </Button>
@@ -267,7 +267,11 @@ const HeroSection: React.FC = () => {
               variant="outline" 
               size="lg" 
               onClick={() => navigate('/post-job')}
-              className="w-full sm:w-auto border-2 border-primary/60 hover:border-primary bg-white hover:bg-primary hover:text-white px-6 md:px-8 py-3 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 text-sm md:text-base"
+              className={`w-full sm:w-auto border-2 px-6 md:px-8 py-3 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 text-sm md:text-base ${
+                isDark 
+                  ? 'border-slate-600 bg-slate-800/50 text-slate-200 hover:bg-slate-700 hover:border-slate-500' 
+                  : 'border-primary/60 hover:border-primary bg-white hover:bg-primary hover:text-white'
+              }`}
             >
               Post a Job
             </Button>
