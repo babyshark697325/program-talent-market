@@ -10,7 +10,7 @@ interface Props {
 }
 
 const StudentServiceCard: React.FC<Props> = ({ student, onView }) => (
-  <div className="flex flex-col bg-background text-foreground border border-border rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-200 p-4 md:p-6 cursor-pointer h-full">
+  <div className="flex flex-col bg-white border border-muted rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-200 p-4 md:p-6 cursor-pointer h-full">
     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 md:gap-4 mb-4 text-center sm:text-left">
       <img
         src={student.avatarUrl}
@@ -22,17 +22,17 @@ const StudentServiceCard: React.FC<Props> = ({ student, onView }) => (
         <div className="text-sm text-muted-foreground">{student.title}</div>
       </div>
     </div>
-    <div className="flex-1 mb-4 text-sm md:text-[15px] text-muted-foreground line-clamp-3">
+    <div className="flex-1 mb-4 text-sm md:text-[15px] text-gray-700 line-clamp-3">
       {student.description}
     </div>
     <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4">
       {student.skills.slice(0, 3).map((skill) => (
-        <Badge key={skill} className="bg-muted text-muted-foreground px-2 md:px-3 py-1 text-xs rounded-lg">
+        <Badge key={skill} className="bg-accent/40 text-accent-foreground px-2 md:px-3 py-1 text-xs rounded-lg">
           {skill}
         </Badge>
       ))}
       {student.skills.length > 3 && (
-        <Badge className="bg-muted text-muted-foreground px-2 md:px-3 py-1 text-xs rounded-lg">
+        <Badge className="bg-gray-100 text-gray-600 px-2 md:px-3 py-1 text-xs rounded-lg">
           +{student.skills.length - 3}
         </Badge>
       )}

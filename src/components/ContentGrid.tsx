@@ -26,7 +26,7 @@ const ContentGrid: React.FC<ContentGridProps> = ({
 }) => {
   const renderEmptyState = (type: "students" | "jobs") => (
     <div className="text-center py-20">
-      <div className="bg-card/70 backdrop-blur-sm rounded-3xl p-16 shadow-xl border border-primary/20 max-w-lg mx-auto">
+      <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-16 shadow-xl border border-primary/20 max-w-lg mx-auto">
         <div className="w-24 h-24 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
           {type === "students" ? (
             <Users className="text-primary/40" size={48} />
