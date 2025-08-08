@@ -101,3 +101,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Invert-based dark mode (toggled by ThemeToggle via next-themes 'dark' class) */
+html.dark {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Re-invert media or elements that should keep original colors */
+html.dark img,
+html.dark video,
+html.dark picture,
+html.dark .no-invert,
+html.dark [data-no-invert] {
+  filter: invert(1) hue-rotate(180deg);
+}
