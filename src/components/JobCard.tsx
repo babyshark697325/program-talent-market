@@ -13,7 +13,7 @@ interface JobCardProps {
 
 const JobCard: React.FC<JobCardProps> = ({ job, onView }) => {
   return (
-    <Card className="h-full flex flex-col hover:shadow-lg transition-shadow duration-200">
+    <Card className="h-full flex flex-col hover:shadow-lg transition-shadow duration-200 bg-background text-foreground border-border">
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between">
           <div className="flex-1">

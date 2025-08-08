@@ -10,7 +10,7 @@ interface Props {
 }
 
 const StudentServiceCard: React.FC<Props> = ({ student, onView }) => (
-  <div className="flex flex-col bg-card text-card-foreground border border-border rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-200 p-4 md:p-6 cursor-pointer h-full">
+  <div className="flex flex-col bg-background text-foreground border border-border rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-200 p-4 md:p-6 cursor-pointer h-full">
     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 md:gap-4 mb-4 text-center sm:text-left">
       <img
         src={student.avatarUrl}
