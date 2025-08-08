@@ -29,10 +29,10 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
         {/* Enhanced Header */}
         <div className="text-center mb-6 md:mb-10">
           <div className="inline-flex items-center gap-2 md:gap-3 bg-muted text-foreground px-4 md:px-6 py-2 md:py-3 rounded-full text-xs md:text-sm font-bold mb-4 md:mb-6 shadow-lg border border-border">
-            <Star size={14} className="md:w-[18px] md:h-[18px] text-green-700 fill-current animate-pulse" />
+            <Star size={14} className="md:w-[18px] md:h-[18px] text-primary fill-current animate-pulse" />
             <span className="hidden sm:inline">Featured Student of the Week</span>
             <span className="sm:hidden">Featured Student</span>
-            <Star size={12} className="md:w-4 md:h-4 text-green-700 animate-pulse fill-current" style={{ animationDelay: '1s' }} />
+            <Star size={12} className="md:w-4 md:h-4 text-primary animate-pulse fill-current" style={{ animationDelay: '1s' }} />
           </div>
           <h3 className="text-xl md:text-3xl font-black text-foreground mb-2 md:mb-3 leading-relaxed pb-2">
             Spotlight Success
@@ -105,8 +105,8 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
                     size={18}
                     className={`transition-all duration-300 ${
                       i < student.clientReview.rating
-                        ? "text-yellow-400 fill-current animate-pulse"
-                        : "text-gray-300"
+                        ? "text-primary fill-current animate-pulse"
+                        : "text-muted-foreground"
                     }`}
                     style={{ animationDelay: `${i * 0.1}s` }}
                   />
@@ -129,7 +129,7 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
             <div className="mt-4 flex justify-end">
               <div className="flex gap-1">
                 <div className="w-1 h-1 bg-primary rounded-full animate-pulse"></div>
-                <div className="w-1 h-1 bg-accent rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                <div className="w-1 h-1 bg-primary rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
                 <div className="w-1 h-1 bg-primary rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
               </div>
             </div>

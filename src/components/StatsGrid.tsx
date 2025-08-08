@@ -14,7 +14,7 @@ const StatsGrid: React.FC<StatsGridProps> = ({ studentsCount, skillsCount }) => 
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-4 md:mb-6">
             <div className="w-16 md:w-20 h-16 md:h-20 bg-muted rounded-2xl md:rounded-3xl flex items-center justify-center shadow-lg">
-              <Users className="text-white" size={32} />
+              <Users className="text-primary" size={32} />
             </div>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 md:mb-6 text-foreground leading-[1.2] pb-2 md:pb-4 overflow-visible">
@@ -29,15 +29,15 @@ const StatsGrid: React.FC<StatsGridProps> = ({ studentsCount, skillsCount }) => 
               <div className="text-xs md:text-sm text-muted-foreground">Talented Students</div>
             </div>
             <div className="bg-card/60 rounded-xl md:rounded-2xl p-3 md:p-4 backdrop-blur-sm border border-primary/10">
-              <div className="text-lg md:text-2xl font-bold text-accent">{skillsCount}+</div>
+              <div className="text-lg md:text-2xl font-bold text-primary">{skillsCount}+</div>
               <div className="text-xs md:text-sm text-muted-foreground">Skills Available</div>
             </div>
             <div className="bg-card/60 rounded-xl md:rounded-2xl p-3 md:p-4 backdrop-blur-sm border border-primary/10">
-              <div className="text-lg md:text-2xl font-bold text-green-600">4.9★</div>
+              <div className="text-lg md:text-2xl font-bold text-primary">4.9★</div>
               <div className="text-xs md:text-sm text-muted-foreground">Average Rating</div>
             </div>
             <div className="bg-card/60 rounded-xl md:rounded-2xl p-3 md:p-4 backdrop-blur-sm border border-primary/10">
-              <div className="text-lg md:text-2xl font-bold text-purple-600">24h</div>
+              <div className="text-lg md:text-2xl font-bold text-primary">24h</div>
               <div className="text-xs md:text-sm text-muted-foreground">Response Time</div>
             </div>
           </div>

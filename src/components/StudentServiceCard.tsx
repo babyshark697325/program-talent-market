@@ -27,7 +27,7 @@ const StudentServiceCard: React.FC<Props> = ({ student, onView }) => (
     </div>
     <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4">
       {student.skills.slice(0, 3).map((skill) => (
-        <Badge key={skill} className="bg-accent/40 text-accent-foreground px-2 md:px-3 py-1 text-xs rounded-lg">
+        <Badge key={skill} className="bg-muted text-muted-foreground px-2 md:px-3 py-1 text-xs rounded-lg">
           {skill}
         </Badge>
       ))}
