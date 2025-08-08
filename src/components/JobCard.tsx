@@ -13,7 +13,7 @@ interface JobCardProps {
 
 const JobCard: React.FC<JobCardProps> = ({ job, onView }) => {
   return (
-    <Card className="h-full flex flex-col hover:shadow-lg transition-shadow duration-200">
+    <Card className="h-full flex flex-col hover:shadow-lg transition-shadow duration-200 bg-background text-foreground border-border">
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between">
           <div className="flex-1">
@@ -45,8 +45,8 @@ const JobCard: React.FC<JobCardProps> = ({ job, onView }) => {
         
         <div className="space-y-2 text-sm">
           <div className="flex items-center gap-2">
-            <DollarSign size={14} className="text-green-600" />
-            <span className="font-medium text-green-700">{job.budget}</span>
+            <DollarSign size={14} className="text-primary" />
+            <span className="font-medium text-primary">{job.budget}</span>
           </div>
           <div className="flex items-center gap-2">
             <Calendar size={14} className="text-muted-foreground" />

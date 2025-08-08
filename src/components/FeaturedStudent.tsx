@@ -23,24 +23,18 @@ interface FeaturedStudentProps {
 
 const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfile }) => {
   return (
-    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white via-primary/5 to-accent/10 border border-primary/20 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl animate-pulse opacity-60"></div>
-        <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-accent/15 to-primary/15 rounded-full blur-2xl animate-pulse opacity-40" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse opacity-30" style={{ animationDelay: '4s' }}></div>
-      </div>
+    <div className="relative overflow-hidden rounded-3xl bg-background border border-border shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
       
       <div className="relative z-10 p-4 md:p-8">
         {/* Enhanced Header */}
         <div className="text-center mb-6 md:mb-10">
-          <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-primary/20 to-accent/20 backdrop-blur-sm text-primary px-4 md:px-6 py-2 md:py-3 rounded-full text-xs md:text-sm font-bold mb-4 md:mb-6 shadow-lg border border-primary/30">
-            <Star size={14} className="md:w-[18px] md:h-[18px] text-green-700 fill-current animate-pulse" />
+          <div className="inline-flex items-center gap-2 md:gap-3 bg-muted text-foreground px-4 md:px-6 py-2 md:py-3 rounded-full text-xs md:text-sm font-bold mb-4 md:mb-6 shadow-lg border border-border">
+            <Star size={14} className="md:w-[18px] md:h-[18px] text-primary fill-current animate-pulse" />
             <span className="hidden sm:inline">Featured Student of the Week</span>
             <span className="sm:hidden">Featured Student</span>
-            <Star size={12} className="md:w-4 md:h-4 text-green-700 animate-pulse fill-current" style={{ animationDelay: '1s' }} />
+            <Star size={12} className="md:w-4 md:h-4 text-primary animate-pulse fill-current" style={{ animationDelay: '1s' }} />
           </div>
-          <h3 className="text-xl md:text-3xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2 md:mb-3 leading-relaxed pb-2">
+          <h3 className="text-xl md:text-3xl font-black text-foreground mb-2 md:mb-3 leading-relaxed pb-2">
             Spotlight Success
           </h3>
           <p className="text-muted-foreground font-medium text-sm md:text-lg">Celebrating excellence in our community</p>
@@ -51,18 +45,18 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 mb-4 md:mb-6">
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                
                 <img
                   src={student.avatarUrl}
                   alt={`${student.name} profile`}
-                  className="relative w-20 md:w-24 h-20 md:h-24 rounded-full object-cover border-4 border-white shadow-xl group-hover:scale-105 transition-transform duration-300"
+                  className="relative w-20 md:w-24 h-20 md:h-24 rounded-full object-cover border-4 border-card shadow-xl group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute -bottom-1 md:-bottom-2 -right-1 md:-right-2 bg-gradient-to-r from-primary to-accent text-white rounded-full p-1.5 md:p-2 shadow-lg animate-pulse">
+                <div className="absolute -bottom-1 md:-bottom-2 -right-1 md:-right-2 bg-primary text-primary-foreground rounded-full p-1.5 md:p-2 shadow-lg animate-pulse">
                   <Star size={12} className="md:w-[14px] md:h-[14px] fill-current" />
                 </div>
               </div>
               <div className="text-center sm:text-left">
-                <h4 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary to-accent/80 bg-clip-text text-transparent">
+                <h4 className="text-xl md:text-2xl font-bold text-foreground">
                   {student.name}
                 </h4>
                 <p className="text-muted-foreground font-semibold text-base md:text-lg">{student.title}</p>
@@ -73,7 +67,7 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
               {student.skills.map((skill, index) => (
                 <Badge 
                   key={skill} 
-                  className="bg-gradient-to-r from-primary/80 to-accent/70 text-white border-primary/30 px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+                  className="bg-muted text-muted-foreground px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {skill}
@@ -82,28 +76,28 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
             </div>
 
             {/* Enhanced Student Quote */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 mb-6 relative shadow-lg border border-primary/10 hover:shadow-xl transition-all duration-300">
+            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 mb-6 relative shadow-lg border border-primary/10 hover:shadow-xl transition-all duration-300">
               <Quote size={20} className="text-primary/50 absolute top-4 left-4" />
-              <p className="text-gray-700 italic pl-8 pr-4 font-medium leading-relaxed">
+              <p className="text-card-foreground italic pl-8 pr-4 font-medium leading-relaxed">
                 "{student.quote}"
               </p>
               <div className="absolute bottom-2 right-4">
-                <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
               </div>
             </div>
 
             <Button 
               onClick={onViewProfile} 
-              className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               View Full Profile
             </Button>
           </div>
 
           {/* Enhanced Client Review */}
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-primary/10 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
+          <div className="bg-card/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-primary/10 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
             <div className="mb-6">
-              <h5 className="font-bold text-gray-900 mb-3 text-lg">Recent Client Review</h5>
+              <h5 className="font-bold text-card-foreground mb-3 text-lg">Recent Client Review</h5>
               <div className="flex items-center gap-2 mb-4">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
@@ -111,8 +105,8 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
                     size={18}
                     className={`transition-all duration-300 ${
                       i < student.clientReview.rating
-                        ? "text-yellow-400 fill-current animate-pulse"
-                        : "text-gray-300"
+                        ? "text-primary fill-current animate-pulse"
+                        : "text-muted-foreground"
                     }`}
                     style={{ animationDelay: `${i * 0.1}s` }}
                   />
@@ -123,11 +117,11 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
               </div>
             </div>
             
-            <blockquote className="text-gray-700 mb-6 leading-relaxed font-medium text-lg">
+            <blockquote className="text-card-foreground mb-6 leading-relaxed font-medium text-lg">
               "{student.clientReview.text}"
             </blockquote>
             
-            <cite className="text-sm font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <cite className="text-sm font-bold text-foreground">
               — {student.clientReview.clientName}
             </cite>
             
@@ -135,7 +129,7 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
             <div className="mt-4 flex justify-end">
               <div className="flex gap-1">
                 <div className="w-1 h-1 bg-primary rounded-full animate-pulse"></div>
-                <div className="w-1 h-1 bg-accent rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                <div className="w-1 h-1 bg-primary rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
                 <div className="w-1 h-1 bg-primary rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
               </div>
             </div>
