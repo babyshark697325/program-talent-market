@@ -51,6 +51,12 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Chips/Tags and Glow tokens */
+    --tag-bg: 0 0% 92%; /* light mode fallback */
+    --tag-foreground: 222.2 47.4% 11.2%;
+    --glow: 152 100% 48%;
+    --glow-foreground: 222.2 84% 4.9%;
   }
 
   .dark {
@@ -89,6 +95,12 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Dark mode tokens for chips/tags and glow */
+    --tag-bg: 0 0% 18%; /* ~#2d2d2d */
+    --tag-foreground: 0 0% 81%; /* ~#cfcfcf */
+    --glow: 152 100% 50%; /* ~#00ff88 */
+    --glow-foreground: 222.2 84% 4.9%;
   }
 }
 

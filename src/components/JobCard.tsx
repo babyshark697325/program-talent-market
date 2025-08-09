@@ -26,12 +26,12 @@ const JobCard: React.FC<JobCardProps> = ({ job, onView }) => {
         </div>
         <div className="flex flex-wrap gap-2">
           {job.skills.slice(0, 3).map((skill) => (
-            <Badge key={skill} variant="secondary" className="text-xs">
+            <Badge key={skill} className="bg-[hsl(var(--tag-bg))] text-[hsl(var(--tag-foreground))] text-xs">
               {skill}
             </Badge>
           ))}
           {job.skills.length > 3 && (
-            <Badge variant="outline" className="text-xs">
+            <Badge className="bg-[hsl(var(--tag-bg))] text-[hsl(var(--tag-foreground))] text-xs">
               +{job.skills.length - 3} more
             </Badge>
           )}
@@ -56,7 +56,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, onView }) => {
       </CardContent>
       
       <CardFooter className="pt-4">
-        <Button onClick={onView} className="w-full">
+        <Button onClick={onView} className="w-full bg-[hsl(var(--glow))] text-[hsl(var(--glow-foreground))] shadow-[0_8px_24px_hsl(var(--glow)/0.35)] hover:shadow-[0_12px_36px_hsl(var(--glow)/0.5)]">
           View Details
         </Button>
       </CardFooter>

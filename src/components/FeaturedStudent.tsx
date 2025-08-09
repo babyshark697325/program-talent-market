@@ -68,7 +68,7 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
                 {student.skills.map((skill, index) => (
                   <Badge 
                     key={skill} 
-                    className="bg-muted text-muted-foreground px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+                    className="bg-[hsl(var(--tag-bg))] text-[hsl(var(--tag-foreground))] px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {skill}
@@ -87,12 +87,12 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
                 </div>
               </div>
 
-              <Button 
-                onClick={onViewProfile} 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-              >
-                View Full Profile
-              </Button>
+            <Button 
+              onClick={onViewProfile} 
+              className="bg-[hsl(var(--glow))] text-[hsl(var(--glow-foreground))] px-8 py-3 rounded-2xl font-semibold shadow-[0_8px_24px_hsl(var(--glow)/0.45)] hover:shadow-[0_12px_36px_hsl(var(--glow)/0.6)] transition-all duration-300 hover:scale-105"
+            >
+              View Full Profile
+            </Button>
             </div>
 
             {/* Enhanced Client Review */}
