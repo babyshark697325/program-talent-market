@@ -19,7 +19,17 @@ const StudentServiceCard: React.FC<Props> = ({ student, onView }) => (
           className="w-14 md:w-16 h-14 md:h-16 rounded-full object-cover border"
         />
         <div className="flex-1 min-w-0">
-          <div className="text-base md:text-lg font-semibold truncate">{student.name}</div>
+          <div className="flex items-center gap-2">
+            <div className="text-base md:text-lg font-semibold truncate">{student.name}</div>
+            {student.affiliation && (
+              <Badge
+                variant={student.affiliation === 'alumni' ? 'secondary' : 'default'}
+                className="rounded-full text-[10px] px-2 py-0.5"
+              >
+                {student.affiliation === 'alumni' ? 'MyVillage Alumni' : 'MyVillage Student'}
+              </Badge>
+            )}
+          </div>
           <div className="text-sm text-muted-foreground">{student.title}</div>
         </div>
       </div>

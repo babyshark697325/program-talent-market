@@ -39,7 +39,17 @@ const StudentProfile = () => {
             </Avatar>
             
             <div className="flex-1">
-              <h1 className="text-3xl font-bold mb-2">{student.name}</h1>
+              <div className="flex items-center gap-2 mb-2">
+                <h1 className="text-3xl font-bold">{student.name}</h1>
+                {student.affiliation && (
+                  <Badge
+                    variant={student.affiliation === 'alumni' ? 'secondary' : 'default'}
+                    className="rounded-full text-xs px-2 py-0.5"
+                  >
+                    {student.affiliation === 'alumni' ? 'MyVillage Alumni' : 'MyVillage Student'}
+                  </Badge>
+                )}
+              </div>
               <p className="text-xl text-muted-foreground mb-4">{student.title}</p>
               
               <div className="flex flex-wrap items-center gap-4 mb-4">
