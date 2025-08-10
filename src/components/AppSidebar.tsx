@@ -166,7 +166,7 @@ export function AppSidebar() {
       <SidebarHeader className="p-6">
         <div className="flex items-center gap-3">
           <div className={`w-8 h-8 bg-gradient-to-br ${getRoleColor()} rounded-lg flex items-center justify-center`}>
-            <span className="text-white font-bold text-sm">MV</span>
+            <span className="text-primary-foreground font-bold text-sm">MV</span>
           </div>
           <div>
             <h2 className="font-bold text-lg bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">

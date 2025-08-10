@@ -43,7 +43,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ jobs }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-primary/5 relative overflow-hidden">
+    <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-1/4 w-72 h-72 bg-gradient-to-br from-primary/10 to-accent/20 rounded-full blur-3xl animate-pulse opacity-60"></div>
@@ -73,10 +73,10 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ jobs }) => {
       <div className="max-w-7xl mx-auto w-full px-6 pb-16 relative z-10">
         {/* Key Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <Card className="p-6 bg-white/60 backdrop-blur-sm border border-primary/10">
+          <Card className="p-6 bg-secondary/40 backdrop-blur-sm border border-primary/10">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center">
-                <Users className="text-white" size={24} />
+                <Users className="text-primary-foreground" size={24} />
               </div>
               <div>
                 <h3 className="font-bold text-2xl text-blue-600">{adminStats.totalUsers}</h3>
@@ -85,10 +85,10 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ jobs }) => {
             </div>
           </Card>
 
-          <Card className="p-6 bg-white/60 backdrop-blur-sm border border-primary/10">
+          <Card className="p-6 bg-secondary/40 backdrop-blur-sm border border-primary/10">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center">
-                <Briefcase className="text-white" size={24} />
+                <Briefcase className="text-primary-foreground" size={24} />
               </div>
               <div>
                 <h3 className="font-bold text-2xl text-green-600">{adminStats.activeJobs}</h3>
@@ -97,10 +97,10 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ jobs }) => {
             </div>
           </Card>
 
-          <Card className="p-6 bg-white/60 backdrop-blur-sm border border-primary/10">
+          <Card className="p-6 bg-secondary/40 backdrop-blur-sm border border-primary/10">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center">
-                <DollarSign className="text-white" size={24} />
+                <DollarSign className="text-primary-foreground" size={24} />
               </div>
               <div>
                 <h3 className="font-bold text-2xl text-purple-600">${adminStats.totalRevenue.toLocaleString()}</h3>
@@ -109,10 +109,10 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ jobs }) => {
             </div>
           </Card>
 
-          <Card className="p-6 bg-white/60 backdrop-blur-sm border border-primary/10">
+          <Card className="p-6 bg-secondary/40 backdrop-blur-sm border border-primary/10">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center">
-                <AlertTriangle className="text-white" size={24} />
+                <AlertTriangle className="text-primary-foreground" size={24} />
               </div>
               <div>
                 <h3 className="font-bold text-2xl text-orange-600">{adminStats.pendingVerifications}</h3>
@@ -124,7 +124,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ jobs }) => {
 
         {/* Admin Actions */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          <Card className="p-8 bg-gradient-to-r from-white/80 to-primary/5 backdrop-blur-sm border border-primary/10">
+          <Card className="p-8 bg-gradient-to-r from-secondary/60 to-primary/10 backdrop-blur-sm border border-primary/10">
             <h2 className="text-2xl font-bold mb-6 text-primary flex items-center gap-3">
               <Settings size={28} />
               System Management
@@ -149,14 +149,14 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ jobs }) => {
             </div>
           </Card>
 
-          <Card className="p-8 bg-gradient-to-r from-white/80 to-accent/5 backdrop-blur-sm border border-accent/10">
+          <Card className="p-8 bg-gradient-to-r from-secondary/60 to-accent/10 backdrop-blur-sm border border-accent/10">
             <h2 className="text-2xl font-bold mb-6 text-accent flex items-center gap-3">
               <TrendingUp size={28} />
               Recent Activity
             </h2>
             <div className="space-y-4 max-h-64 overflow-y-auto">
               {recentActivity.map((activity, index) => (
-                <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-white/50">
+                <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-secondary/40">
                   <div className={`w-2 h-2 rounded-full mt-2 ${
                     activity.status === 'success' ? 'bg-green-500' :
                     activity.status === 'warning' ? 'bg-orange-500' :
@@ -175,7 +175,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ jobs }) => {
         </div>
 
         {/* Quick Stats Overview */}
-        <Card className="p-8 bg-gradient-to-r from-white/90 to-primary/10 backdrop-blur-sm border border-primary/20">
+        <Card className="p-8 bg-gradient-to-r from-secondary/70 to-primary/10 backdrop-blur-sm border border-primary/20">
           <h2 className="text-3xl font-bold mb-8 text-primary text-center">Platform Overview</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>

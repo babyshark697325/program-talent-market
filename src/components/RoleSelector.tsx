@@ -8,7 +8,7 @@ const RoleSelector: React.FC = () => {
   const { role, setRole } = useRole();
 
   return (
-    <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-2xl p-1 shadow-md border border-primary/10">
+    <div className="flex items-center gap-2 bg-secondary/50 backdrop-blur-sm rounded-2xl p-1 shadow-md border border-primary/10">
       <Button
         variant={role === 'student' ? 'default' : 'ghost'}
         size="sm"

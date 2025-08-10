@@ -15,7 +15,7 @@ const StudentDashboard: React.FC<StudentDashboardProps> = ({ jobs, setActiveTab 
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-primary/5 relative overflow-hidden">
+    <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-1/4 w-72 h-72 bg-gradient-to-br from-primary/10 to-accent/20 rounded-full blur-3xl animate-pulse opacity-60"></div>
@@ -41,10 +41,10 @@ const StudentDashboard: React.FC<StudentDashboardProps> = ({ jobs, setActiveTab 
       {/* Student Quick Stats */}
       <div className="max-w-6xl mx-auto w-full px-6 pb-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-6 shadow-lg border border-primary/10">
+          <div className="bg-secondary/40 backdrop-blur-sm rounded-3xl p-6 shadow-lg border border-primary/10">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-gradient-to-r from-primary to-primary/80 rounded-2xl flex items-center justify-center">
-                <Award className="text-white" size={24} />
+                <Award className="text-primary-foreground" size={24} />
               </div>
               <div>
                 <h3 className="font-bold text-2xl text-primary">12</h3>
@@ -52,10 +52,10 @@ const StudentDashboard: React.FC<StudentDashboardProps> = ({ jobs, setActiveTab 
               </div>
             </div>
           </div>
-          <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-6 shadow-lg border border-primary/10">
+          <div className="bg-secondary/40 backdrop-blur-sm rounded-3xl p-6 shadow-lg border border-primary/10">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-gradient-to-r from-accent to-accent/80 rounded-2xl flex items-center justify-center">
-                <Briefcase className="text-white" size={24} />
+                <Briefcase className="text-primary-foreground" size={24} />
               </div>
               <div>
                 <h3 className="font-bold text-2xl text-accent">8</h3>
@@ -63,10 +63,10 @@ const StudentDashboard: React.FC<StudentDashboardProps> = ({ jobs, setActiveTab 
               </div>
             </div>
           </div>
-          <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-6 shadow-lg border border-primary/10">
+          <div className="bg-secondary/40 backdrop-blur-sm rounded-3xl p-6 shadow-lg border border-primary/10">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center">
-                <TrendingUp className="text-white" size={24} />
+                <TrendingUp className="text-primary-foreground" size={24} />
               </div>
               <div>
                 <h3 className="font-bold text-2xl text-green-600">$2,450</h3>
@@ -77,7 +77,7 @@ const StudentDashboard: React.FC<StudentDashboardProps> = ({ jobs, setActiveTab 
         </div>
 
         {/* Browse Jobs Section */}
-        <div className="bg-gradient-to-r from-white/80 to-primary/5 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-primary/10 mb-12">
+        <div className="bg-gradient-to-r from-secondary/60 to-primary/10 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-primary/10 mb-12">
           <h2 className="text-3xl font-bold mb-6 text-primary">Available Opportunities</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {jobs.slice(0, 6).map((job) => (

@@ -29,7 +29,7 @@ const SearchFilters: React.FC<SearchFiltersProps> = ({
   resultsCount
 }) => {
   return (
-    <div className="bg-white/70 backdrop-blur-sm rounded-2xl md:rounded-3xl p-4 md:p-8 shadow-xl border border-primary/20 mb-6 md:mb-10 animate-fade-in">
+    <div className="bg-secondary/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-4 md:p-8 shadow-xl border border-primary/20 mb-6 md:mb-10 animate-fade-in">
       <div className="flex flex-col lg:flex-row gap-4 md:gap-6 mb-4 md:mb-6">
         <div className="relative flex-1">
           <Search className="absolute left-3 md:left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
@@ -38,7 +38,7 @@ const SearchFilters: React.FC<SearchFiltersProps> = ({
             placeholder={`Search ${activeTab === "students" ? "students..." : "jobs..."}...`}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="pl-10 md:pl-12 py-3 md:py-4 text-base md:text-lg rounded-2xl border-primary/30 focus:border-primary focus:ring-primary/20 bg-white/90 backdrop-blur-sm shadow-sm"
+            className="pl-10 md:pl-12 py-3 md:py-4 text-base md:text-lg rounded-2xl border-primary/30 focus:border-primary focus:ring-primary/20 bg-secondary backdrop-blur-sm shadow-sm"
           />
         </div>
         
