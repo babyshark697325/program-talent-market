@@ -67,7 +67,15 @@ const BrowseStudents = () => {
         </div>
 
         <div className="rounded-3xl p-8 shadow-xl border mb-10 bg-white/70 dark:bg-[#040b17] border-primary/20 dark:border-white/10">
-          <div className="flex flex-col lg:flex-row gap-6 mb-6">
+          <div className="flex flex-col lg:flex-row gap-6 mb-6 relative">
+            {/* Clear Filters Button - top right */}
+            <button
+              onClick={handleClearFilters}
+              className="absolute right-0 top-0 bg-gradient-to-r from-primary to-primary/80 text-white px-4 py-2 rounded-full shadow-md hover:shadow-lg transition-all text-sm font-semibold z-10"
+              style={{ margin: '1rem' }}
+            >
+              Clear Filters
+            </button>
             <div className="relative flex-1">
               <input
                 type="text"
@@ -79,7 +87,7 @@ const BrowseStudents = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-2">
             <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground whitespace-nowrap">
               Filter by skill:
             </div>

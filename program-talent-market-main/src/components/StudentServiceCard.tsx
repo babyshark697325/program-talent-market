@@ -31,7 +31,7 @@ const StudentServiceCard: React.FC<Props> = ({ student, onView }) => (
       {student.affiliation && (
         <Badge
           variant={student.affiliation === 'alumni' ? 'secondary' : 'default'}
-          className="rounded-full text-[10px] px-2 py-0.5 shrink-0"
+          className={`rounded-full text-[10px] px-2 py-0.5 shrink-0 ${student.affiliation === 'alumni' ? 'bg-[#D4AF37] text-black border border-[#D4AF37]' : ''}`}
         >
           {student.affiliation === 'alumni' ? 'MyVillage Alumni' : 'MyVillage Student'}
         </Badge>

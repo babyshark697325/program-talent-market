@@ -102,9 +102,9 @@ const ManageJobs = () => {
         </div>
 
         {jobs.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {jobs.map((job, index) => (
-              <div key={job.id} className="relative group">
+              <div key={job.id} className="relative group h-full flex flex-col">
                 <div className="absolute top-2 right-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                   <div className="flex gap-2">
                     <Button 
@@ -132,7 +132,7 @@ const ManageJobs = () => {
                   </div>
                 </div>
                 
-                <div className="animate-fade-in hover:scale-105 transition-transform duration-300"
+                <div className="animate-fade-in hover:scale-105 transition-transform duration-300 h-full flex flex-col"
                      style={{ animationDelay: `${0.1 * index}s` }}>
                   <JobCard
                     job={job}
