@@ -50,7 +50,7 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
                   <img
                     src={student.avatarUrl}
                     alt={`${student.name} profile`}
-                    className="relative w-20 md:w-24 h-20 md:h-24 rounded-full object-cover border-4 border-card shadow-xl group-hover:scale-105 transition-transform duration-300"
+                    className="relative w-20 md:w-24 h-20 md:h-24 rounded-full object-cover border-4 border-[#C7A836] shadow-xl group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute -bottom-1 md:-bottom-2 -right-1 md:-right-2 bg-primary text-primary-foreground rounded-full p-1.5 md:p-2 shadow-lg animate-pulse">
                     <Star size={12} className="md:w-[14px] md:h-[14px] fill-current" />
@@ -88,8 +88,9 @@ const FeaturedStudent: React.FC<FeaturedStudentProps> = ({ student, onViewProfil
               </div>
 
             <Button 
-              onClick={onViewProfile} 
-              className="bg-[hsl(var(--glow))] text-[hsl(var(--glow-foreground))] px-8 py-3 rounded-2xl font-semibold shadow-[0_8px_24px_hsl(var(--glow)/0.45)] hover:shadow-[0_12px_36px_hsl(var(--glow)/0.6)] transition-all duration-300 hover:scale-105"
+              onClick={onViewProfile}
+              variant="default"
+              className="px-8 py-3 rounded-2xl font-semibold shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               View Full Profile
             </Button>

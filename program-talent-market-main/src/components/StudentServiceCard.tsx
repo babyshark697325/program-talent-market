@@ -15,9 +15,9 @@ const StudentServiceCard: React.FC<Props> = ({ student, onView }) => (
       {/* header */}
 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 md:gap-4 mb-4 text-center sm:text-left">
   <img
-    src={student.avatarUrl}
-    alt={`${student.name} profile`}
-    className="w-14 md:w-16 h-14 md:h-16 rounded-full object-cover border flex-shrink-0"
+  src={student.avatarUrl}
+  alt={`${student.name} profile`}
+  className="w-14 md:w-16 h-14 md:h-16 rounded-full object-cover border-2 border-[#C7A836] flex-shrink-0"
   />
 
   <div className="flex-1 min-w-0">
