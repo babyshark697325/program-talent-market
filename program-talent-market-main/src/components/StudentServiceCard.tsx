@@ -31,7 +31,7 @@ const StudentServiceCard: React.FC<Props> = ({ student, onView }) => (
       {student.affiliation && (
         <Badge
           variant={student.affiliation === 'alumni' ? 'secondary' : 'default'}
-          className={`rounded-full text-[10px] px-2 py-0.5 shrink-0 ${student.affiliation === 'alumni' ? 'bg-[#D4AF37] text-black border border-[#D4AF37]' : ''}`}
+          className={`rounded-full text-[10px] px-2 py-0.5 shrink-0 ${student.affiliation === 'alumni' ? 'bg-[#D4AF37] text-black border border-[#D4AF37] !transition-none !hover:bg-[#D4AF37] !hover:text-black !hover:border-[#D4AF37] !scale-100' : ''}`}
         >
           {student.affiliation === 'alumni' ? 'MyVillage Alumni' : 'MyVillage Student'}
         </Badge>
@@ -52,12 +52,12 @@ const StudentServiceCard: React.FC<Props> = ({ student, onView }) => (
       {/* tags */}
       <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4">
         {student.skills.slice(0, 3).map((skill) => (
-          <Badge key={skill} className="bg-[hsl(var(--tag-bg))] text-[hsl(var(--tag-foreground))] px-2 md:px-3 py-1 text-xs rounded-lg">
+          <Badge key={skill} className="bg-[hsl(var(--tag-bg))] text-[hsl(var(--tag-foreground))] px-2 md:px-3 py-1 text-xs rounded-lg !transition-none !hover:bg-[hsl(var(--tag-bg))] !hover:text-[hsl(var(--tag-foreground))] !hover:border-none !scale-100">
             {skill}
           </Badge>
         ))}
         {student.skills.length > 3 && (
-          <Badge className="bg-[hsl(var(--tag-bg))] text-[hsl(var(--tag-foreground))] px-2 md:px-3 py-1 text-xs rounded-lg">
+          <Badge className="bg-[hsl(var(--tag-bg))] text-[hsl(var(--tag-foreground))] px-2 md:px-3 py-1 text-xs rounded-lg !transition-none !hover:bg-[hsl(var(--tag-bg))] !hover:text-[hsl(var(--tag-foreground))] !hover:border-none !scale-100">
             +{student.skills.length - 3}
           </Badge>
         )}
