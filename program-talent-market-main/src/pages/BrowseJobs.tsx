@@ -69,7 +69,7 @@ const BrowseJobs = () => {
           </p>
         </div>
 
-        <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/20 mb-10">
+  <div className="bg-white/70 dark:bg-[#040b17] backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/20 dark:border-white/10 mb-10">
           <div className="flex flex-col lg:flex-row gap-6 mb-6">
             <div className="relative flex-1">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={20} />
@@ -78,7 +78,7 @@ const BrowseJobs = () => {
                 placeholder="Search jobs by title, company, or description..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 text-lg rounded-2xl border border-primary/30 focus:border-primary focus:ring-primary/20 bg-white/90 backdrop-blur-sm shadow-sm focus:outline-none focus:ring-2"
+                className="w-full pl-12 pr-4 py-4 text-lg rounded-2xl border border-primary/30 dark:border-white/10 focus:border-primary focus:ring-primary/20 bg-white/90 dark:bg-[#040b17] backdrop-blur-sm shadow-sm focus:outline-none focus:ring-2"
               />
             </div>
           </div>
@@ -93,7 +93,7 @@ const BrowseJobs = () => {
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm ${
                   selectedSkills.length === 0 
                     ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-primary/25" 
-                    : "bg-white/90 text-primary border border-primary/30 hover:bg-primary/5"
+                    : "bg-white/90 dark:bg-[#040b17] text-primary border border-primary/30 dark:border-white/10 hover:bg-primary/5 dark:hover:bg-white/5"
                 }`}
               >
                 All Skills
@@ -111,7 +111,7 @@ const BrowseJobs = () => {
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm ${
                     selectedSkills.includes(skill)
                       ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-primary/25" 
-                      : "bg-white/90 text-primary border border-primary/30 hover:bg-primary/5"
+                      : "bg-white/90 dark:bg-[#040b17] text-primary border border-primary/30 dark:border-white/10 hover:bg-primary/5 dark:hover:bg-white/5"
                   }`}
                 >
                   {skill}
@@ -152,7 +152,7 @@ const BrowseJobs = () => {
           </div>
         ) : (
           <div className="text-center py-20">
-            <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-16 shadow-xl border border-primary/20 max-w-lg mx-auto">
+            <div className="bg-white/70 dark:bg-[#040b17] backdrop-blur-sm rounded-3xl p-16 shadow-xl border border-primary/20 dark:border-white/10 max-w-lg mx-auto">
               <div className="w-24 h-24 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-4xl">🔍</span>
               </div>
