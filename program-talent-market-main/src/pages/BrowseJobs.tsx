@@ -61,7 +61,7 @@ const BrowseJobs = () => {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-8">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight mb-6">
             Browse Job Opportunities
           </h1>
           <p className="text-muted-foreground text-lg">
@@ -70,7 +70,15 @@ const BrowseJobs = () => {
         </div>
 
   <div className="bg-white/70 dark:bg-[#040b17] backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/20 dark:border-white/10 mb-10">
-          <div className="flex flex-col lg:flex-row gap-6 mb-6">
+          <div className="flex flex-col lg:flex-row gap-6 mb-6 relative">
+            {/* Clear Filters Button - top right */}
+            <button
+              onClick={handleClearFilters}
+              className="absolute right-0 top-0 bg-gradient-to-r from-primary to-primary/80 text-white px-4 py-2 rounded-full shadow-md hover:shadow-lg transition-all text-sm font-semibold z-10"
+              style={{ margin: '1rem' }}
+            >
+              Clear Filters
+            </button>
             <div className="relative flex-1">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={20} />
               <input

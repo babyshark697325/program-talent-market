@@ -82,7 +82,10 @@ export const mockStudents: StudentService[] = [
     contact: {
       email: "jamie.patel@myvillage.com",
       phone: "(555) 234-5678",
-      linkedinUrl: "https://www.linkedin.com/in/jamie-patel"
+      linkedinUrl: "https://www.linkedin.com/in/jamie-patel",
+      githubUrl: "https://github.com/jamie-patel",
+      upworkUrl: "https://www.upwork.com/freelancers/jamie-patel",
+      fiverrUrl: "https://www.fiverr.com/jamiepatel"
     },
     portfolio: [
       {
@@ -109,7 +112,10 @@ export const mockStudents: StudentService[] = [
     contact: {
       email: "morgan.lee@myvillage.com",
       phone: "(555) 345-6789",
-      linkedinUrl: "https://www.linkedin.com/in/morgan-lee"
+      linkedinUrl: "https://www.linkedin.com/in/morgan-lee",
+      githubUrl: "https://github.com/morgan-lee",
+      upworkUrl: "https://www.upwork.com/freelancers/morgan-lee",
+      fiverrUrl: "https://www.fiverr.com/morganlee"
     },
     portfolio: [
       {
@@ -136,7 +142,10 @@ export const mockStudents: StudentService[] = [
     contact: {
       email: "samira.chen@myvillage.com",
       phone: "(555) 456-7890",
-      linkedinUrl: "https://www.linkedin.com/in/samira-chen"
+      linkedinUrl: "https://www.linkedin.com/in/samira-chen",
+      githubUrl: "https://github.com/samira-chen",
+      upworkUrl: "https://www.upwork.com/freelancers/samira-chen",
+      fiverrUrl: "https://www.fiverr.com/samirachen"
     },
     portfolio: [
       {
@@ -163,7 +172,10 @@ export const mockStudents: StudentService[] = [
     contact: {
       email: "ethan.smith@myvillage.com",
       phone: "(555) 567-8901",
-      linkedinUrl: "https://www.linkedin.com/in/ethan-smith"
+      linkedinUrl: "https://www.linkedin.com/in/ethan-smith",
+      githubUrl: "https://github.com/ethan-smith",
+      upworkUrl: "https://www.upwork.com/freelancers/ethan-smith",
+      fiverrUrl: "https://www.fiverr.com/ethansmith"
     },
     portfolio: [
       {

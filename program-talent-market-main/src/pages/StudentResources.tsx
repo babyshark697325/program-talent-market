@@ -56,7 +56,7 @@ const StudentResources = () => {
     <div className="p-6 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Learning Resources</h1>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight mb-6">Learning Resources</h1>
           <p className="text-muted-foreground">Enhance your skills with our curated learning materials</p>
         </div>
         <Button>

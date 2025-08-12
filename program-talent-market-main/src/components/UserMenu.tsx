@@ -38,8 +38,10 @@ const UserMenu: React.FC = () => {
   };
 
   const getRoleLabel = (role: string | null) => {
-    if (!role) return 'User';
-    return role.charAt(0).toUpperCase() + role.slice(1);
+    if (!role) return 'Student'; // Default to Student if role is missing
+    if (role === 'admin') return 'Admin';
+    if (role === 'client') return 'Client';
+    return 'Student';
   };
 
   return (
@@ -47,8 +49,8 @@ const UserMenu: React.FC = () => {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-10 w-10 rounded-full">
           <Avatar className="h-10 w-10">
-            <AvatarFallback className="bg-primary/10 text-primary">
-              {getInitials(user.email || 'U')}
+            <AvatarFallback className="bg-primary/10 text-primary text-xs font-bold">
+              {getRoleLabel(userRole)}
             </AvatarFallback>
           </Avatar>
         </Button>
